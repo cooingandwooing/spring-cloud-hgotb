@@ -81,16 +81,16 @@ public class SwaggerConfig implements WebMvcConfigurer {
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
                 .title("Swagger API")
-                .description("https://gitee.com/wells2333/spring-microservice-exam")
-                .termsOfServiceUrl("https://gitee.com/wells2333/spring-microservice-exam")
-                .contact(new Contact("tangyi", "https://gitee.com/wells2333/spring-microservice-exam", "1633736729@qq.com"))
-                .version("3.4.0")
+                .description("https://gitee.com/zhanzhanlusi/spring-cloud-hgotb")
+                .termsOfServiceUrl("https://gitee.com/zhanzhanlusi/spring-cloud-hgotb")
+                .contact(new Contact("gaoxiaofeng", "https://gitee.com/zhanzhanlusi/spring-cloud-hgotb", "554099752@qq.com"))
+                .version("1.0.0")
                 .build();
     }
 
     /**
      * 显示swagger-ui.html文档展示页，还必须注入swagger资源：
-     *
+     * 让DispathcherServlet不拦截swagger的静态资源，貌似解决文件上传swagger显示问题。
      * @param registry registry
      */
     @Override
