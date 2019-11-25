@@ -13,7 +13,7 @@ import java.lang.reflect.Type;
 import java.util.*;
 
 /**
- * @author tangyi
+ * @author gaoxiaofeng
  * @date 2018/11/26 22:29
  */
 public class MapUtil {
@@ -29,8 +29,9 @@ public class MapUtil {
     @SuppressWarnings({"unchecked"})
     public final static <E> E get(Map<String, Object> map, Object key, E defaultValue) {
         Object o = map.get(key);
-        if (o == null)
+        if (o == null) {
             return defaultValue;
+        }
         return (E) o;
     }
 

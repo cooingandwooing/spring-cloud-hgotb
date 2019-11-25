@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * 树形实体
  *
- * @author tangyi
+ * @author gaoxiaofeng
  * @date 2018-09-13 20:40
  */
 @Data

@@ -7,7 +7,7 @@ import java.io.Serializable;
 /**
  * 封装返回数据
  *
- * @author tangyi
+ * @author gaoxiaofeng
  * @date 2019/3/17 12:08
  */
 @Data

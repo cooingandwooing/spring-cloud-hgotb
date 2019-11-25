@@ -3,7 +3,7 @@ package com.github.cooingandwooing.common.core.constant;
 /**
  * 公用常量
  *
- * @author tangyi
+ * @author gaoxiaofeng
  * @date 2018-08-23 12:00
  */
 public class CommonConstant {
@@ -26,7 +26,7 @@ public class CommonConstant {
     /**
      * jwt签名
      */
-    public static final String SIGN_KEY = "EXAM";
+    public static final String SIGN_KEY = "POETRY";
 
     /**
      * 页码

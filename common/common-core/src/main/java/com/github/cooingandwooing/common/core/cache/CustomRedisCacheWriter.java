@@ -18,10 +18,10 @@ import java.util.function.Consumer;
 import java.util.function.Function;
 
 /**
- * 源码：org.springframework.data.redis.cache.DefaultRedisCacheWriter
+ * 源码：@see org.springframework.data.redis.cache.DefaultRedisCacheWriter
  *
  * @author gaoxiaofeng
- * @date 2019/6/9 15:28
+ * @date 2019-6-9 15:28
  */
 public class CustomRedisCacheWriter implements RedisCacheWriter {
 

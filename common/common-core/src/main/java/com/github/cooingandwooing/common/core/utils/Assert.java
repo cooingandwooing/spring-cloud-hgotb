@@ -1,7 +1,7 @@
 package com.github.cooingandwooing.common.core.utils;
 
 /**
- * @author tangyi
+ * @author gaoxiaofeng
  * @date 2019/1/23 19:59
  */
 public class Assert {
@@ -11,7 +11,7 @@ public class Assert {
      *
      * @param object  object
      * @param message message
-     * @author tangyi
+     * @author gaoxiaofeng
      * @date 2019/01/23 20:00
      */
     public static void notNull(Object object, String message) {

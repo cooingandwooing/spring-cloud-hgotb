@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Configuration;
 /**
  * ID生成配置
  *
- * @author tangyi
+ * @author gaoxiaofeng
  * @date 2019/4/26 10:47
  */
 @Data

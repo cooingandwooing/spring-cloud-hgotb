@@ -1,7 +1,7 @@
 package com.github.cooingandwooing.common.core.utils;
 
 /**
- * @author tangyi
+ * @author gaoxiaofeng
  * @date 2018/11/26 22:47
  */
 public class ObjectUtil {

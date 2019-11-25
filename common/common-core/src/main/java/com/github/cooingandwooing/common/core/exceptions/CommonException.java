@@ -3,8 +3,8 @@ package com.github.cooingandwooing.common.core.exceptions;
 /**
  * 公共异常
  *
- * @author tangyi
- * @date 2019/3/16 20:28
+ * @author gaoxiaofeng
+ * @date 2019-3-16 20:28
  */
 public class CommonException extends RuntimeException {
 

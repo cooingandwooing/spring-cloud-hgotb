@@ -15,7 +15,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * okHttp工具类
  *
- * @author tangyi
+ * @author gaoxiaofeng
  * @date 2018-09-07 20:31
  */
 public class OkHttpUtil {
@@ -55,8 +55,9 @@ public class OkHttpUtil {
      * @return OkHttpClient
      */
     public synchronized static OkHttpUtil getInstance() {
-        if (instance == null)
+        if (instance == null) {
             instance = new OkHttpUtil();
+        }
         return instance;
     }
 
@@ -66,7 +67,7 @@ public class OkHttpUtil {
      * @param url    url
      * @param header header
      * @return String
-     * @author tangyi
+     * @author gaoxiaofeng
      * @date 2018/9/7 20:37
      */
     public String get(String url, Map<String, Object> header) throws Exception {
@@ -79,7 +80,7 @@ public class OkHttpUtil {
      * @param url    url
      * @param header header
      * @return String
-     * @author tangyi
+     * @author gaoxiaofeng
      * @date 2018/9/11 10:24
      */
     public ResponseBody getResponseBody(String url, Map<String, Object> header) throws Exception {
@@ -91,14 +92,15 @@ public class OkHttpUtil {
      *
      * @param url    url
      * @param header header
-     * @return String
+     * @return gaoxiaofeng
      * @author tangyi
      * @date 2018/10/11 11:11
      */
     public Response getResponse(String url, Map<String, Object> header) throws Exception {
         Request.Builder builder = new Request.Builder().url(url).get();
-        for (String key : header.keySet())
+        for (String key : header.keySet()) {
             builder.addHeader(key, header.get(key).toString());
+        }
         return okHttpClient.newCall(builder.build()).execute();
     }
 
@@ -108,7 +110,7 @@ public class OkHttpUtil {
      * @param header header
      * @param data   data
      * @return String
-     * @author tangyi
+     * @author gaoxiaofeng
      * @date 2018/9/9 10:32
      */
     public String postJson(String url, Map<String, Object> header, Map<String, Object> data) {
@@ -118,8 +120,9 @@ public class OkHttpUtil {
             logger.debug("postJson json:{}", json);
             RequestBody body = RequestBody.create(mediaType, json);
             Request.Builder builder = new Request.Builder().url(url).post(body);
-            for (String key : header.keySet())
+            for (String key : header.keySet()) {
                 builder.addHeader(key, header.get(key).toString());
+            }
             return okHttpClient.newCall(builder.build()).execute().body().string();
         } catch (Exception e) {
             logger.error(e.getMessage(), e);
@@ -133,7 +136,7 @@ public class OkHttpUtil {
      * @param header header
      * @param object object
      * @return String
-     * @author tangyi
+     * @author gaoxiaofeng
      * @date 2018/9/9 10:32
      */
     public String postJson(String url, Map<String, Object> header, Object object) {
@@ -143,8 +146,9 @@ public class OkHttpUtil {
             logger.debug("postJson json:{}", json);
             RequestBody body = RequestBody.create(mediaType, json);
             Request.Builder builder = new Request.Builder().url(url).post(body);
-            for (String key : header.keySet())
+            for (String key : header.keySet()) {
                 builder.addHeader(key, header.get(key).toString());
+            }
             return okHttpClient.newCall(builder.build()).execute().body().string();
         } catch (Exception e) {
             logger.error(e.getMessage(), e);
@@ -158,17 +162,19 @@ public class OkHttpUtil {
      * @param header header
      * @param data   data
      * @return String
-     * @author tangyi
+     * @author gaoxiaofeng
      * @date 2018/9/9 10:32
      */
     public String postForm(String url, Map<String, Object> header, Map<String, Object> data) throws Exception {
         logger.debug("post data:{}", data);
         FormBody.Builder formBuilder = new FormBody.Builder();
-        for (String key : data.keySet())
+        for (String key : data.keySet()) {
             formBuilder.add(key, data.get(key).toString());
+        }
         Request.Builder builder = new Request.Builder().url(url).post(formBuilder.build());
-        for (String key : header.keySet())
+        for (String key : header.keySet()) {
             builder.addHeader(key, header.get(key).toString());
+        }
         return okHttpClient.newCall(builder.build()).execute().body().string();
     }
 
@@ -177,16 +183,18 @@ public class OkHttpUtil {
      *
      * @param header header
      * @return String
-     * @author tangyi
+     * @author gaoxiaofeng
      * @date 2018/9/15 10:36
      */
     public String postFile(String url, Map<String, Object> header, String filePath) throws Exception {
         Request.Builder builder = new Request.Builder().url(url).post(RequestBody.create(MediaType.parse("application/octet-stream"), new File(filePath)));
-        for (String key : header.keySet())
+        for (String key : header.keySet()) {
             builder.addHeader(key, header.get(key).toString());
+        }
         Response response = okHttpClient.newCall(builder.build()).execute();
-        if (!response.isSuccessful())
+        if (!response.isSuccessful()) {
             throw new RuntimeException("请求接口失败！");
+        }
         return response.body().string();
     }
 
@@ -196,17 +204,19 @@ public class OkHttpUtil {
      * @param header header
      * @param file   file
      * @return String
-     * @author tangyi
+     * @author gaoxiaofeng
      * @date 2018/9/9 10:32
      */
     public String put(String url, Map<String, Object> header, String file) throws Exception {
         RequestBody body = RequestBody.create(MediaType.parse("application/octet-stream"), new File(file));
         Request.Builder builder = new Request.Builder().url(url).put(body);
-        for (String key : header.keySet())
+        for (String key : header.keySet()) {
             builder.addHeader(key, header.get(key).toString());
+        }
         Response response = okHttpClient.newCall(builder.build()).execute();
-        if (!response.isSuccessful())
+        if (!response.isSuccessful()) {
             throw new RuntimeException("请求接口失败！");
+        }
         return response.body().string();
     }
 
@@ -216,17 +226,19 @@ public class OkHttpUtil {
      * @param header header
      * @param bytes  bytes
      * @return String
-     * @author tangyi
+     * @author gaoxiaofeng
      * @date 2018/9/14 17:14
      */
     public String putBytes(String url, Map<String, Object> header, byte[] bytes) throws Exception {
         RequestBody body = RequestBody.create(MediaType.parse("application/octet-stream"), bytes);
         Request.Builder builder = new Request.Builder().url(url).put(body);
-        for (String key : header.keySet())
+        for (String key : header.keySet()) {
             builder.addHeader(key, header.get(key).toString());
+        }
         Response response = okHttpClient.newCall(builder.build()).execute();
-        if (!response.isSuccessful())
+        if (!response.isSuccessful()) {
             throw new RuntimeException("请求接口失败！");
+        }
         return response.body().string();
     }
 
@@ -236,17 +248,19 @@ public class OkHttpUtil {
      * @param header      header
      * @param inputStream inputStream
      * @return String
-     * @author tangyi
+     * @author gaoxiaofeng
      * @date 2019/1/15 16:49
      */
     public String putStream(String url, Map<String, Object> header, InputStream inputStream) throws Exception {
         RequestBody body = OkHttpRequestBodyUtil.create(MediaType.parse("application/octet-stream"), inputStream);
         Request.Builder builder = new Request.Builder().url(url).put(body);
-        for (String key : header.keySet())
+        for (String key : header.keySet()) {
             builder.addHeader(key, header.get(key).toString());
+        }
         Response response = okHttpClient.newCall(builder.build()).execute();
-        if (!response.isSuccessful())
+        if (!response.isSuccessful()) {
             throw new RuntimeException("请求接口失败！");
+        }
         return response.body().string();
     }
 
@@ -256,7 +270,7 @@ public class OkHttpUtil {
      * @param header header
      * @param data   data
      * @return String
-     * @author tangyi
+     * @author gaoxiaofeng
      * @date 2018/9/9 10:49
      */
     public String patch(String url, Map<String, Object> header, Map<String, Object> data) throws Exception {
@@ -264,8 +278,9 @@ public class OkHttpUtil {
         MediaType mediaType = MediaType.parse("application/json");
         RequestBody body = RequestBody.create(mediaType, mapToJSONObject(data).toString());
         Request.Builder builder = new Request.Builder().url(url).patch(body);
-        for (String key : header.keySet())
+        for (String key : header.keySet()) {
             builder.addHeader(key, header.get(key).toString());
+        }
         return okHttpClient.newCall(builder.build()).execute().body().string();
     }
 
@@ -275,7 +290,7 @@ public class OkHttpUtil {
      * @param url    url
      * @param header header
      * @return String
-     * @author tangyi
+     * @author gaoxiaofeng
      * @date 2018/9/11 10:28
      */
     public String delete(String url, Map<String, Object> header) throws Exception {
@@ -288,20 +303,21 @@ public class OkHttpUtil {
      * @param url    url
      * @param header header
      * @return String
-     * @author tangyi
+     * @author gaoxiaofeng
      * @date 2018/9/12 15:15
      */
     public Response deleteResponse(String url, Map<String, Object> header) throws Exception {
         Request.Builder builder = new Request.Builder().url(url).delete();
-        for (String key : header.keySet())
+        for (String key : header.keySet()) {
             builder.addHeader(key, header.get(key).toString());
+        }
         return okHttpClient.newCall(builder.build()).execute();
     }
 
     /**
      * @param data data
      * @return JSONObject
-     * @author tangyi
+     * @author gaoxiaofeng
      * @date 2018/9/4 20:24
      */
     private JSONObject mapToJSONObject(Map<String, Object> data) {
@@ -312,8 +328,9 @@ public class OkHttpUtil {
             if (object instanceof HashMap) {
                 Map childMap = (Map) object;
                 JSONObject childJsonObject = new JSONObject();
-                for (Object childKey : childMap.keySet())
+                for (Object childKey : childMap.keySet()) {
                     childJsonObject.put(childKey.toString(), childMap.get(childKey));
+                }
                 object = childJsonObject;
             }
             jsonObject.put(key, object);

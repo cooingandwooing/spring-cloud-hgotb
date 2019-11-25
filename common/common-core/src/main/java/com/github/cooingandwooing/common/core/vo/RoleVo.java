@@ -6,7 +6,7 @@ import lombok.Data;
 /**
  * 角色
  *
- * @author tangyi
+ * @author gaoxiaofeng
  * @date 2018-08-25 13:58
  */
 @Data

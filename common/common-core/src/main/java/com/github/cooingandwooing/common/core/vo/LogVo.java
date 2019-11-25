@@ -7,7 +7,7 @@ import lombok.Data;
 /**
  * logVo
  *
- * @author tangyi
+ * @author gaoxiaofeng
  * @date 2019-01-05 17:07
  */
 @Data

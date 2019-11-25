@@ -4,7 +4,7 @@ package com.github.cooingandwooing.common.core.exceptions;
  *
  * 服务异常
  *
- * @author tangyi
+ * @author gaoxiaofeng
  * @date 2019-10-08 12:56
  */
 public class ServiceException extends CommonException {

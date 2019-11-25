@@ -5,7 +5,7 @@ import com.github.cooingandwooing.common.core.model.ResponseBean;
 /**
  *
  *
- * @author tangyi
+ * @author gaoxiaofeng
  * @date 2019-10-08 12:03
  */
 public class ResponseUtil {

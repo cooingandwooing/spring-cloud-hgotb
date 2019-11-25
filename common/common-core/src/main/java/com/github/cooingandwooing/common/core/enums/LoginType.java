@@ -6,7 +6,7 @@ import lombok.Getter;
 /**
  * 登录类型
  *
- * @author tangyi
+ * @author gaoxiaofeng
  * @date 2019/07/02 09:45
  */
 @Getter

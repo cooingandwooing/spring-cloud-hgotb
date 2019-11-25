@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 /**
  * 以静态变量保存Spring ApplicationContext
  *
- * @author tangyi
+ * @author gaoxiaofeng
  * @date 2018-08-24 19:04
  */
 @Service
@@ -27,8 +27,9 @@ public class SpringContextHolder implements ApplicationContextAware, DisposableB
      * @return
      */
     public static ApplicationContext getApplicationContext() {
-        if (applicationContext == null)
+        if (applicationContext == null) {
             throw new CommonException("applicationContext为空！");
+        }
         return applicationContext;
     }
 

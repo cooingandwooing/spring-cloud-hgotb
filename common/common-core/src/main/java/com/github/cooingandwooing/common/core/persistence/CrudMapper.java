@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * Crud Mapper
  *
- * @author tangyi
+ * @author gaoxiaofeng
  * @date 2018-08-24 18:59
  */
 public interface CrudMapper<T> extends BaseMapper {

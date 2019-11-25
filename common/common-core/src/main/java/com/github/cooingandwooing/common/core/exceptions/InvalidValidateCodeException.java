@@ -3,7 +3,7 @@ package com.github.cooingandwooing.common.core.exceptions;
 /**
  * 验证码错误异常
  *
- * @author tangyi
+ * @author gaoxiaofeng
  * @date 2019/3/18 16:46
  */
 public class InvalidValidateCodeException extends CommonException {

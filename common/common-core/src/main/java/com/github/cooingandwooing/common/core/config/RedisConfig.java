@@ -21,10 +21,10 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * redis配置
+ * redis配置 redis集群缓存
  *
  * @author gaoxiaofeng
- * @date 2019/3/16 20:40
+ * @date 2019-3-16 20:40
  */
 @Configuration
 @EnableCaching

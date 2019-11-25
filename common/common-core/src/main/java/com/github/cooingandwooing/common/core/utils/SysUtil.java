@@ -1,7 +1,7 @@
 package com.github.cooingandwooing.common.core.utils;
 
-import com.github.tangyi.common.security.constant.SecurityConstant;
-import com.github.tangyi.common.security.tenant.TenantContextHolder;
+import com.github.cooingandwooing.common.security.constant.SecurityConstant;
+import com.github.cooingandwooing.common.security.tenant.TenantContextHolder;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.StringUtils;
 import org.bouncycastle.util.encoders.Base64;
@@ -24,7 +24,7 @@ import java.security.Principal;
 /**
  * 系统工具类
  *
- * @author tangyi
+ * @author gaoxiaofeng
  * @date 2018-09-13 20:50
  */
 @Slf4j
@@ -43,10 +43,12 @@ public class SysUtil {
      */
     public static String getUser() {
         Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        if (principal instanceof UserDetails)
+        if (principal instanceof UserDetails) {
             return ((UserDetails) principal).getUsername();
-        if (principal instanceof Principal)
+        }
+        if (principal instanceof Principal) {
             return ((Principal) principal).getName();
+        }
         return String.valueOf(principal);
     }
 
@@ -66,10 +68,12 @@ public class SysUtil {
      */
     public static String getTenantCode() {
         String tenantCode = TenantContextHolder.getTenantCode();
-        if (StringUtils.isBlank(tenantCode))
+        if (StringUtils.isBlank(tenantCode)) {
             tenantCode = getCurrentUserTenantCode();
-        if (StringUtils.isBlank(tenantCode))
+        }
+        if (StringUtils.isBlank(tenantCode)) {
             tenantCode = SecurityConstant.DEFAULT_TENANT_CODE;
+        }
         return tenantCode;
     }
 

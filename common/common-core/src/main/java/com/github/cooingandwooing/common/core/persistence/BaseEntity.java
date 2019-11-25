@@ -15,7 +15,7 @@ import java.util.Date;
 /**
  * Entity基类
  *
- * @author tangyi
+ * @author gaoxiaofeng
  * @date 2018-08-24 18:58
  */
 @Data

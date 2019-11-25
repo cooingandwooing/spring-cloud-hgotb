@@ -1,9 +1,9 @@
 package com.github.cooingandwooing.auth.config;
 
 import com.github.cooingandwooing.auth.security.CustomTokenConverter;
-import com.github.tangyi.common.security.core.ClientDetailsServiceImpl;
-import com.github.tangyi.common.security.exceptions.CustomOauthException;
-import com.github.tangyi.user.api.feign.UserServiceClient;
+import com.github.cooingandwooing.common.security.core.ClientDetailsServiceImpl;
+import com.github.cooingandwooing.common.security.exceptions.CustomOauthException;
+import com.github.cooingandwooing.user.api.feign.UserServiceClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.bootstrap.encrypt.KeyProperties;
 import org.springframework.context.annotation.Bean;

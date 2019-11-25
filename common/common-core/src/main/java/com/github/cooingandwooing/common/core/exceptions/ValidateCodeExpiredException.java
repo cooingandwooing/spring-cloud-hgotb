@@ -3,7 +3,7 @@ package com.github.cooingandwooing.common.core.exceptions;
 /**
  * 验证码过期异常
  *
- * @author tangyi
+ * @author gaoxiaofeng
  * @date 2019/3/29 12:07
  */
 public class ValidateCodeExpiredException extends CommonException {

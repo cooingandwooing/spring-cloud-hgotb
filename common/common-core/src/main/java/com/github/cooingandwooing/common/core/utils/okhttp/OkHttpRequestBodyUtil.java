@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.io.InputStream;
 
 /**
- * @author tangyi
+ * @author gaoxiaofeng
  * @version V1.0
  * @date 2018-09-09 10:14
  */
@@ -20,7 +20,7 @@ public class OkHttpRequestBodyUtil {
     /**
      * @param
      * @return
-     * @author tangyi
+     * @author gaoxiaofeng
      * @date 2018/9/9 10:22
      */
     public static RequestBody create(final MediaType mediaType, final InputStream inputStream) {

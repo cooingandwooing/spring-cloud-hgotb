@@ -3,7 +3,7 @@ package com.github.cooingandwooing.common.core.exceptions;
 /**
  * 租户不存在异常
  *
- * @author tangyi
+ * @author gaoxiaofeng
  * @date 2019/5/26 10:14
  */
 public class TenantNotFoundException extends CommonException {

@@ -14,7 +14,9 @@ import java.time.format.DateTimeFormatter;
 import java.util.*;
 
 /**
- * @author tangyi
+ * Excel工具类
+ *
+ * @author gaoxiaofeng
  * @date 2018/11/26 22:20
  */
 public class ExcelToolUtil {
@@ -216,8 +218,9 @@ public class ExcelToolUtil {
             for (int cellnum = 0; cellnum < row.getLastCellNum(); cellnum++) {
                 // 从第1列开始将单元格中的值写入map
                 Cell cell = row.getCell(cellnum);
-                if (cell == null)
+                if (cell == null) {
                     continue;
+                }
                 int valType = cell.getCellType();
                 if (valType == Cell.CELL_TYPE_STRING) {
                     map.put(keys[cellnum], cell.getStringCellValue());
@@ -249,7 +252,8 @@ public class ExcelToolUtil {
             return new BigDecimal(num).toPlainString();
         } else if (num.contains(".0")) {
             return num.substring(0, num.length() - 2);
-        } else
+        } else {
             return num;
+        }
     }
 }

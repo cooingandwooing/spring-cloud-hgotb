@@ -14,11 +14,6 @@ public class ServiceConstant {
     public static final String USER_SERVICE = "user-service";
 
     /**
-     * 考试服务名称
-     */
-    public static final String EXAM_SERVICE = "exam-service";
-
-    /**
      * 授权服务名称
      */
     public static final String AUTH_SERVICE = "auth-service";

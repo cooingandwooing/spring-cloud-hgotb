@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @author tangyi
+ * @author gaoxiaofeng
  * @date 2018-08-25 17:22
  */
 public abstract class CrudService<D extends CrudMapper<T>, T extends BaseEntity<T>> extends BaseService {
@@ -72,8 +72,9 @@ public abstract class CrudService<D extends CrudMapper<T>, T extends BaseEntity<
      * @return List
      */
     public List<T> findListById(Long[] ids) {
-        if (ids == null || ids.length == 0)
+        if (ids == null || ids.length == 0) {
             return new ArrayList<>();
+        }
         return dao.findListById(ids);
     }
 

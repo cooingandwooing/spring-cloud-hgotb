@@ -6,9 +6,9 @@ import java.security.cert.CertificateException;
 import java.security.cert.X509Certificate;
 
 /**
- * SSLSocketFactory
+ * SSLSocketFactory for OkHttpUtil 45:46
  *
- * @author tangyi
+ * @author gaoxiaofeng
  * @date 2018-12-04 16:53
  */
 public class SSLSocketClient {
@@ -34,7 +34,7 @@ public class SSLSocketClient {
      * 获取TrustManager
      *
      * @return TrustManager
-     * @author tangyi
+     * @author gaoxiaofeng
      * @date 2018/12/4 16:55
      */
     private static TrustManager[] getTrustManager() {
@@ -60,7 +60,7 @@ public class SSLSocketClient {
      * 获取HostnameVerifier
      *
      * @return HostnameVerifier
-     * @author tangyi
+     * @author gaoxiaofeng
      * @date 2018/12/4 16:56
      */
     public static HostnameVerifier getHostnameVerifier() {

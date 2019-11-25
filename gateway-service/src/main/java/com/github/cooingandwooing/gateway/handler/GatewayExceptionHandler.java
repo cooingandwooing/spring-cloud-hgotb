@@ -1,10 +1,10 @@
 package com.github.cooingandwooing.gateway.handler;
 
-import com.github.tangyi.common.core.exceptions.InvalidAccessTokenException;
-import com.github.tangyi.common.core.exceptions.InvalidValidateCodeException;
-import com.github.tangyi.common.core.exceptions.ValidateCodeExpiredException;
-import com.github.tangyi.common.core.model.ResponseBean;
-import com.github.tangyi.common.core.utils.Assert;
+import com.github.cooingandwooing.common.core.exceptions.InvalidAccessTokenException;
+import com.github.cooingandwooing.common.core.exceptions.InvalidValidateCodeException;
+import com.github.cooingandwooing.common.core.exceptions.ValidateCodeExpiredException;
+import com.github.cooingandwooing.common.core.model.ResponseBean;
+import com.github.cooingandwooing.common.core.utils.Assert;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.web.reactive.error.ErrorWebExceptionHandler;
 import org.springframework.cloud.gateway.support.NotFoundException;

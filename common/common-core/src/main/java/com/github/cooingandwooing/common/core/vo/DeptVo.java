@@ -6,7 +6,7 @@ import lombok.Data;
 /**
  * 部门vo
  *
- * @author tangyi
+ * @author gaoxiaofeng
  * @date 2018/12/31 22:02
  */
 @Data

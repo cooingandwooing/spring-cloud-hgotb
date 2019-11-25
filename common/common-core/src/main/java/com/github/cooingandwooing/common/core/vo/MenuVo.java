@@ -4,7 +4,7 @@ import com.github.cooingandwooing.common.core.persistence.BaseEntity;
 import lombok.Data;
 
 /**
- * @author tangyi
+ * @author gaoxiaofeng
  * @date 2018-08-28 20:40
  */
 @Data
@@ -51,7 +51,7 @@ public class MenuVo extends BaseEntity<MenuVo> {
     private String path;
 
     /**
-     * VUE页面
+     * react页面
      */
     private String component;
 }

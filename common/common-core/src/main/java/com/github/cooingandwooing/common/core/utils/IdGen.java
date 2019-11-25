@@ -5,7 +5,7 @@ import java.util.UUID;
 /**
  * id生成工具类
  *
- * @author tangyi
+ * @author gaoxiaofeng
  * @date 2018-08-23 12:03
  */
 public class IdGen {
@@ -21,7 +21,7 @@ public class IdGen {
      * 基于snowflake算法生成ID
      *
      * @return String
-     * @author tangyi
+     * @author gaoxiaofeng
      * @date 2019/04/26 11:24
      */
     public static long snowflakeId() {

@@ -6,7 +6,7 @@ import com.github.pagehelper.PageInfo;
 /**
  * 分页查询工具类
  *
- * @author tangyi
+ * @author gaoxiaofeng
  * @date 2018/12/4 20:16
  */
 public class PageUtil {
@@ -27,7 +27,7 @@ public class PageUtil {
      * @param sort  排序字段
      * @param order 顺序
      * @return String
-     * @author tangyi
+     * @author gaoxiaofeng
      * @date 2018/12/04 20:18
      */
     public static String orderBy(String sort, String order) {
@@ -47,7 +47,7 @@ public class PageUtil {
      * @param sort     sort
      * @param order    order
      * @return PageInfo
-     * @author tangyi
+     * @author gaoxiaofeng
      * @date 2019/03/28 15:36
      */
     public static <T> PageInfo<T> pageInfo(String pageNum, String pageSize, String sort, String order) {
@@ -63,7 +63,7 @@ public class PageUtil {
      *
      * @param source source
      * @param target target
-     * @author tangyi
+     * @author gaoxiaofeng
      * @date 2019/07/03 22:26:18
      */
     public static void copyProperties(PageInfo<?> source, PageInfo<?> target) {

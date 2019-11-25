@@ -3,7 +3,7 @@ package com.github.cooingandwooing.common.core.persistence;
 /**
  * Dao接口
  *
- * @author tangyi
+ * @author gaoxiaofeng
  * @date 2018-08-24 18:59
  */
 public interface BaseMapper {

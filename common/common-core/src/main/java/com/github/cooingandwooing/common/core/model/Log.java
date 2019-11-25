@@ -8,7 +8,7 @@ import javax.validation.constraints.NotBlank;
 /**
  * 日志
  *
- * @author tangyi
+ * @author gaoxiaofeng
  * @date 2018/10/31 20:29
  */
 @Data

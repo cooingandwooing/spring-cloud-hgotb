@@ -3,7 +3,7 @@ package com.github.cooingandwooing.common.core.utils;
 /**
  * 文件工具类
  *
- * @author tangyi
+ * @author gaoxiaofeng
  * @date 2018/10/30 22:05
  */
 public class FileUtil {
