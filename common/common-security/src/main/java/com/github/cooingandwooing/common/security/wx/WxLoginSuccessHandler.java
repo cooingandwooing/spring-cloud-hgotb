@@ -26,7 +26,7 @@ import java.util.HashMap;
 /**
  * 微信登录成功
  *
- * @author tangyi
+ * @author gaoxiaofeng
  * @date 2019/07/05 19:29
  */
 @Slf4j
@@ -54,16 +54,18 @@ public class WxLoginSuccessHandler implements AuthenticationSuccessHandler {
     @Override
     public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication) {
         String header = request.getHeader(HttpHeaders.AUTHORIZATION);
-        if (header == null || !header.startsWith(BASIC_))
+        if (header == null || !header.startsWith(BASIC_)) {
             throw new UnapprovedClientAuthenticationException("请求头中client信息为空");
+        }
         try {
             String[] tokens = SecurityUtil.extractAndDecodeHeader(header);
             assert tokens.length == 2;
             String clientId = tokens[0];
             ClientDetails clientDetails = clientDetailsService.loadClientByClientId(clientId);
             // 校验secret
-            if (!passwordEncoder.matches(tokens[1], clientDetails.getClientSecret()))
+            if (!passwordEncoder.matches(tokens[1], clientDetails.getClientSecret())) {
                 throw new InvalidClientException("Given client ID does not match authenticated client");
+            }
             TokenRequest tokenRequest = new TokenRequest(new HashMap<>(), clientId, clientDetails.getScope(), "wx");
             // 校验scope
             new DefaultOAuth2RequestValidator().validateScope(tokenRequest, clientDetails);

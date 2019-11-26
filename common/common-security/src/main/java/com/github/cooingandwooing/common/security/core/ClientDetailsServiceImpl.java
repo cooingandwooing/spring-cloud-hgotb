@@ -9,7 +9,7 @@ import javax.sql.DataSource;
 /**
  * jdbc客户端service
  *
- * @author tangyi
+ * @author gaoxiaofeng
  * @date 2019/3/30 23:30
  */
 public class ClientDetailsServiceImpl extends JdbcClientDetailsService {
@@ -23,7 +23,7 @@ public class ClientDetailsServiceImpl extends JdbcClientDetailsService {
      *
      * @param clientId clientId
      * @return ClientDetails
-     * @author tangyi
+     * @author gaoxiaofeng
      * @date 2019/03/30 23:31
      */
     @Override

@@ -8,7 +8,7 @@ import org.springframework.security.oauth2.common.exceptions.OAuth2Exception;
 /**
  * 定制OAuth2Exception
  *
- * @author tangyi
+ * @author gaoxiaofeng
  * @date 2019/3/18 22:36
  */
 @Data

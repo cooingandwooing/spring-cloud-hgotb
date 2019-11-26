@@ -1,13 +1,13 @@
 package com.github.cooingandwooing.user.api.feign;
 
 import com.github.cooingandwooing.user.api.module.Tenant;
-import com.github.tangyi.common.core.constant.ServiceConstant;
-import com.github.tangyi.common.core.model.Log;
-import com.github.tangyi.common.core.model.ResponseBean;
-import com.github.tangyi.common.core.vo.AttachmentVo;
-import com.github.tangyi.common.core.vo.DeptVo;
-import com.github.tangyi.common.core.vo.UserVo;
-import com.github.tangyi.common.feign.config.CustomFeignConfig;
+import com.github.cooingandwooing.common.core.constant.ServiceConstant;
+import com.github.cooingandwooing.common.core.model.Log;
+import com.github.cooingandwooing.common.core.model.ResponseBean;
+import com.github.cooingandwooing.common.core.vo.AttachmentVo;
+import com.github.cooingandwooing.common.core.vo.DeptVo;
+import com.github.cooingandwooing.common.core.vo.UserVo;
+import com.github.cooingandwooing.common.feign.config.CustomFeignConfig;
 import com.github.cooingandwooing.user.api.dto.UserDto;
 import com.github.cooingandwooing.user.api.dto.UserInfoDto;
 import com.github.cooingandwooing.user.api.feign.factory.UserServiceClientFallbackFactory;

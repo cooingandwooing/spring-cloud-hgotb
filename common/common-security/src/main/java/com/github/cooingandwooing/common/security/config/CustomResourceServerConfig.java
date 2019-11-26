@@ -14,7 +14,7 @@ import org.springframework.security.oauth2.provider.error.OAuth2AccessDeniedHand
 /**
  * 资源服务器配置
  *
- * @author tangyi
+ * @author gaoxiaofeng
  * @date 2019-03-15 11:37
  */
 @Configuration
@@ -39,14 +39,20 @@ public class CustomResourceServerConfig extends ResourceServerConfigurerAdapter 
     private final WxSecurityConfigurer wxSecurityConfigurer;
 
     @Autowired
-    public CustomResourceServerConfig(FilterIgnorePropertiesConfig filterIgnorePropertiesConfig, MobileSecurityConfigurer mobileSecurityConfigurer, WxSecurityConfigurer wxSecurityConfigurer) {
+    public CustomResourceServerConfig( FilterIgnorePropertiesConfig filterIgnorePropertiesConfig, MobileSecurityConfigurer mobileSecurityConfigurer, WxSecurityConfigurer wxSecurityConfigurer) {
         this.filterIgnorePropertiesConfig = filterIgnorePropertiesConfig;
         this.mobileSecurityConfigurer = mobileSecurityConfigurer;
         this.wxSecurityConfigurer = wxSecurityConfigurer;
     }
 
+    /**
+     * 重点，设置资源id，每一个Resource Server（一个微服务实例）设置一个resourceid
+     * 再给client授权的时候，可以设置这个client可以访问哪一些微服务实例，如果没设置，就是对所有的resource都有访问权限。
+     * @param resources
+     */
     @Override
     public void configure(ResourceServerSecurityConfigurer resources) {
+        // Flag to indicate that only token-based authentication is allowed on these resources. stateless - the flag value (default true)
         resources.resourceId(RESOURCE_ID).stateless(false);
     }
 

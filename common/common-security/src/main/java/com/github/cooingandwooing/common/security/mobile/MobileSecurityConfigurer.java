@@ -15,7 +15,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 /**
  * 手机登录配置
  *
- * @author tangyi
+ * @author gaoxiaofeng
  * @date 2019/6/22 21:26
  */
 @Data

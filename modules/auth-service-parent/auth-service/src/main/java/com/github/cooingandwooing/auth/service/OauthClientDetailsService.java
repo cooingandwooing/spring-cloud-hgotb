@@ -1,8 +1,8 @@
 package com.github.cooingandwooing.auth.service;
 
 import com.github.cooingandwooing.auth.mapper.OauthClientDetailsMapper;
-import com.github.tangyi.auth.api.module.OauthClientDetails;
-import com.github.tangyi.common.core.service.CrudService;
+import com.github.cooingandwooing.auth.api.module.OauthClientDetails;
+import com.github.cooingandwooing.common.core.service.CrudService;
 import org.springframework.stereotype.Service;
 
 /**

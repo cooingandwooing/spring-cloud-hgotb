@@ -1,7 +1,7 @@
 package com.github.cooingandwooing.user.api.module;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.github.tangyi.common.core.persistence.BaseEntity;
+import com.github.cooingandwooing.common.core.persistence.BaseEntity;
 import lombok.Data;
 
 import javax.validation.constraints.Email;

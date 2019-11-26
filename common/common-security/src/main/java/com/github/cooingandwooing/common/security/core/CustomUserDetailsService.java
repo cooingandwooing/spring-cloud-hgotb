@@ -8,7 +8,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 /**
  * 查询用户信息接口
  *
- * @author tangyi
+ * @author gaoxiaofeng
  * @date 2019/5/28 21:05
  */
 public interface CustomUserDetailsService {

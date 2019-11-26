@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * 手机登录filter
  *
- * @author tangyi
+ * @author gaoxiaofeng
  * @date 2019/6/22 21:15
  */
 @Slf4j
@@ -57,8 +57,9 @@ public class MobileAuthenticationFilter extends AbstractAuthenticationProcessing
 
     @Override
     public Authentication attemptAuthentication(HttpServletRequest request, HttpServletResponse response) throws AuthenticationException {
-        if (postOnly && !request.getMethod().equals(HttpMethod.POST.name()))
+        if (postOnly && !request.getMethod().equals(HttpMethod.POST.name())) {
             throw new AuthenticationServiceException("Authentication method not supported: " + request.getMethod());
+        }
         // 获取手机登录的参数
         String mobile = obtainMobile(request);
         if (mobile == null) {

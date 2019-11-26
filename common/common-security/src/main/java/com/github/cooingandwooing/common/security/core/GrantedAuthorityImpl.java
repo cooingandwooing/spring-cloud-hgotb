@@ -4,8 +4,8 @@ import org.springframework.security.core.GrantedAuthority;
 
 /**
  * GrantedAuthority封装
- *
- * @author tangyi
+ * 怀疑这个类没起作用
+ * @author gaoxiaofeng
  * @date 2019/3/17 14:29
  */
 public class GrantedAuthorityImpl implements GrantedAuthority {

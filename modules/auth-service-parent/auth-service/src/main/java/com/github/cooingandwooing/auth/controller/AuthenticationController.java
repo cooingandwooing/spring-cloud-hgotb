@@ -1,9 +1,9 @@
 package com.github.cooingandwooing.auth.controller;
 
-import com.github.tangyi.common.core.constant.CommonConstant;
-import com.github.tangyi.common.core.exceptions.CommonException;
-import com.github.tangyi.common.core.model.ResponseBean;
-import com.github.tangyi.common.core.web.BaseController;
+import com.github.cooingandwooing.common.core.constant.CommonConstant;
+import com.github.cooingandwooing.common.core.exceptions.CommonException;
+import com.github.cooingandwooing.common.core.model.ResponseBean;
+import com.github.cooingandwooing.common.core.web.BaseController;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -49,10 +49,12 @@ public class AuthenticationController extends BaseController {
     @PostMapping("removeToken")
     public ResponseBean<Boolean> removeToken(HttpServletRequest request) {
         String accessToken = request.getHeader("Authorization");
-        if (StringUtils.isBlank(accessToken))
+        if (StringUtils.isBlank(accessToken)) {
             throw new CommonException("accessToken为空.");
-        if (accessToken.startsWith(CommonConstant.AUTHORIZATION_BEARER))
+        }
+        if (accessToken.startsWith(CommonConstant.AUTHORIZATION_BEARER)) {
             accessToken = accessToken.split(CommonConstant.AUTHORIZATION_BEARER)[1];
+        }
         return new ResponseBean<>(consumerTokenServices.revokeToken(accessToken));
     }
 }

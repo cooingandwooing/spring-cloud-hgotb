@@ -11,7 +11,7 @@ import java.util.Map;
 /**
  * 定制OauthException序列化
  *
- * @author tangyi
+ * @author gaoxiaofeng
  * @date 2019/3/18 22:37
  */
 public class CustomOauthExceptionSerializer extends StdSerializer<CustomOauthException> {

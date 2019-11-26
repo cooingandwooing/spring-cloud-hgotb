@@ -8,7 +8,7 @@ import java.util.Collection;
 /**
  * 微信登录token
  *
- * @author tangyi
+ * @author gaoxiaofeng
  * @date 2019/07/05 19:29
  */
 public class WxAuthenticationToken extends AbstractAuthenticationToken {

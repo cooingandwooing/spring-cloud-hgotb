@@ -15,7 +15,7 @@ import java.io.IOException;
 /**
  * 获取请求头里的租户code
  *
- * @author tangyi
+ * @author gaoxiaofeng
  * @date 2019/5/28 22:53
  */
 @Slf4j
@@ -30,8 +30,9 @@ public class TenantTokenFilter implements Filter {
         // 获取请求头里的TENANT_CODE
         String tenantCode = request.getHeader(SecurityConstant.TENANT_CODE_HEADER);
         // 没有携带tenantCode则采用默认的tenantCode
-        if (tenantCode == null)
+        if (tenantCode == null) {
             tenantCode = SecurityConstant.DEFAULT_TENANT_CODE;
+        }
         TenantContextHolder.setTenantCode(tenantCode);
         filterChain.doFilter(request, response);
         TenantContextHolder.clear();

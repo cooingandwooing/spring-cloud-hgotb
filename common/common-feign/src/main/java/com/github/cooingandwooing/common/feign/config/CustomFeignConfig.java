@@ -14,7 +14,7 @@ import java.util.Map;
 /**
  * 服务间调用携带Authorization、Tenant-Code请求头
  *
- * @author tangyi
+ * @author gaoxiaofeng
  * @date 2019-03-15 14:14
  */
 @Configuration
@@ -38,8 +38,9 @@ public class CustomFeignConfig implements RequestInterceptor {
             // hystrix隔离策略会导致RequestContextHolder.getRequestAttributes()返回null
             // 解决方案：http://www.itmuch.com/spring-cloud-sum/hystrix-threadlocal/
             ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
-            if (attributes != null)
+            if (attributes != null) {
                 return attributes.getRequest();
+            }
             return null;
         } catch (Exception e) {
             return null;

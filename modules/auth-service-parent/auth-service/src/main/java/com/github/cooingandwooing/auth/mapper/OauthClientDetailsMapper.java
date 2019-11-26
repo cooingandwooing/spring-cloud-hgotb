@@ -1,7 +1,7 @@
 package com.github.cooingandwooing.auth.mapper;
 
-import com.github.tangyi.auth.api.module.OauthClientDetails;
-import com.github.tangyi.common.core.persistence.CrudMapper;
+import com.github.cooingandwooing.auth.api.module.OauthClientDetails;
+import com.github.cooingandwooing.common.core.persistence.CrudMapper;
 import org.apache.ibatis.annotations.Mapper;
 
 /**

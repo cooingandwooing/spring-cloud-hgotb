@@ -7,7 +7,7 @@ import java.io.Serializable;
 /**
  * 微信用户的基本信息
  *
- * @author tangyi
+ * @author gaoxiaofeng
  * @date 2019/07/06 15:58
  */
 @Data

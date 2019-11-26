@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * 微信登录filter，登录时支持传入用户的资料，如姓名、电话、性别等
  *
- * @author tangyi
+ * @author gaoxiaofeng
  * @date 2019/07/05 19:32
  */
 @Slf4j
@@ -60,8 +60,9 @@ public class WxAuthenticationFilter extends AbstractAuthenticationProcessingFilt
 
     @Override
     public Authentication attemptAuthentication(HttpServletRequest request, HttpServletResponse response) throws AuthenticationException {
-        if (postOnly && !request.getMethod().equals(HttpMethod.POST.name()))
+        if (postOnly && !request.getMethod().equals(HttpMethod.POST.name())) {
             throw new AuthenticationServiceException("Authentication method not supported: " + request.getMethod());
+        }
         // 获取code
         String code = obtainCode(request);
         if (code == null) {

@@ -12,7 +12,7 @@ import java.security.Principal;
 /**
  * 安全工具类
  *
- * @author tangyi
+ * @author gaoxiaofeng
  * @date 2019/3/17 11:44
  */
 public class SecurityUtil {
@@ -38,10 +38,12 @@ public class SecurityUtil {
      */
     public static String getCurrentUsername() {
         Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        if (principal instanceof UserDetails)
+        if (principal instanceof UserDetails) {
             return ((UserDetails) principal).getUsername();
-        if (principal instanceof Principal)
+        }
+        if (principal instanceof Principal) {
             return ((Principal) principal).getName();
+        }
         return String.valueOf(principal);
     }
 
@@ -84,8 +86,9 @@ public class SecurityUtil {
         }
         String token = new String(decoded, "UTF8");
         int delim = token.indexOf(":");
-        if (delim == -1)
+        if (delim == -1) {
             throw new RuntimeException("Invalid basic authentication token");
+        }
         return new String[]{token.substring(0, delim), token.substring(delim + 1)};
     }
 }

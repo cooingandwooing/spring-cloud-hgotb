@@ -1,15 +1,15 @@
 package com.github.cooingandwooing.auth.controller;
 
 import com.github.pagehelper.PageInfo;
-import com.github.tangyi.auth.api.module.OauthClientDetails;
+import com.github.cooingandwooing.auth.api.module.OauthClientDetails;
 import com.github.cooingandwooing.auth.service.OauthClientDetailsService;
-import com.github.tangyi.common.core.constant.CommonConstant;
-import com.github.tangyi.common.core.model.ResponseBean;
-import com.github.tangyi.common.core.utils.PageUtil;
-import com.github.tangyi.common.core.utils.SysUtil;
-import com.github.tangyi.common.core.web.BaseController;
-import com.github.tangyi.common.log.annotation.Log;
-import com.github.tangyi.common.security.constant.SecurityConstant;
+import com.github.cooingandwooing.common.core.constant.CommonConstant;
+import com.github.cooingandwooing.common.core.model.ResponseBean;
+import com.github.cooingandwooing.common.core.utils.PageUtil;
+import com.github.cooingandwooing.common.core.utils.SysUtil;
+import com.github.cooingandwooing.common.core.web.BaseController;
+import com.github.cooingandwooing.common.log.annotation.Log;
+import com.github.cooingandwooing.common.security.constant.SecurityConstant;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
@@ -140,8 +140,9 @@ public class OauthClientDetailsController extends BaseController {
     public ResponseBean<Boolean> updateOauthClient(@RequestBody OauthClientDetails oauthClientDetails) {
         OauthClientDetails tempOauthClientDetails = oauthClientDetailsService.get(oauthClientDetails);
         // 有调整过明文则重新加密密钥
-        if (tempOauthClientDetails != null && !tempOauthClientDetails.getClientSecretPlainText().equals(oauthClientDetails.getClientSecretPlainText()))
+        if (tempOauthClientDetails != null && !tempOauthClientDetails.getClientSecretPlainText().equals(oauthClientDetails.getClientSecretPlainText())) {
             oauthClientDetails.setClientSecret(bCryptPasswordEncoder.encode(oauthClientDetails.getClientSecretPlainText()));
+        }
         oauthClientDetails.setCommonValue(SysUtil.getUser(), SysUtil.getSysCode());
         return new ResponseBean<>(oauthClientDetailsService.update(oauthClientDetails) > 0);
     }
@@ -183,8 +184,9 @@ public class OauthClientDetailsController extends BaseController {
     public ResponseBean<Boolean> deleteAllOauthClient(@RequestBody Long[] ids) {
         boolean success = false;
         try {
-            if (ArrayUtils.isNotEmpty(ids))
+            if (ArrayUtils.isNotEmpty(ids)) {
                 success = oauthClientDetailsService.deleteAll(ids) > 0;
+            }
         } catch (Exception e) {
             log.error("删除客户端失败！", e);
         }

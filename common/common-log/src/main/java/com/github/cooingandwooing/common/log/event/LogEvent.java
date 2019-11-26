@@ -1,6 +1,6 @@
 package com.github.cooingandwooing.common.log.event;
 
-import com.github.tangyi.common.core.model.Log;
+import com.github.cooingandwooing.common.core.model.Log;
 import org.springframework.context.ApplicationEvent;
 
 /**

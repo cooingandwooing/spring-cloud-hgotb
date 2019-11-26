@@ -12,7 +12,7 @@ import java.util.List;
 /**
  * 不做权限拦截的URL
  *
- * @author tangyi
+ * @author gaoxiaofeng
  * @date 2019/3/16 20:39
  */
 @Data

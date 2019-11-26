@@ -8,7 +8,7 @@ import java.util.Collection;
 /**
  * 手机登录token
  *
- * @author tangyi
+ * @author gaoxiaofeng
  * @date 2019/6/22 15:27
  */
 public class MobileAuthenticationToken extends AbstractAuthenticationToken {

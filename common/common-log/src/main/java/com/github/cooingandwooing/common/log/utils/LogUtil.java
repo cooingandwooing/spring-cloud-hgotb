@@ -3,8 +3,8 @@ package com.github.cooingandwooing.common.log.utils;
 import cn.hutool.core.util.URLUtil;
 import cn.hutool.extra.servlet.ServletUtil;
 import cn.hutool.http.HttpUtil;
-import com.github.tangyi.common.core.constant.CommonConstant;
-import com.github.tangyi.common.core.model.Log;
+import com.github.cooingandwooing.common.core.constant.CommonConstant;
+import com.github.cooingandwooing.common.core.model.Log;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.oauth2.provider.OAuth2Authentication;
@@ -17,7 +17,7 @@ import java.util.Objects;
 /**
  * 日志工具类
  *
- * @author tangyi
+ * @author gaoxiaofeng
  * @date 2019/3/13 00:01
  */
 public class LogUtil {

@@ -3,7 +3,7 @@ package com.github.cooingandwooing.common.security.tenant;
 /**
  * ThreadLocal保存租户code
  *
- * @author tangyi
+ * @author gaoxiaofeng
  * @date 2019/5/28 20:54
  */
 public class TenantContextHolder {

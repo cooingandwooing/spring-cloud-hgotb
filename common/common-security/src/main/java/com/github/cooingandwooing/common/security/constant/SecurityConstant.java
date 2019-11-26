@@ -1,7 +1,7 @@
 package com.github.cooingandwooing.common.security.constant;
 
 /**
- * @author tangyi
+ * @author gaoxiaofeng
  * @date 2018-08-25 14:08
  */
 public class SecurityConstant {
@@ -59,7 +59,7 @@ public class SecurityConstant {
     /**
      * 默认系统编号
      */
-    public static final String SYS_CODE = "EXAM";
+    public static final String SYS_CODE = "POETRY";
 
     /**
      * 默认租户编号

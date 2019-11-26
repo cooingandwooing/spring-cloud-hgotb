@@ -72,6 +72,43 @@ jackson 概述
 2. 三者不相伯仲，随着掌握一个都能满足项目中的 json 解析操作。因为发现 spring boot web 组件默认依赖的就是 FasterXml jackson，所以还是花点时间稍微研究一下还是很有必要的。
 
 3. gson 和 fastjson 使用时只需要导入一个 jar 包(或者一个依赖)即可，而 jackson 却不是全部集成在一个 jar (一个应用)内，而是分为不同的功能模块，需要使用哪些功能，则导入对应的 jar 包(或依赖)。
+
+# Spring Cloud 使用Feign调用服务传递Header中的参数
+1.使用Feign 调用其他微服务，尤其是在多级调用的同时，需要将一些共同的参数传递至下一个服务，如：token。比较方便的做法是放在请求头中，在Feign调用的同时自动将参数放到restTemplate中。
+
+2.具体做法是首先实现 RequestInterceptor
+
+3.RequestContextHolder.getRequestAttributes()该方法是从ThreadLocal变量里面取得相应信息的，当hystrix断路器的隔离策略为THREAD时，是无法取得ThreadLocal中的值。
+
+解决方案：
+
+（1）. hystrix隔离策略换为SEMAPHORE。
+
+（2）自定义策略，模仿Sleuth的trace传递。
+
+具体可参考：http://www.itmuch.com/spring-cloud-sum/hystrix-threadlocal/
+
+4.最后需要注意的是，如果是使用多线程的情况下，则需要在主线程调用其他线程前将RequestAttributes对象设置为子线程共享
+    
+    ServletRequestAttributes attribute = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
+    RequestContextHolder.setRequestAttributes(attribute, true);
+    
+#  ResourceID在哪验证
+@EnableResourceServer会给Spring Security的FilterChan添加一个OAuth2AuthenticationProcessingFilter，OAuth2AuthenticationProcessingFilter会使用OAuth2AuthenticationManager来验证token。
+OAuth2AuthenticationManager#authenticate(Authentication authentication)
+
+# 粗细粒度的访问控制
+粗粒度访问控制，所有URL以"/admin"开头的用户必须拥有角色"ADMIN"才能访问。实际上操作的时候hasRole表达式，会判断参数是否包含"ROLE_"前缀，如果没有则加上去，然后再去校验。有这个前缀则直接校验。
+
+细粒度的访问控制
+注：需要使用注解@EnableGlobalMethodSecurity(prePostEnabled=true) 开启
+
+    @PreAuthoritze("hasAuthority('readArtical')")
+    public List<Artical> getAll() {
+        //...
+    }
+    这个注解，会从SecurityContext中取出Authencation对象，然后再取出Collection<GrantedAuthority> authorites集合。
+    然后比对当前用户是否有权限"readArtical"。实际上就是比对集合中是否有那个GrantedAuthority的getAuthority()方法返回的字符串与"radArtical"匹配。
 # XX 参考资料
 
 - [Twitter的分布式自增ID算法snowflake (Java版)](https://www.cnblogs.com/relucent/p/4955340.html)
@@ -79,3 +116,5 @@ jackson 概述
 - [Okhttp3基本使用](https://www.jianshu.com/p/da4a806e599b)
 - [Okhttp3官网](https://github.com/square/okhttp)
 - [FasterXML jackson 入门到深入](https://blog.csdn.net/wangmx1993328/article/details/88598625)
+- [Spring Cloud 使用Feign调用服务传递Header中的参数](https://www.cnblogs.com/li-zhi-long/p/11447088.html)
+- [Spring Security OAuth2#resource_ids](https://blog.csdn.net/xichenguan/article/details/77886871)

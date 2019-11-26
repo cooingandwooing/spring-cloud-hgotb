@@ -26,12 +26,12 @@ import java.util.concurrent.TimeUnit;
  * 自定义隔离策略
  * 解决RequestContextHolder.getRequestAttributes()问题
  *
- * @author tangyi
+ * @author gaoxiaofeng
  * @date 2019/3/27 20:53
  */
 @Slf4j
 @Component
-@Primary
+@Primary // 优先适用本bean
 public class CustomFeignHystrixConcurrencyStrategy extends HystrixConcurrencyStrategy {
 
     private HystrixConcurrencyStrategy hystrixConcurrencyStrategy;

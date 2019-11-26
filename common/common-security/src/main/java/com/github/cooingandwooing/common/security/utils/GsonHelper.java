@@ -7,7 +7,7 @@ import java.lang.reflect.Type;
 /**
  * 基于Gson的json工具类
  *
- * @author tangyi
+ * @author gaoxiaofeng
  * @date 2017-11-23 18:03
  */
 public class GsonHelper {
@@ -31,8 +31,9 @@ public class GsonHelper {
     public static GsonHelper getInstance() {
         if (instance == null) {
             synchronized (GsonHelper.class) {
-                if (instance == null)
+                if (instance == null) {
                     instance = new GsonHelper();
+                }
             }
         }
         return instance;

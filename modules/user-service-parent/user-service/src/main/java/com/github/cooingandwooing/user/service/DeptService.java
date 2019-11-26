@@ -1,8 +1,8 @@
 package com.github.cooingandwooing.user.service;
 
-import com.github.tangyi.common.core.service.CrudService;
-import com.github.tangyi.user.api.module.Dept;
-import com.github.tangyi.user.api.module.User;
+import com.github.cooingandwooing.common.core.service.CrudService;
+import com.github.cooingandwooing.user.api.module.Dept;
+import com.github.cooingandwooing.user.api.module.User;
 import com.github.cooingandwooing.user.mapper.DeptMapper;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

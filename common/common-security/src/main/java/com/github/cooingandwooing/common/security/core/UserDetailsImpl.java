@@ -10,7 +10,7 @@ import java.util.Set;
 /**
  * UserDetails封装
  *
- * @author tangyi
+ * @author gaoxiaofeng
  * @date 2019/3/17 14:37
  */
 @Data

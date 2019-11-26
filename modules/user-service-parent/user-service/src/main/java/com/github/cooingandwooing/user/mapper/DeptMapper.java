@@ -1,7 +1,7 @@
 package com.github.cooingandwooing.user.mapper;
 
-import com.github.tangyi.common.core.persistence.CrudMapper;
-import com.github.tangyi.user.api.module.Dept;
+import com.github.cooingandwooing.common.core.persistence.CrudMapper;
+import com.github.cooingandwooing.user.api.module.Dept;
 import org.apache.ibatis.annotations.Mapper;
 
 /**

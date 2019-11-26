@@ -26,7 +26,7 @@ import java.util.HashMap;
 /**
  * 手机号登录成功，返回oauth token
  *
- * @author tangyi
+ * @author gaoxiaofeng
  * @date 2019/6/22 21:19
  */
 @Slf4j
@@ -54,16 +54,18 @@ public class MobileLoginSuccessHandler implements AuthenticationSuccessHandler {
     @Override
     public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication) {
         String header = request.getHeader(HttpHeaders.AUTHORIZATION);
-        if (header == null || !header.startsWith(BASIC_))
+        if (header == null || !header.startsWith(BASIC_)) {
             throw new UnapprovedClientAuthenticationException("请求头中client信息为空");
+        }
         try {
             String[] tokens = SecurityUtil.extractAndDecodeHeader(header);
             assert tokens.length == 2;
             String clientId = tokens[0];
             ClientDetails clientDetails = clientDetailsService.loadClientByClientId(clientId);
             // 校验secret
-            if (!passwordEncoder.matches(tokens[1], clientDetails.getClientSecret()))
+            if (!passwordEncoder.matches(tokens[1], clientDetails.getClientSecret())) {
                 throw new InvalidClientException("Given client ID does not match authenticated client");
+            }
             TokenRequest tokenRequest = new TokenRequest(new HashMap<>(), clientId, clientDetails.getScope(), "mobile");
             //校验scope
             new DefaultOAuth2RequestValidator().validateScope(tokenRequest, clientDetails);
