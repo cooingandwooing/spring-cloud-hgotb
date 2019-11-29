@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * 网关统一异常处理
  *
- * @author tangyi
+ * @author gaoxiaofeng
  * @date 2019/3/18 20:52
  */
 @Slf4j

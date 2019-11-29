@@ -7,8 +7,8 @@ import java.util.Map;
 
 /**
  * 断言信息
- *
- * @author tangyi
+ * 3.路由断言模型
+ * @author gaoxiaofeng
  * @date 2019/3/27 11:08
  */
 @Data

@@ -3,7 +3,7 @@ package com.github.cooingandwooing.gateway.properties;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
 /**
- * @author tangyi
+ * @author gaoxiaofeng
  * @date 2019/6/19 01:55
  */
 @ConfigurationProperties("gateway.token-transfer")

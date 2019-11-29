@@ -2,10 +2,10 @@ package com.github.cooingandwooing.gateway.filters;
 
 import cn.hutool.core.util.StrUtil;
 import com.github.cooingandwooing.gateway.constants.GatewayConstant;
-import com.github.tangyi.common.core.constant.CommonConstant;
-import com.github.tangyi.common.core.enums.LoginType;
-import com.github.tangyi.common.core.exceptions.InvalidValidateCodeException;
-import com.github.tangyi.common.core.exceptions.ValidateCodeExpiredException;
+import com.github.cooingandwooing.common.core.constant.CommonConstant;
+import com.github.cooingandwooing.common.core.enums.LoginType;
+import com.github.cooingandwooing.common.core.exceptions.InvalidValidateCodeException;
+import com.github.cooingandwooing.common.core.exceptions.ValidateCodeExpiredException;
 import lombok.AllArgsConstructor;
 import org.springframework.cloud.gateway.filter.GatewayFilterChain;
 import org.springframework.cloud.gateway.filter.GlobalFilter;
@@ -23,7 +23,7 @@ import java.net.URI;
 /**
  * 验证码过滤器
  *
- * @author tangyi
+ * @author gaoxiaofeng
  * @date 2019/3/18 16:40
  */
 @AllArgsConstructor
@@ -66,20 +66,24 @@ public class ValidateCodeFilter implements GlobalFilter, Ordered {
         MultiValueMap<String, String> params = serverHttpRequest.getQueryParams();
         // 验证码
         String code = params.getFirst("code");
-        if (StrUtil.isBlank(code))
+        if (StrUtil.isBlank(code)) {
             throw new InvalidValidateCodeException("请输入验证码.");
+        }
         // 获取随机码
         String randomStr = params.getFirst("randomStr");
         // 随机数为空，则获取手机号
-        if (StrUtil.isBlank(randomStr))
+        if (StrUtil.isBlank(randomStr)) {
             randomStr = params.getFirst("mobile");
+        }
         String key = CommonConstant.DEFAULT_CODE_KEY + loginType.getType() + "@" + randomStr;
         // 验证码过期
-        if (!redisTemplate.hasKey(key))
+        if (!redisTemplate.hasKey(key)) {
             throw new ValidateCodeExpiredException(GatewayConstant.EXPIRED_ERROR);
+        }
         Object codeObj = redisTemplate.opsForValue().get(key);
-        if (codeObj == null)
+        if (codeObj == null) {
             throw new ValidateCodeExpiredException(GatewayConstant.EXPIRED_ERROR);
+        }
         String saveCode = codeObj.toString();
         if (StrUtil.isBlank(saveCode)) {
             redisTemplate.delete(key);
@@ -99,10 +103,12 @@ public class ValidateCodeFilter implements GlobalFilter, Ordered {
      * @return LoginType
      */
     private LoginType getLoginType(String grantType) {
-        if (CommonConstant.GRANT_TYPE_PASSWORD.equals(grantType))
+        if (CommonConstant.GRANT_TYPE_PASSWORD.equals(grantType)) {
             return LoginType.PWD;
-        if (CommonConstant.GRANT_TYPE_MOBILE.equals(grantType))
+        }
+        if (CommonConstant.GRANT_TYPE_MOBILE.equals(grantType)) {
             return LoginType.SMS;
+        }
         return LoginType.PWD;
     }
 }

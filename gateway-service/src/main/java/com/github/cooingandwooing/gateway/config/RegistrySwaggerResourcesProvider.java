@@ -2,8 +2,8 @@ package com.github.cooingandwooing.gateway.config;
 
 import com.github.cooingandwooing.gateway.module.Route;
 import com.github.cooingandwooing.gateway.service.RouteService;
-import com.github.tangyi.common.core.constant.CommonConstant;
-import com.github.tangyi.common.core.utils.JsonMapper;
+import com.github.cooingandwooing.common.core.constant.CommonConstant;
+import com.github.cooingandwooing.common.core.utils.JsonMapper;
 import com.github.cooingandwooing.gateway.vo.RoutePredicateVo;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -20,11 +20,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Swagger聚合文档
+ * Swagger聚合文档 聚合各个服务的swagger接口
  * 目前问题：结合动态更新路由之后，GatewayProperties获取不到新的路由列表，导致swagger-ui显示不了
  * 解决办法：从Redis里读取路由数据
  *
- * @author tangyi
+ * @author gaoxiaofeng
  * @date 2019/3/26 15:39
  */
 @Slf4j
@@ -32,9 +32,13 @@ import java.util.List;
 @Primary
 @AllArgsConstructor
 public class RegistrySwaggerResourcesProvider implements SwaggerResourcesProvider {
-
+    /**
+     * swagger2默认的url后缀
+     */
     private static final String API_URI = "/v2/api-docs";
-
+    /**
+     * 网关路由
+     */
     private final RouteLocator routeLocator;
 
     private final SwaggerProviderConfig swaggerProviderConfig;
@@ -50,8 +54,9 @@ public class RegistrySwaggerResourcesProvider implements SwaggerResourcesProvide
         // 取出gateway的route
         routeLocator.getRoutes().subscribe(route -> {
             // 根据文档提供者过滤
-            if (swaggerProviderConfig.getProviders().contains(route.getId()))
+            if (swaggerProviderConfig.getProviders().contains(route.getId())) {
                 routes.add(route.getId());
+            }
         });
         // 结合配置的route-路径(Path)，和route过滤，只获取有效的route节点
         List<Route> routeList = this.routeList();
@@ -89,8 +94,9 @@ public class RegistrySwaggerResourcesProvider implements SwaggerResourcesProvide
         if (object == null) {
             // 放入缓存
             routeList = routeService.findList(new Route());
-            if (CollectionUtils.isNotEmpty(routeList))
+            if (CollectionUtils.isNotEmpty(routeList)) {
                 redisTemplate.opsForValue().set(CommonConstant.ROUTE_KEY, JsonMapper.getInstance().toJson(routeList));
+            }
         } else {
             routeList = JsonMapper.getInstance().fromJson(object.toString(), JsonMapper.getInstance().createCollectionType(ArrayList.class, Route.class));
         }

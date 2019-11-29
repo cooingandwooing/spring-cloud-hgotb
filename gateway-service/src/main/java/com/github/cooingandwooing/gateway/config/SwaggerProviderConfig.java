@@ -12,7 +12,7 @@ import java.util.List;
 /**
  * 提供swagger文档的服务
  *
- * @author tangyi
+ * @author gaoxiaofeng
  * @date 2019/3/27 16:24
  */
 @Data

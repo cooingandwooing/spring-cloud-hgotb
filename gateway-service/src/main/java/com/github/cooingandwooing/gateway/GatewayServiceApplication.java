@@ -1,6 +1,6 @@
 package com.github.cooingandwooing.gateway;
 
-import com.github.tangyi.common.core.constant.CommonConstant;
+import com.github.cooingandwooing.common.core.constant.CommonConstant;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;

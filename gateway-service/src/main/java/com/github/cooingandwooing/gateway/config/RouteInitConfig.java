@@ -10,7 +10,7 @@ import javax.annotation.PostConstruct;
 /**
  * 初始化的时候加载路由数据
  *
- * @author tangyi
+ * @author gaoxiaofeng
  * @date 2019/4/2 14:40
  */
 @Slf4j

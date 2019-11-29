@@ -7,8 +7,8 @@ import java.util.Map;
 
 /**
  * 过滤器信息
- *
- * @author tangyi
+ * 2.创建过滤器模型
+ * @author gaoxiaofeng
  * @date 2019/3/27 11:07
  */
 @Data

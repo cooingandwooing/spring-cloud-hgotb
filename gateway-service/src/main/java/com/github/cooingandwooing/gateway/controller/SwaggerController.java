@@ -12,9 +12,9 @@ import springfox.documentation.swagger.web.*;
 import java.util.Optional;
 
 /**
- * SwaggerController
+ * SwaggerController swagger聚合接口，三个接口都是swagger-ui.html需要访问的接口
  *
- * @author tangyi
+ * @author gaoxiaofeng
  * @date 2019/3/26 17:01
  */
 @RestController

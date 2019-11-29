@@ -7,8 +7,8 @@ import java.util.List;
 
 /**
  * 路由信息
- *
- * @author tangyi
+ * 1.创建路由模型
+ * @author gaoxiaofeng
  * @date 2019/3/27 11:06
  */
 @Data

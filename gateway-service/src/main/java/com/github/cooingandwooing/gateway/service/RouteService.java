@@ -1,10 +1,10 @@
 package com.github.cooingandwooing.gateway.service;
 
 import com.fasterxml.jackson.databind.JavaType;
-import com.github.tangyi.common.core.constant.CommonConstant;
-import com.github.tangyi.common.core.exceptions.CommonException;
-import com.github.tangyi.common.core.service.CrudService;
-import com.github.tangyi.common.core.utils.JsonMapper;
+import com.github.cooingandwooing.common.core.constant.CommonConstant;
+import com.github.cooingandwooing.common.core.exceptions.CommonException;
+import com.github.cooingandwooing.common.core.service.CrudService;
+import com.github.cooingandwooing.common.core.utils.JsonMapper;
 import com.github.cooingandwooing.gateway.constants.GatewayConstant;
 import com.github.cooingandwooing.gateway.mapper.RouteMapper;
 import com.github.cooingandwooing.gateway.module.Route;
@@ -28,7 +28,7 @@ import java.util.List;
 /**
  * 路由service
  *
- * @author tangyi
+ * @author gaoxiaofeng
  * @date 2019/4/2 15:01
  */
 @Slf4j
@@ -49,14 +49,16 @@ public class RouteService extends CrudService<RouteMapper, Route> {
     @Override
     public int insert(Route route) {
         int update;
-        if (StringUtils.isBlank(route.getRouteId()))
+        if (StringUtils.isBlank(route.getRouteId())) {
             throw new CommonException("服务ID不能为空！");
+        }
         // 校验服务路由是否存在
         Route condition = new Route();
         condition.setRouteId(route.getRouteId());
         List<Route> routes = this.findList(condition);
-        if (CollectionUtils.isNotEmpty(routes))
+        if (CollectionUtils.isNotEmpty(routes)) {
             throw new CommonException("该服务的路由已存在！");
+        }
         route.setCommonValue("", GatewayConstant.SYS_CODE, GatewayConstant.DEFAULT_TENANT_CODE);
         if ((update = this.dao.insert(route)) > 0) {
             dynamicRouteService.add(routeDefinition(route));
@@ -73,8 +75,9 @@ public class RouteService extends CrudService<RouteMapper, Route> {
     @Override
     public int update(Route route) {
         int update;
-        if (StringUtils.isBlank(route.getRouteId()))
+        if (StringUtils.isBlank(route.getRouteId())) {
             throw new CommonException("服务ID不能为空！");
+        }
         route.setNewRecord(false);
         route.setCommonValue("", GatewayConstant.SYS_CODE, GatewayConstant.DEFAULT_TENANT_CODE);
         if ((update = this.dao.update(route)) > 0) {
@@ -111,8 +114,9 @@ public class RouteService extends CrudService<RouteMapper, Route> {
         List<Route> routes = this.findList(init);
         if (CollectionUtils.isNotEmpty(routes)) {
             log.info("加载{}条路由记录", routes.size());
-            for (Route route : routes)
+            for (Route route : routes) {
                 dynamicRouteService.update(routeDefinition(route));
+            }
             // 存入Redis
             redisTemplate.opsForValue().set(CommonConstant.ROUTE_KEY, JsonMapper.getInstance().toJson(routes));
         }
@@ -123,8 +127,8 @@ public class RouteService extends CrudService<RouteMapper, Route> {
      * 初始化RouteDefinition
      *
      * @param route route
-     * @return RouteDefinition
-     * @author tangyi
+     * @return RouteDefinition 路由
+     * @author gaoxiaofeng
      * @date 2019/04/02 18:50
      */
     private RouteDefinition routeDefinition(Route route) {
@@ -133,8 +137,9 @@ public class RouteService extends CrudService<RouteMapper, Route> {
         routeDefinition.setId(route.getRouteId());
 
         // predicates
-        if (StringUtils.isNotBlank(route.getPredicates()))
+        if (StringUtils.isNotBlank(route.getPredicates())) {
             routeDefinition.setPredicates(predicateDefinitions(route));
+        }
 
         // filters
         if (StringUtils.isNotBlank(route.getFilters())) {
@@ -147,8 +152,8 @@ public class RouteService extends CrudService<RouteMapper, Route> {
 
     /**
      * @param route route
-     * @return List
-     * @author tangyi
+     * @return List 断言
+     * @author gaoxiaofeng
      * @date 2019/04/02 21:28
      */
     private List<PredicateDefinition> predicateDefinitions(Route route) {
@@ -172,8 +177,8 @@ public class RouteService extends CrudService<RouteMapper, Route> {
 
     /**
      * @param route route
-     * @return List
-     * @author tangyi
+     * @return List 过滤器
+     * @author gaoxiaofeng
      * @date 2019/04/02 21:29
      */
     private List<FilterDefinition> filterDefinitions(Route route) {

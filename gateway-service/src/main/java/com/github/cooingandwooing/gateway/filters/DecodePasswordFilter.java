@@ -2,9 +2,9 @@ package com.github.cooingandwooing.gateway.filters;
 
 import cn.hutool.core.util.StrUtil;
 import com.github.cooingandwooing.gateway.constants.GatewayConstant;
-import com.github.tangyi.common.core.constant.CommonConstant;
-import com.github.tangyi.common.core.properties.SysProperties;
-import com.github.tangyi.common.core.utils.SysUtil;
+import com.github.cooingandwooing.common.core.constant.CommonConstant;
+import com.github.cooingandwooing.common.core.properties.SysProperties;
+import com.github.cooingandwooing.common.core.utils.SysUtil;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.StringUtils;
@@ -25,7 +25,12 @@ import java.net.URI;
  * 解密过滤器
  * 对外密码字段的名称是credential，在这里解密，转换成password
  *
- * @author tangyi
+ * 用到springcloud 的gateway作为网关做统一的请求转发，需求在gateway模块处理请求过来的参数进行解密然后再转发到后续模块，
+ * 后续模块处理完毕再转回getway处理加密然后返回前端的过程
+ * 解密：在gateway中加decodeFilter，在run方法中处理，处理解密主要针对get方式的url参数以及类似post请求的requestBody的参数进行处理。
+ *
+ * 加密：在gateway中加encodeFilter，在run方法中处理加密操作
+ * @author gaoxiaofeng
  * @date 2019/3/18 11:30
  */
 @Slf4j

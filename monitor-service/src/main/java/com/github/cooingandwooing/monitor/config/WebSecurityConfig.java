@@ -8,7 +8,7 @@ import org.springframework.security.web.authentication.SavedRequestAwareAuthenti
 import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
 
 /**
- * @author tangyi
+ * @author gaoxiaofeng
  * @date 2019/3/21 14:48
  */
 @Configuration

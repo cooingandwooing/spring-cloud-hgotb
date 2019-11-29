@@ -1,6 +1,6 @@
 package com.github.cooingandwooing.gateway.module;
 
-import com.github.tangyi.common.core.persistence.BaseEntity;
+import com.github.cooingandwooing.common.core.persistence.BaseEntity;
 import lombok.Data;
 
 import javax.validation.constraints.NotBlank;
@@ -8,7 +8,7 @@ import javax.validation.constraints.NotBlank;
 /**
  * 网关过滤器
  *
- * @author tangyi
+ * @author gaoxiaofeng
  * @date 2019-08-16 17:48
  */
 @Data

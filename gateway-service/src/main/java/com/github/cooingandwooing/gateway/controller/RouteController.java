@@ -1,11 +1,11 @@
 package com.github.cooingandwooing.gateway.controller;
 
 import com.github.pagehelper.PageInfo;
-import com.github.tangyi.common.core.constant.CommonConstant;
-import com.github.tangyi.common.core.exceptions.CommonException;
-import com.github.tangyi.common.core.model.ResponseBean;
-import com.github.tangyi.common.core.utils.PageUtil;
-import com.github.tangyi.common.core.web.BaseController;
+import com.github.cooingandwooing.common.core.constant.CommonConstant;
+import com.github.cooingandwooing.common.core.exceptions.CommonException;
+import com.github.cooingandwooing.common.core.model.ResponseBean;
+import com.github.cooingandwooing.common.core.utils.PageUtil;
+import com.github.cooingandwooing.common.core.web.BaseController;
 import com.github.cooingandwooing.gateway.module.Route;
 import com.github.cooingandwooing.gateway.service.RouteService;
 import lombok.AllArgsConstructor;
@@ -19,7 +19,7 @@ import javax.validation.Valid;
  * 路由controller
  * TODO：增加security认证
  *
- * @author tangyi
+ * @author gaoxiaofeng
  * @date 2019/4/2 15:03
  */
 @Slf4j
@@ -139,8 +139,9 @@ public class RouteController extends BaseController {
     public ResponseBean<Boolean> deleteAll(@RequestBody Long[] ids) {
         boolean success = false;
         try {
-            if (ArrayUtils.isNotEmpty(ids))
+            if (ArrayUtils.isNotEmpty(ids)) {
                 success = routeService.deleteAll(ids) > 0;
+            }
             return new ResponseBean<>(success);
         } catch (Exception e) {
             log.error(e.getMessage(), e);
@@ -153,7 +154,7 @@ public class RouteController extends BaseController {
      * 刷新路由
      *
      * @return ResponseBean
-     * @author tangyi
+     * @author gaoxiaofeng
      * @date 2019/04/07 12:32
      */
     @GetMapping("refresh")

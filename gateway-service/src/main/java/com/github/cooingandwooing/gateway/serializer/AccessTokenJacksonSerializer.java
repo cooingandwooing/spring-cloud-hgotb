@@ -8,7 +8,7 @@ import com.github.cooingandwooing.gateway.model.AccessToken;
 import java.io.IOException;
 
 /**
- * @author tangyi
+ * @author gaoxiaofeng
  * @date 2019/5/19 15:47
  */
 public class AccessTokenJacksonSerializer extends StdSerializer<AccessToken> {

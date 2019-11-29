@@ -1,7 +1,7 @@
 package com.github.cooingandwooing.gateway.constants;
 
 /**
- * @author tangyi
+ * @author gaoxiaofeng
  * @date 2019/3/18 16:55
  */
 public class GatewayConstant {
@@ -54,7 +54,7 @@ public class GatewayConstant {
     /**
      * 默认系统编号
      */
-    public static final String SYS_CODE = "EXAM";
+    public static final String SYS_CODE = "POETRY";
 
     /**
      * 默认租户编号

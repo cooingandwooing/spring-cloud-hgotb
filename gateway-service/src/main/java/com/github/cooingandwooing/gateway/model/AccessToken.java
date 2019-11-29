@@ -10,7 +10,7 @@ import java.io.Serializable;
 /**
  * 封装access_token
  *
- * @author tangyi
+ * @author gaoxiaofeng
  * @date 2019/5/19 15:43
  */
 @Data

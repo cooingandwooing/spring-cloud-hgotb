@@ -23,7 +23,7 @@ import java.util.List;
  * 演示环境过滤器
  * 如果配置了preview.enabled为true则过滤器生效
  *
- * @author tangyi
+ * @author gaoxiaofeng
  * @date 2019/4/23 10:54
  */
 @Slf4j
@@ -51,26 +51,30 @@ public class PreviewFilter implements GlobalFilter, Ordered {
      *
      * @param request request
      * @return boolean
-     * @author tangyi
+     * @author gaoxiaofeng
      * @date 2019/06/19 20:06
      */
     private boolean shouldFilter(ServerHttpRequest request) {
         // enabled为false
-        if (!previewConfig.isEnabled())
+        if (!previewConfig.isEnabled()) {
             return false;
+        }
         // 演示环境下，只拦截对默认租户的修改操作
         if (GatewayConstant.DEFAULT_TENANT_CODE.equals(request.getHeaders().getFirst(GatewayConstant.TENANT_CODE_HEADER))) {
             String method = request.getMethodValue(), uri = request.getURI().getPath();
             // GET请求、POST请求
-            if (StrUtil.equalsIgnoreCase(method, HttpMethod.GET.name()))
+            if (StrUtil.equalsIgnoreCase(method, HttpMethod.GET.name())) {
                 return false;
+            }
             if (StrUtil.equalsIgnoreCase(method, HttpMethod.POST.name())
                     && !StrUtil.containsIgnoreCase(uri, "delete")
-                    && !StrUtil.containsIgnoreCase(uri, "menu"))
+                    && !StrUtil.containsIgnoreCase(uri, "menu")) {
                 return false;
+            }
             // 拦截DELETE请求
-            if (StrUtil.equalsIgnoreCase(method, HttpMethod.DELETE.name()) && !StrUtil.containsIgnoreCase(uri, "attachment"))
+            if (StrUtil.equalsIgnoreCase(method, HttpMethod.DELETE.name()) && !StrUtil.containsIgnoreCase(uri, "attachment")) {
                 return true;
+            }
             // URL白名单
             return !isIgnore(uri);
         }
@@ -82,15 +86,16 @@ public class PreviewFilter implements GlobalFilter, Ordered {
      *
      * @param uri uri
      * @return boolean
-     * @author tangyi
+     * @author gaoxiaofeng
      * @date 2019/04/23 13:44
      */
     private boolean isIgnore(String uri) {
         List<String> ignoreUrls = previewConfig.getIgnores();
         if (ignoreUrls != null && !ignoreUrls.isEmpty()) {
             for (String ignoreUrl : ignoreUrls) {
-                if (StrUtil.containsIgnoreCase(uri, ignoreUrl))
+                if (StrUtil.containsIgnoreCase(uri, ignoreUrl)) {
                     return true;
+                }
             }
         }
         return false;
