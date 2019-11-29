@@ -117,7 +117,7 @@ public class RouteService extends CrudService<RouteMapper, Route> {
             for (Route route : routes) {
                 dynamicRouteService.update(routeDefinition(route));
             }
-            // 存入Redis
+            // 存入Redis for RegistrySwaggerResourcesProvider swagger-ui显示
             redisTemplate.opsForValue().set(CommonConstant.ROUTE_KEY, JsonMapper.getInstance().toJson(routes));
         }
         return true;
