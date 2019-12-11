@@ -2,7 +2,7 @@ package com.github.cooingandwooing.auth.service;
 
 import cn.binarywang.wx.miniapp.api.WxMaService;
 import cn.binarywang.wx.miniapp.bean.WxMaJscode2SessionResult;
-import com.github.tangyi.auth.api.module.WxSession;
+import com.github.cooingandwooing.auth.api.module.WxSession;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 /**
  * 微信Service
  *
- * @author tangyi
+ * @author gaoxiaofeng
  * @date 2019/07/05 20:33
  */
 @Slf4j
@@ -25,7 +25,7 @@ public class WxSessionService {
      *
      * @param code code
      * @return WxSession
-     * @author tangyi
+     * @author gaoxiaofeng
      * @date 2019/07/05 20:37:02
      */
     public WxSession getSession(String code) {
@@ -45,7 +45,7 @@ public class WxSessionService {
      *
      * @param code code
      * @return WxSession
-     * @author tangyi
+     * @author gaoxiaofeng
      * @date 2019/07/06 14:01:13
      */
     public WxSession code2Session(String code) {

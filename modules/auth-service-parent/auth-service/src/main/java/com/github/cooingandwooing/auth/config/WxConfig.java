@@ -12,7 +12,7 @@ import org.springframework.context.annotation.Configuration;
 /**
  * 微信相关配置
  *
- * @author tangyi
+ * @author gaoxiaofeng
  * @date 2019/07/05 20:29
  */
 @Configuration

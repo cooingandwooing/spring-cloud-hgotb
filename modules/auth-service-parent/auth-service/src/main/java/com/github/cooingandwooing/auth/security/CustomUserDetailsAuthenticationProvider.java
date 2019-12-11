@@ -1,8 +1,8 @@
 package com.github.cooingandwooing.auth.security;
 
-import com.github.tangyi.common.core.exceptions.TenantNotFoundException;
-import com.github.tangyi.common.security.core.CustomUserDetailsService;
-import com.github.tangyi.common.security.tenant.TenantContextHolder;
+import com.github.cooingandwooing.common.core.exceptions.TenantNotFoundException;
+import com.github.cooingandwooing.common.security.core.CustomUserDetailsService;
+import com.github.cooingandwooing.common.security.tenant.TenantContextHolder;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.InternalAuthenticationServiceException;
@@ -16,7 +16,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 /**
  * 认证Provider，提供获取用户信息、认证、授权等功能
  *
- * @author tangyi
+ * @author gaoxiaofeng
  * @date 2019/5/28 21:26
  */
 @Slf4j

@@ -1,29 +1,29 @@
 package com.github.cooingandwooing.auth.security;
 
 import com.github.cooingandwooing.auth.model.CustomUserDetails;
-import com.github.tangyi.auth.api.module.WxSession;
+import com.github.cooingandwooing.auth.api.module.WxSession;
 import com.github.cooingandwooing.auth.service.WxSessionService;
-import com.github.tangyi.common.core.constant.CommonConstant;
-import com.github.tangyi.common.core.enums.LoginType;
-import com.github.tangyi.common.core.exceptions.CommonException;
-import com.github.tangyi.common.core.exceptions.ServiceException;
-import com.github.tangyi.common.core.exceptions.TenantNotFoundException;
-import com.github.tangyi.common.core.model.ResponseBean;
-import com.github.tangyi.common.core.properties.SysProperties;
-import com.github.tangyi.common.core.utils.DateUtils;
-import com.github.tangyi.common.core.utils.ResponseUtil;
-import com.github.tangyi.common.core.vo.RoleVo;
-import com.github.tangyi.common.core.vo.UserVo;
-import com.github.tangyi.common.security.core.CustomUserDetailsService;
-import com.github.tangyi.common.security.core.GrantedAuthorityImpl;
-import com.github.tangyi.common.security.mobile.MobileUser;
-import com.github.tangyi.common.security.wx.WxUser;
-import com.github.tangyi.user.api.constant.MenuConstant;
-import com.github.tangyi.user.api.dto.UserDto;
-import com.github.tangyi.user.api.enums.IdentityType;
-import com.github.tangyi.user.api.feign.UserServiceClient;
-import com.github.tangyi.user.api.module.Menu;
-import com.github.tangyi.user.api.module.Tenant;
+import com.github.cooingandwooing.common.core.constant.CommonConstant;
+import com.github.cooingandwooing.common.core.enums.LoginType;
+import com.github.cooingandwooing.common.core.exceptions.CommonException;
+import com.github.cooingandwooing.common.core.exceptions.ServiceException;
+import com.github.cooingandwooing.common.core.exceptions.TenantNotFoundException;
+import com.github.cooingandwooing.common.core.model.ResponseBean;
+import com.github.cooingandwooing.common.core.properties.SysProperties;
+import com.github.cooingandwooing.common.core.utils.DateUtils;
+import com.github.cooingandwooing.common.core.utils.ResponseUtil;
+import com.github.cooingandwooing.common.core.vo.RoleVo;
+import com.github.cooingandwooing.common.core.vo.UserVo;
+import com.github.cooingandwooing.common.security.core.CustomUserDetailsService;
+import com.github.cooingandwooing.common.security.core.GrantedAuthorityImpl;
+import com.github.cooingandwooing.common.security.mobile.MobileUser;
+import com.github.cooingandwooing.common.security.wx.WxUser;
+import com.github.cooingandwooing.user.api.constant.MenuConstant;
+import com.github.cooingandwooing.user.api.dto.UserDto;
+import com.github.cooingandwooing.user.api.enums.IdentityType;
+import com.github.cooingandwooing.user.api.feign.UserServiceClient;
+import com.github.cooingandwooing.user.api.module.Menu;
+import com.github.cooingandwooing.user.api.module.Tenant;
 import com.google.common.collect.Lists;
 import lombok.AllArgsConstructor;
 import org.apache.commons.collections4.CollectionUtils;
@@ -43,7 +43,7 @@ import java.util.stream.Collectors;
 /**
  * 从数据库获取用户信息
  *
- * @author tangyi
+ * @author gaoxiaofeng
  * @date 2019-03-14 14:36
  */
 @AllArgsConstructor

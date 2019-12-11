@@ -26,7 +26,7 @@ import java.util.List;
 /**
  * Oauth2客户端信息管理
  *
- * @author tangyi
+ * @author gaoxiaofeng
  * @date 2019/3/30 16:49
  */
 @Slf4j

@@ -1,7 +1,7 @@
 package com.github.cooingandwooing.auth.config;
 
 import com.github.cooingandwooing.auth.security.CustomUserDetailsAuthenticationProvider;
-import com.github.tangyi.common.security.core.CustomUserDetailsService;
+import com.github.cooingandwooing.common.security.core.CustomUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -17,7 +17,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 /**
  * Spring Security配置
  *
- * @author tangyi
+ * @author gaoxiaofeng
  * @date 2019-03-14 14:35
  */
 @Configuration

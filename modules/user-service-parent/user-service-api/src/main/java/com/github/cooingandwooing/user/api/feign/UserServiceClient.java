@@ -20,7 +20,7 @@ import java.util.List;
 /**
  * 用户服务
  *
- * @author tangyi
+ * @author gaoxiaofeng
  * @date 2018-12-30 23:21
  */
 @FeignClient(value = ServiceConstant.USER_SERVICE, configuration = CustomFeignConfig.class, fallbackFactory = UserServiceClientFallbackFactory.class)

@@ -1,6 +1,6 @@
 package com.github.cooingandwooing.auth.model;
 
-import com.github.tangyi.common.core.enums.LoginType;
+import com.github.cooingandwooing.common.core.enums.LoginType;
 import lombok.Data;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.User;
@@ -10,7 +10,7 @@ import java.util.Collection;
 /**
  * 用户信息
  *
- * @author tangyi
+ * @author gaoxiaofeng
  * @date 2019/5/28 21:13
  */
 @Data

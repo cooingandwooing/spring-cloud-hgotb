@@ -1,8 +1,8 @@
 package com.github.cooingandwooing.auth.security;
 
-import com.github.tangyi.common.core.constant.CommonConstant;
-import com.github.tangyi.common.core.enums.LoginType;
-import com.github.tangyi.common.security.tenant.TenantContextHolder;
+import com.github.cooingandwooing.common.core.constant.CommonConstant;
+import com.github.cooingandwooing.common.core.enums.LoginType;
+import com.github.cooingandwooing.common.security.tenant.TenantContextHolder;
 import org.springframework.security.oauth2.common.DefaultOAuth2AccessToken;
 import org.springframework.security.oauth2.common.OAuth2AccessToken;
 import org.springframework.security.oauth2.provider.OAuth2Authentication;

@@ -1,11 +1,11 @@
 package com.github.cooingandwooing.auth.filter;
 
 import com.github.cooingandwooing.auth.model.CustomUserDetails;
-import com.github.tangyi.common.core.constant.CommonConstant;
-import com.github.tangyi.common.core.constant.ServiceConstant;
-import com.github.tangyi.common.core.model.Log;
-import com.github.tangyi.common.core.utils.SysUtil;
-import com.github.tangyi.user.api.feign.UserServiceClient;
+import com.github.cooingandwooing.common.core.constant.CommonConstant;
+import com.github.cooingandwooing.common.core.constant.ServiceConstant;
+import com.github.cooingandwooing.common.core.model.Log;
+import com.github.cooingandwooing.common.core.utils.SysUtil;
+import com.github.cooingandwooing.user.api.feign.UserServiceClient;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
@@ -26,8 +26,8 @@ import java.io.IOException;
 /**
  *
  * 登录成功后的处理，如记录登录日志
- *
- * @author tangyi
+ * 没有放入过滤器链中 没有启用
+ * @author gaoxiaofeng
  * @date 2019-10-11 12:08
  */
 @Slf4j
