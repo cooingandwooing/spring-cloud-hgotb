@@ -14,7 +14,7 @@ import java.util.Map;
 /**
  * 扩展JwtAccessTokenConverter，增加租户code
  *
- * @author tangyi
+ * @author gaoxiaofeng
  * @date 2019/5/28 22:53
  */
 public class CustomTokenConverter extends JwtAccessTokenConverter {

@@ -152,9 +152,9 @@ public class CustomAuthorizationServerConfigurer extends AuthorizationServerConf
     public void configure(AuthorizationServerSecurityConfigurer oauthServer) {
         oauthServer
                 .passwordEncoder(new BCryptPasswordEncoder())
-                // 开启/oauth/token_key验证端口无权限访问
+                // 开启/oauth/token_key验证端口无权限访问 公钥（如果有的话）会由认证服务器通过 /oauth/token_key 提供，这个地址默认情况下是通过 “deenyAll()” 来保护的。你可以向 AuthorizationServerSecurityConfigurer 注入一个标准的 SpEL 表达式（比如 “permitAll()” 就可以，因为那是公钥）来放开保护限制。
                 .tokenKeyAccess("permitAll()")
-                // 开启/oauth/check_token验证端口认证权限访问 公钥（如果有的话）会由认证服务器通过 /oauth/token_key 提供，这个地址默认情况下是通过 “deenyAll()” 来保护的。你可以向 AuthorizationServerSecurityConfigurer 注入一个标准的 SpEL 表达式（比如 “permitAll()” 就可以，因为那是公钥）来放开保护限制。
+                // 开启/oauth/check_token验证端口认证权限访问
                 .checkTokenAccess("isAuthenticated()")
                 .allowFormAuthenticationForClients();// 主要是让/oauth/token支持client_id以及client_secret作登录认证
 				//.addTokenEndpointAuthenticationFilter(new CustomTokenEndpointAuthenticationFilter(authenticationManager, oAuth2RequestFactory, userServiceClient)); //登录成功后的处理，如记录登录日志 通过调用security. .addTokenEndpointAuthenticationFilter(integrationAuthenticationFilter);方法，将拦截器放入到认证链条中

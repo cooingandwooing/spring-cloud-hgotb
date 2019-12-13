@@ -26,17 +26,39 @@ public class Route extends BaseEntity<Route> {
     private String routeName;
 
     /**
-     * 断言
+     * 断言 [
+     *   {
+     *     "name": "Path",
+     *     "args": {
+     *       "_genkey_0": "/api/msc/**"
+     *     }
+     *   }
+     * ]
      */
     private String predicates;
 
     /**
      * 过滤器
+     * [
+     *   {
+     *     "name": "StripPrefix",
+     *     "args": {
+     *       "_genkey_0": "2"
+     *     }
+     *   },
+     *   {
+     *     "name": "RemoveRequestHeader",
+     *     "args": {
+     *       "_genkey_0": "Cookie",
+     *       "_genkey_1": "Set-Cookie"
+     *     }
+     *   }
+     * ]
      */
     private String filters;
 
     /**
-     * URI
+     * URI lb://msc-service
      */
     @NotBlank(message = "路由URI不能为空")
     private String uri;
