@@ -17,7 +17,7 @@ import java.util.stream.Collectors;
 /**
  * 用户工具类
  *
- * @author tangyi
+ * @author gaoxiaofeng
  * @date 2018/11/26 22:32
  */
 public class UserUtils {

@@ -341,6 +341,10 @@ truststorePass="changeit"
 sslProtocol="TLS" />
 
 clientAuth参数制定服务器是否要验证客户端证书，如果指定为true，那么客户端必须拥护服务器端可信任的证书后服务器才能响应客户端；如果指定为false，那么服务器不需要验证客户端的证书。
+
+# 项目构建xx服务和xx服务-api原因
+xx服务是实际运行的微服务
+xx服务-api不是实际运行的服务,只提供调用xx服务中restful服务的包,其他服务依赖这个包就可以调用xx服务了.
 # XX 参考资料
 
 

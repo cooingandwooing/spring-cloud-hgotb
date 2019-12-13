@@ -12,6 +12,7 @@ import com.github.cooingandwooing.user.api.dto.UserDto;
 import com.github.cooingandwooing.user.api.dto.UserInfoDto;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.ArrayList;
@@ -37,6 +38,7 @@ public class UserServiceClientFallbackImpl implements UserServiceClient {
      * @param tenantCode 租户标识
      * @return ResponseBean
      */
+    @GetMapping("/v1/user/findUserByIdentifier/{identifier}")
     @Override
     public ResponseBean<UserVo> findUserByIdentifier(String identifier, String tenantCode) {
         log.error("feign 查询用户信息失败:{}, {}, {}", tenantCode, identifier, throwable);

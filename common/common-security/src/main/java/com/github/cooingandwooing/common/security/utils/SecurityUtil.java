@@ -21,7 +21,7 @@ public class SecurityUtil {
      * 获取当前用户的租户标识
      *
      * @return String
-     * @author tangyi
+     * @author gaoxiaofeng
      * @date 2019/05/25 14:19
      */
     public static String getCurrentUserTenantCode() {
@@ -33,7 +33,7 @@ public class SecurityUtil {
      * 获取当前登录的用户名
      *
      * @return String
-     * @author tangyi
+     * @author gaoxiaofeng
      * @date 2019/03/17 11:46
      */
     public static String getCurrentUsername() {
@@ -51,7 +51,7 @@ public class SecurityUtil {
      * 获取当前用户的授权信息
      *
      * @return Authentication
-     * @author tangyi
+     * @author gaoxiaofeng
      * @date 2019/03/17 19:18
      */
     public static Authentication getCurrentAuthentication() {
@@ -62,7 +62,7 @@ public class SecurityUtil {
      * 获取当前登录用户的授权信息
      *
      * @return Object
-     * @author tangyi
+     * @author gaoxiaofeng
      * @date 2019/03/17 11:48
      */
     public static Object getCurrentPrincipal() {

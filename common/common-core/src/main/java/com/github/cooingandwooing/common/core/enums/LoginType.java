@@ -19,14 +19,14 @@ public enum LoginType {
     PWD("PWD", "账号密码登录", "/oauth/token"),
 
     /**
-     * 验证码登录
-     */
-    SMS("SMS", "验证码登录", "/mobile/token"),
-
-    /**
      * QQ登录
      */
     QQ("QQ", "QQ登录", "/mobile/token"),
+
+    /**
+     * 验证码登录
+     */
+    SMS("SMS", "验证码登录", "/mobile/token"),
 
     /**
      * 微信登录
