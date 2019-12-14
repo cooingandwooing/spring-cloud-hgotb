@@ -1,12 +1,12 @@
 package com.github.cooingandwooing.user.api.module;
 
-import com.github.tangyi.common.core.persistence.BaseEntity;
+import com.github.cooingandwooing.common.core.persistence.BaseEntity;
 import lombok.Data;
 
 /**
  * 角色菜单关联
  *
- * @author tangyi
+ * @author cooingandwooing
  * @date 2018/8/26 22:24
  */
 @Data

@@ -1,9 +1,9 @@
 package com.github.cooingandwooing.user.controller;
 
-import com.github.tangyi.common.core.dto.SysConfigDto;
-import com.github.tangyi.common.core.model.ResponseBean;
-import com.github.tangyi.common.core.properties.SysProperties;
-import com.github.tangyi.common.core.web.BaseController;
+import com.github.cooingandwooing.common.core.dto.SysConfigDto;
+import com.github.cooingandwooing.common.core.model.ResponseBean;
+import com.github.cooingandwooing.common.core.properties.SysProperties;
+import com.github.cooingandwooing.common.core.web.BaseController;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.AllArgsConstructor;
@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 /**
  * 系统配置controller
  *
- * @author tangyi
+ * @author cooingandwooing
  * @date 2019-02-28 17:29
  */
 @AllArgsConstructor
@@ -30,7 +30,7 @@ public class SysConfigController extends BaseController {
      * 获取系统配置
      *
      * @return ResponseBean
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2019/2/28 17:31
      */
     @GetMapping

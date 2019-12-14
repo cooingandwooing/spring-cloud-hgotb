@@ -1,7 +1,7 @@
 package com.github.cooingandwooing.user.controller;
 
-import com.github.tangyi.common.core.model.ResponseBean;
-import com.github.tangyi.common.core.web.BaseController;
+import com.github.cooingandwooing.common.core.model.ResponseBean;
+import com.github.cooingandwooing.common.core.web.BaseController;
 import com.github.cooingandwooing.user.service.MobileService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 /**
  * 手机管理Controller
  *
- * @author tangyi
+ * @author cooingandwooing
  * @date 2019/07/02 09:34
  */
 @Slf4j
@@ -33,7 +33,7 @@ public class MobileController extends BaseController {
      *
      * @param mobile     mobile
      * @return ResponseBean
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2019/07/02 09:49:05
      */
     @GetMapping("sendSms/{mobile}")

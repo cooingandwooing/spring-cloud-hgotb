@@ -1,13 +1,13 @@
 package com.github.cooingandwooing.user.api.module;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.github.tangyi.common.core.persistence.BaseEntity;
+import com.github.cooingandwooing.common.core.persistence.BaseEntity;
 import lombok.Data;
 
 /**
  * 用户授权信息
  *
- * @author tangyi
+ * @author cooingandwooing
  * @date 2019/07/03 11:10
  */
 @Data

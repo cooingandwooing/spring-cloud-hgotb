@@ -32,7 +32,7 @@ public interface UserServiceClient {
      * @param identifier identifier
      * @param tenantCode 租户标识
      * @return ResponseBean
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2019/03/17 12:14
      */
     @GetMapping("/v1/user/findUserByIdentifier/{identifier}")
@@ -45,7 +45,7 @@ public interface UserServiceClient {
      * @param identityType identityType
      * @param tenantCode   租户标识
      * @return ResponseBean
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2019/07/06 14:14:11
      */
     @GetMapping("/v1/user/findUserByIdentifier/{identifier}")
@@ -56,7 +56,7 @@ public interface UserServiceClient {
      * 获取当前用户的信息
      *
      * @return ResponseBean
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2019/03/23 23:44
      */
     @GetMapping("/v1/user/info")
@@ -76,7 +76,7 @@ public interface UserServiceClient {
      *
      * @param userVo userVo
      * @return ResponseBean
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2019/05/09 22:04
      */
     @RequestMapping(value = "/v1/user/userCount", method = RequestMethod.POST)
@@ -96,7 +96,7 @@ public interface UserServiceClient {
      *
      * @param id id
      * @return ResponseBean
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2019/01/01 20:44
      */
     @DeleteMapping("/v1/attachment/{id}")
@@ -116,7 +116,7 @@ public interface UserServiceClient {
      *
      * @param log log
      * @return ResponseBean
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2019/03/23 23:26
      */
     @PostMapping("/v1/log")
@@ -128,7 +128,7 @@ public interface UserServiceClient {
      * @param role       角色
      * @param tenantCode 租户标识
      * @return ResponseBean
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2019/04/08 20:42
      */
     @GetMapping("/v1/menu/findMenuByRole/{role}")
@@ -139,7 +139,7 @@ public interface UserServiceClient {
      *
      * @param tenantCode 租户标识
      * @return ResponseBean
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2019/04/26 11:48
      */
     @GetMapping("/v1/menu/findAllMenu")
@@ -150,7 +150,7 @@ public interface UserServiceClient {
      *
      * @param tenantCode 租户标识
      * @return ResponseBean
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2019/05/26 10:21
      */
     @GetMapping("/v1/tenant/findTenantByTenantCode/{tenantCode}")
@@ -162,7 +162,7 @@ public interface UserServiceClient {
      * @param social     social
      * @param tenantCode 租户标识
      * @return ResponseBean
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2019/06/22 21:10
      */
     @GetMapping("/v1/user/findUserBySocial/{social}")
@@ -173,7 +173,7 @@ public interface UserServiceClient {
      *
      * @param userDto userDto
      * @return ResponseBean
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2019/07/05 20:57:31
      */
     @PostMapping("/v1/user/register")
@@ -184,7 +184,7 @@ public interface UserServiceClient {
      *
      * @param userDto userDto
      * @return ResponseBean
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2019/07/05 20:59:06
      */
     @PutMapping("/v1/user")

@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 /**
  * 消息中心服务断路器工厂
  *
- * @author tangyi
+ * @author cooingandwooing
  * @date 2019/07/02 16:08
  */
 @Component

@@ -2,14 +2,14 @@ package com.github.cooingandwooing.msc.api.feign.fallback;
 
 import com.github.cooingandwooing.msc.api.dto.SmsDto;
 import com.github.cooingandwooing.msc.api.feign.MscServiceClient;
-import com.github.tangyi.common.core.model.ResponseBean;
+import com.github.cooingandwooing.common.core.model.ResponseBean;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
 /**
  * 消息中心服务断路器
  *
- * @author tangyi
+ * @author cooingandwooing
  * @date 2019/07/02 16:09
  */
 @Slf4j

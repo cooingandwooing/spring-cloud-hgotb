@@ -1,8 +1,8 @@
 package com.github.cooingandwooing.user.service;
 
-import com.github.tangyi.common.core.constant.CommonConstant;
-import com.github.tangyi.common.core.service.CrudService;
-import com.github.tangyi.user.api.module.Role;
+import com.github.cooingandwooing.common.core.constant.CommonConstant;
+import com.github.cooingandwooing.common.core.service.CrudService;
+import com.github.cooingandwooing.user.api.module.Role;
 import com.github.cooingandwooing.user.mapper.RoleMapper;
 import com.github.cooingandwooing.user.mapper.RoleMenuMapper;
 import com.github.cooingandwooing.user.mapper.UserRoleMapper;
@@ -17,7 +17,7 @@ import java.util.List;
 /**
  * 角色service
  *
- * @author tangyi
+ * @author cooingandwooing
  * @date 2018/8/26 14:16
  */
 @AllArgsConstructor
@@ -33,7 +33,7 @@ public class RoleService extends CrudService<RoleMapper, Role> {
      *
      * @param role role
      * @return List
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2019/05/15 23:32
      */
     @Override
@@ -47,7 +47,7 @@ public class RoleService extends CrudService<RoleMapper, Role> {
      *
      * @param role role
      * @return Role
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2019/09/21 12:07:47
      */
     @Cacheable(value = "role#" + CommonConstant.CACHE_EXPIRE, key = "#role.roleCode")

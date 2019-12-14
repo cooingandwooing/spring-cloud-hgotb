@@ -1,8 +1,8 @@
 package com.github.cooingandwooing.user.service;
 
-import com.github.tangyi.common.core.service.CrudService;
-import com.github.tangyi.user.api.module.User;
-import com.github.tangyi.user.api.module.UserAuths;
+import com.github.cooingandwooing.common.core.service.CrudService;
+import com.github.cooingandwooing.user.api.module.User;
+import com.github.cooingandwooing.user.api.module.UserAuths;
 import com.github.cooingandwooing.user.mapper.UserAuthsMapper;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -14,7 +14,7 @@ import java.util.List;
 /**
  * 用户授权Service
  *
- * @author tangyi
+ * @author cooingandwooing
  * @date 2019/07/03 11:45
  */
 @AllArgsConstructor
@@ -27,7 +27,7 @@ public class UserAuthsService extends CrudService<UserAuthsMapper, UserAuths> {
      *
      * @param userAuths userAuths
      * @return UserAuths
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2019/07/03 11:52:27
      */
     public UserAuths getByIdentifier(UserAuths userAuths) {
@@ -39,7 +39,7 @@ public class UserAuthsService extends CrudService<UserAuthsMapper, UserAuths> {
      *
      * @param userList userList
      * @return List
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2019/07/03 21:58:31
      */
     public List<UserAuths> getListByUsers(List<User> userList) {
@@ -51,7 +51,7 @@ public class UserAuthsService extends CrudService<UserAuthsMapper, UserAuths> {
      *
      * @param userAuths userAuths
      * @return int
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2019/07/04 11:39:50
      */
     @Transactional
@@ -64,7 +64,7 @@ public class UserAuthsService extends CrudService<UserAuthsMapper, UserAuths> {
      *
      * @param userAuths userAuths
      * @return int
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2019/07/04 11:42:50
      */
     @Transactional
@@ -77,7 +77,7 @@ public class UserAuthsService extends CrudService<UserAuthsMapper, UserAuths> {
      *
      * @param userAuths userAuths
      * @return int
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2019-09-03 13:07
      */
     @Transactional

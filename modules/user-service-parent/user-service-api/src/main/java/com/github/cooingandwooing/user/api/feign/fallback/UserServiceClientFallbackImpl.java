@@ -3,11 +3,11 @@ package com.github.cooingandwooing.user.api.feign.fallback;
 import com.github.cooingandwooing.user.api.feign.UserServiceClient;
 import com.github.cooingandwooing.user.api.module.Menu;
 import com.github.cooingandwooing.user.api.module.Tenant;
-import com.github.tangyi.common.core.model.Log;
-import com.github.tangyi.common.core.model.ResponseBean;
-import com.github.tangyi.common.core.vo.AttachmentVo;
-import com.github.tangyi.common.core.vo.DeptVo;
-import com.github.tangyi.common.core.vo.UserVo;
+import com.github.cooingandwooing.common.core.model.Log;
+import com.github.cooingandwooing.common.core.model.ResponseBean;
+import com.github.cooingandwooing.common.core.vo.AttachmentVo;
+import com.github.cooingandwooing.common.core.vo.DeptVo;
+import com.github.cooingandwooing.common.core.vo.UserVo;
 import com.github.cooingandwooing.user.api.dto.UserDto;
 import com.github.cooingandwooing.user.api.dto.UserInfoDto;
 import lombok.extern.slf4j.Slf4j;
@@ -21,7 +21,7 @@ import java.util.List;
 /**
  * 日志断路器实现
  *
- * @author tangyi
+ * @author cooingandwooing
  * @date 2019/3/23 23:39
  */
 @Slf4j

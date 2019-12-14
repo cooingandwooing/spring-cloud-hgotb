@@ -1,15 +1,15 @@
 package com.github.cooingandwooing.user.service;
 
 import cn.hutool.core.util.RandomUtil;
-import com.github.tangyi.common.core.constant.CommonConstant;
-import com.github.tangyi.common.core.enums.LoginType;
-import com.github.tangyi.common.core.exceptions.ServiceException;
-import com.github.tangyi.common.core.model.ResponseBean;
-import com.github.tangyi.common.core.utils.ResponseUtil;
-import com.github.tangyi.common.security.constant.SecurityConstant;
-import com.github.tangyi.msc.api.constant.SmsConstant;
-import com.github.tangyi.msc.api.dto.SmsDto;
-import com.github.tangyi.msc.api.feign.MscServiceClient;
+import com.github.cooingandwooing.common.core.constant.CommonConstant;
+import com.github.cooingandwooing.common.core.enums.LoginType;
+import com.github.cooingandwooing.common.core.exceptions.ServiceException;
+import com.github.cooingandwooing.common.core.model.ResponseBean;
+import com.github.cooingandwooing.common.core.utils.ResponseUtil;
+import com.github.cooingandwooing.common.security.constant.SecurityConstant;
+import com.github.cooingandwooing.msc.api.constant.SmsConstant;
+import com.github.cooingandwooing.msc.api.dto.SmsDto;
+import com.github.cooingandwooing.msc.api.feign.MscServiceClient;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -20,7 +20,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * 手机管理Service
  *
- * @author tangyi
+ * @author cooingandwooing
  * @date 2019/07/02 09:35
  */
 @Slf4j
@@ -39,7 +39,7 @@ public class MobileService {
      *
      * @param mobile     mobile
      * @return ResponseBean
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2019/07/02 09:36:52
      */
     public ResponseBean<Boolean> sendSms(String mobile) {

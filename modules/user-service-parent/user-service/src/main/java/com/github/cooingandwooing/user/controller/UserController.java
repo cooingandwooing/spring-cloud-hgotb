@@ -40,7 +40,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 /**
- * @author tangyi
+ * @author cooingandwooing
  * @date 2018-08-25 16:20
  */
 @Slf4j
@@ -123,7 +123,7 @@ public class UserController extends BaseController {
      * @param order    order
      * @param userVo   userVo
      * @return PageInfo
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2018/8/26 22:56
      */
     @GetMapping("userList")
@@ -171,7 +171,7 @@ public class UserController extends BaseController {
      *
      * @param userDto userDto
      * @return ResponseBean
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2018/8/26 14:34
      */
     @PostMapping
@@ -189,7 +189,7 @@ public class UserController extends BaseController {
      * @param id      id
      * @param userDto userDto
      * @return ResponseBean
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2018/8/26 15:06
      */
     @PutMapping("/{id:[a-zA-Z0-9,]+}")
@@ -211,7 +211,7 @@ public class UserController extends BaseController {
      *
      * @param userDto userDto
      * @return ResponseBean
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2018/10/30 10:06
      */
     @PutMapping("updateInfo")
@@ -230,7 +230,7 @@ public class UserController extends BaseController {
      *
      * @param userDto userDto
      * @return ResponseBean
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2019/06/21 20:09
      */
     @PutMapping("updatePassword")
@@ -246,7 +246,7 @@ public class UserController extends BaseController {
      *
      * @param userDto userDto
      * @return ResponseBean
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2019/06/21 18:08
      */
     @PutMapping("updateAvatar")
@@ -262,7 +262,7 @@ public class UserController extends BaseController {
      *
      * @param id id
      * @return ResponseBean
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2018/8/26 15:28
      */
     @DeleteMapping("/{id}")
@@ -287,7 +287,7 @@ public class UserController extends BaseController {
      * 导出
      *
      * @param ids ids
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2018/11/26 22:11
      */
     @PostMapping("export")
@@ -335,7 +335,7 @@ public class UserController extends BaseController {
      *
      * @param file file
      * @return ResponseBean
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2018/11/28 12:44
      */
     @PostMapping("import")
@@ -361,7 +361,7 @@ public class UserController extends BaseController {
      *
      * @param ids ids
      * @return ResponseBean
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2018/12/4 9:58
      */
     @PostMapping("deleteAll")
@@ -386,7 +386,7 @@ public class UserController extends BaseController {
      *
      * @param ids ids
      * @return ResponseBean
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2018/12/31 21:16
      */
     @PostMapping(value = "findById")
@@ -401,7 +401,7 @@ public class UserController extends BaseController {
      *
      * @param userDto userDto
      * @return ResponseBean
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2019/01/10 22:35
      */
     @ApiOperation(value = "注册", notes = "注册")
@@ -424,7 +424,7 @@ public class UserController extends BaseController {
      * @param identifier   identifier
      * @param tenantCode   tenantCode
      * @return ResponseBean
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2019/04/23 15:35
      */
     @ApiOperation(value = "检查账号是否存在", notes = "检查账号是否存在")
@@ -443,7 +443,7 @@ public class UserController extends BaseController {
      *
      * @param userVo userVo
      * @return ResponseBean
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2019/05/09 22:09
      */
     @PostMapping("userCount")
@@ -456,7 +456,7 @@ public class UserController extends BaseController {
      *
      * @param userDto userDto
      * @return ResponseBean
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2019/6/7 12:00
      */
     @PutMapping("/resetPassword")

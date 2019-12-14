@@ -7,7 +7,7 @@ import org.apache.ibatis.annotations.Mapper;
 /**
  * 菜单mapper
  *
- * @author tangyi
+ * @author cooingandwooing
  * @date 2018/8/26 22:34
  */
 @Mapper

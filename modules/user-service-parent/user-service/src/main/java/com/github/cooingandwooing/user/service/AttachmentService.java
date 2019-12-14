@@ -1,12 +1,12 @@
 package com.github.cooingandwooing.user.service;
 
-import com.github.tangyi.common.core.constant.CommonConstant;
-import com.github.tangyi.common.core.exceptions.CommonException;
-import com.github.tangyi.common.core.properties.SysProperties;
-import com.github.tangyi.common.core.service.CrudService;
-import com.github.tangyi.common.core.utils.FileUtil;
-import com.github.tangyi.common.core.utils.SysUtil;
-import com.github.tangyi.user.api.module.Attachment;
+import com.github.cooingandwooing.common.core.constant.CommonConstant;
+import com.github.cooingandwooing.common.core.exceptions.CommonException;
+import com.github.cooingandwooing.common.core.properties.SysProperties;
+import com.github.cooingandwooing.common.core.service.CrudService;
+import com.github.cooingandwooing.common.core.utils.FileUtil;
+import com.github.cooingandwooing.common.core.utils.SysUtil;
+import com.github.cooingandwooing.user.api.module.Attachment;
 import com.github.cooingandwooing.user.mapper.AttachmentMapper;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -22,7 +22,7 @@ import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 
 /**
- * @author tangyi
+ * @author cooingandwooing
  * @date 2018/10/30 20:55
  */
 @Slf4j
@@ -139,7 +139,7 @@ public class AttachmentService extends CrudService<AttachmentMapper, Attachment>
      *
      * @param attachment attachment
      * @return String
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2019/06/21 17:45
      */
     public String getPreviewUrl(Attachment attachment) {

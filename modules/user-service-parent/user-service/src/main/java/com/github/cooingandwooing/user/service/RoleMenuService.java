@@ -1,8 +1,8 @@
 package com.github.cooingandwooing.user.service;
 
-import com.github.tangyi.common.core.service.CrudService;
-import com.github.tangyi.common.core.utils.IdGen;
-import com.github.tangyi.user.api.module.RoleMenu;
+import com.github.cooingandwooing.common.core.service.CrudService;
+import com.github.cooingandwooing.common.core.utils.IdGen;
+import com.github.cooingandwooing.user.api.module.RoleMenu;
 import com.github.cooingandwooing.user.mapper.RoleMenuMapper;
 import lombok.AllArgsConstructor;
 import org.apache.commons.collections4.CollectionUtils;
@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @author tangyi
+ * @author cooingandwooing
  * @date 2018/8/26 22:47
  */
 @AllArgsConstructor
@@ -27,7 +27,7 @@ public class RoleMenuService extends CrudService<RoleMenuMapper, RoleMenu> {
 	 * @param role  role
 	 * @param menus 菜单ID集合
 	 * @return int
-	 * @author tangyi
+	 * @author cooingandwooing
 	 * @date 2018/10/28 14:29
 	 */
 	@Transactional
@@ -55,7 +55,7 @@ public class RoleMenuService extends CrudService<RoleMenuMapper, RoleMenu> {
 	 *
 	 * @param roleMenus roleMenus
 	 * @return int
-	 * @author tangyi
+	 * @author cooingandwooing
 	 * @date 2018/10/30 19:59
 	 */
 	@Transactional
@@ -68,7 +68,7 @@ public class RoleMenuService extends CrudService<RoleMenuMapper, RoleMenu> {
 	 *
 	 * @param roleMenu roleMenu
 	 * @return List
-	 * @author tangyi
+	 * @author cooingandwooing
 	 * @date 2019/09/02 22:22:12
 	 */
 	public List<RoleMenu> getByRoleId(RoleMenu roleMenu) {
@@ -80,7 +80,7 @@ public class RoleMenuService extends CrudService<RoleMenuMapper, RoleMenu> {
 	 *
 	 * @param roleMenu roleMenu
 	 * @return List
-	 * @author tangyi
+	 * @author cooingandwooing
 	 * @date 2019-09-14 15:49
 	 */
 	public List<RoleMenu> getByMenuId(RoleMenu roleMenu) {
@@ -92,7 +92,7 @@ public class RoleMenuService extends CrudService<RoleMenuMapper, RoleMenu> {
 	 *
 	 * @param roleMenus roleMenus
 	 * @return List
-	 * @author tangyi
+	 * @author cooingandwooing
 	 * @date 2019-09-14 16:00
 	 */
 	public List<RoleMenu> getByMenuIds(List<RoleMenu> roleMenus) {

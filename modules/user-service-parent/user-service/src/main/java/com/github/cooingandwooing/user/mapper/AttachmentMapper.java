@@ -1,13 +1,13 @@
 package com.github.cooingandwooing.user.mapper;
 
-import com.github.tangyi.common.core.persistence.CrudMapper;
-import com.github.tangyi.user.api.module.Attachment;
+import com.github.cooingandwooing.common.core.persistence.CrudMapper;
+import com.github.cooingandwooing.user.api.module.Attachment;
 import org.apache.ibatis.annotations.Mapper;
 
 /**
  * 附件mapper
  *
- * @author tangyi
+ * @author cooingandwooing
  * @date 2018/10/30 20:55
  */
 @Mapper

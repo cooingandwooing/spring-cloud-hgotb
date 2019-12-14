@@ -1,13 +1,13 @@
 package com.github.cooingandwooing.user.service;
 
-import com.github.tangyi.common.core.exceptions.CommonException;
-import com.github.tangyi.common.core.service.CrudService;
-import com.github.tangyi.common.core.utils.SysUtil;
-import com.github.tangyi.common.core.vo.UserVo;
-import com.github.tangyi.user.api.constant.UserStudentConstant;
-import com.github.tangyi.user.api.dto.StudentDto;
-import com.github.tangyi.user.api.module.Student;
-import com.github.tangyi.user.api.module.UserStudent;
+import com.github.cooingandwooing.common.core.exceptions.CommonException;
+import com.github.cooingandwooing.common.core.service.CrudService;
+import com.github.cooingandwooing.common.core.utils.SysUtil;
+import com.github.cooingandwooing.common.core.vo.UserVo;
+import com.github.cooingandwooing.user.api.constant.UserStudentConstant;
+import com.github.cooingandwooing.user.api.dto.StudentDto;
+import com.github.cooingandwooing.user.api.module.Student;
+import com.github.cooingandwooing.user.api.module.UserStudent;
 import com.github.cooingandwooing.user.mapper.StudentMapper;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.BeanUtils;
@@ -17,7 +17,7 @@ import org.springframework.transaction.annotation.Transactional;
 /**
  * 学生Service
  *
- * @author tangyi
+ * @author cooingandwooing
  * @date 2019/07/09 15:28
  */
 @AllArgsConstructor
@@ -33,7 +33,7 @@ public class StudentService extends CrudService<StudentMapper, Student> {
      *
      * @param studentDto studentDto
      * @return int
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2019/07/10 18:18:04
      */
     @Transactional

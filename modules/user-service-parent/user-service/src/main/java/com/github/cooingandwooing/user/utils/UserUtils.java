@@ -26,7 +26,7 @@ public class UserUtils {
      * 获取User属性的map
      *
      * @return LinkedHashMap
-     * @author tangyi
+     * @author gaoxiaofeng
      * @date 2018/11/26 22:35
      */
     public static LinkedHashMap<String, String> getUserMap() {
@@ -52,7 +52,7 @@ public class UserUtils {
      *
      * @param roles roles
      * @return List
-     * @author tangyi
+     * @author gaoxiaofeng
      * @date 2019/07/03 13:11:05
      */
     public static List<RoleVo> rolesToVo(List<Role> roles) {
@@ -72,7 +72,7 @@ public class UserUtils {
      * @param user        user
      * @param userAuths   userAuths
      * @return UserInfoDto
-     * @author tangyi
+     * @author gaoxiaofeng
      * @date 2019/07/03 20:23:15
      */
     public static void toUserInfoDto(UserInfoDto userInfoDto, User user, UserAuths userAuths) {
@@ -85,7 +85,7 @@ public class UserUtils {
      *
      * @param identifier identifier
      * @return boolean
-     * @author tangyi
+     * @author gaoxiaofeng
      * @date 2019/07/04 00:25:11
      */
     public static boolean isAdmin(String identifier) {
@@ -97,7 +97,7 @@ public class UserUtils {
      * 是否为管理员
      *
      * @return boolean
-     * @author tangyi
+     * @author gaoxiaofeng
      * @date 2019/07/04 00:25:11
      */
     public static boolean isAdmin() {

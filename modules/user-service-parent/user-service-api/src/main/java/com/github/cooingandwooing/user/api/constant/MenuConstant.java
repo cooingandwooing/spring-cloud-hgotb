@@ -1,7 +1,7 @@
 package com.github.cooingandwooing.user.api.constant;
 
 /**
- * @author tangyi
+ * @author cooingandwooing
  * @date 2018/10/28 15:48
  */
 public class MenuConstant {

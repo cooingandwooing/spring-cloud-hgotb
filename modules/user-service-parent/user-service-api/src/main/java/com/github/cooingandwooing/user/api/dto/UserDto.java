@@ -20,7 +20,7 @@ import java.util.List;
 /**
  * userDto
  *
- * @author tangyi
+ * @author cooingandwooing
  * @date 2018/8/26 14:36
  */
 @Data

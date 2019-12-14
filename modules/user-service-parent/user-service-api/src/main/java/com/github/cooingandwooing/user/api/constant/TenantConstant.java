@@ -1,7 +1,7 @@
 package com.github.cooingandwooing.user.api.constant;
 
 /**
- * @author tangyi
+ * @author cooingandwooing
  * @date 2019/5/27 10:25
  */
 public class TenantConstant {

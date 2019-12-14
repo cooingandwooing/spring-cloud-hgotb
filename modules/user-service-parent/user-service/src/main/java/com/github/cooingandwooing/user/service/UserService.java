@@ -47,7 +47,7 @@ import java.util.stream.Stream;
 /**
  * 用户service实现
  *
- * @author tangyi
+ * @author cooingandwooing
  * @date 2018-08-25 16:17
  */
 @AllArgsConstructor
@@ -76,7 +76,7 @@ public class UserService extends CrudService<UserMapper, User> {
      *
      * @param userDto userDto
      * @return int
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2019/07/03 12:17:44
      */
     @Transactional
@@ -113,7 +113,7 @@ public class UserService extends CrudService<UserMapper, User> {
      *
      * @param user user
      * @return int
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2018/10/30 12:43
      */
     @Override
@@ -138,7 +138,7 @@ public class UserService extends CrudService<UserMapper, User> {
      *
      * @param userVo userVo
      * @return User
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2018/9/11 23:44
      */
     public UserInfoDto findUserInfo(UserVo userVo) {
@@ -178,7 +178,7 @@ public class UserService extends CrudService<UserMapper, User> {
      * @param user       user
      * @param identifier identifier
      * @return List
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2019/07/04 00:12:44
      */
     public List<String> getUserPermissions(User user, String identifier) {
@@ -192,7 +192,7 @@ public class UserService extends CrudService<UserMapper, User> {
      * @param identifier identifier
      * @param roles      roles
      * @return List
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2019/07/04 00:14:44
      */
     public List<String> getUserPermissions(User user, String identifier, List<Role> roles) {
@@ -230,7 +230,7 @@ public class UserService extends CrudService<UserMapper, User> {
      *
      * @param user user
      * @return List
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2019/07/03 12:03:17
      */
     private List<Role> getUserRoles(User user) {
@@ -247,7 +247,7 @@ public class UserService extends CrudService<UserMapper, User> {
      *
      * @param users users
      * @return List
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2019/07/03 12:13:38
      */
     public List<Role> getUsersRoles(List<User> users) {
@@ -266,7 +266,7 @@ public class UserService extends CrudService<UserMapper, User> {
      * @param id id
      * @param userDto userDto
      * @return int
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2018/8/26 15:15
      */
     @Transactional
@@ -314,7 +314,7 @@ public class UserService extends CrudService<UserMapper, User> {
      *
      * @param userDto userDto
      * @return int
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2019/07/03 12:26:24
      */
     @Transactional
@@ -345,7 +345,7 @@ public class UserService extends CrudService<UserMapper, User> {
      *
      * @param userDto userDto
      * @return int
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2019/06/21 18:14
      */
     @Transactional
@@ -375,25 +375,28 @@ public class UserService extends CrudService<UserMapper, User> {
      * @param identifier   identifier
      * @param tenantCode   tenantCode
      * @return UserVo
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2019/07/03 13:00:39
      */
     @Cacheable(value = "user#" + CommonConstant.CACHE_EXPIRE, key = "#identifier")
     public UserVo findUserByIdentifier(Integer identityType, String identifier, String tenantCode) {
         UserAuths userAuths = new UserAuths();
         userAuths.setIdentifier(identifier);
-        if (identityType != null)
+        if (identityType != null) {
             userAuths.setIdentityType(IdentityType.match(identityType).getValue());
+        }
         userAuths.setTenantCode(tenantCode);
         userAuths = userAuthsService.getByIdentifier(userAuths);
-        if (userAuths == null)
+        if (userAuths == null) {
             return null;
+        }
         // 查询用户信息
         User user = new User();
         user.setId(userAuths.getUserId());
         user = this.get(user);
-        if (user == null)
+        if (user == null) {
             return null;
+        }
         // 查询用户角色
         List<Role> roles = this.getUserRoles(user);
         UserVo userVo = new UserVo();
@@ -409,7 +412,7 @@ public class UserService extends CrudService<UserMapper, User> {
      * @param identifier identifier
      * @param tenantCode tenantCode
      * @return UserVo
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2019/07/10 18:04:15
      */
     public UserVo findUserByIdentifier(String identifier, String tenantCode) {
@@ -423,7 +426,7 @@ public class UserService extends CrudService<UserMapper, User> {
      * @param identifier   identifier
      * @param tenantCode   tenantCode
      * @return boolean
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2019/07/03 13:23:10
      */
     public boolean checkIdentifierIsExist(Integer identityType, String identifier, String tenantCode) {
@@ -439,7 +442,7 @@ public class UserService extends CrudService<UserMapper, User> {
      *
      * @param random    random
      * @param imageCode imageCode
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2018/9/14 20:12
      */
     public void saveImageCode(String random, String imageCode) {
@@ -470,7 +473,7 @@ public class UserService extends CrudService<UserMapper, User> {
      *
      * @param ids ids
      * @return int
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2019/07/04 11:44:45
      */
     @Transactional
@@ -496,7 +499,7 @@ public class UserService extends CrudService<UserMapper, User> {
      *
      * @param userVo userVo
      * @return int
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2019/05/09 22:10
      */
     public Integer userCount(UserVo userVo) {
@@ -508,7 +511,7 @@ public class UserService extends CrudService<UserMapper, User> {
      *
      * @param userInfoDto userInfoDto
      * @param user        user
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2019/06/21 17:49
      */
     private void initUserAvatar(UserInfoDto userInfoDto, User user) {
@@ -531,7 +534,7 @@ public class UserService extends CrudService<UserMapper, User> {
      *
      * @param userDto userDto
      * @return int
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2019/07/03 13:27:39
      */
     @Transactional
@@ -552,7 +555,7 @@ public class UserService extends CrudService<UserMapper, User> {
      *
      * @param userDto userDto
      * @return boolean
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2019/07/03 13:30:03
      */
     @Transactional
@@ -600,7 +603,7 @@ public class UserService extends CrudService<UserMapper, User> {
      *
      * @param encoded encoded
      * @return String
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2019/07/05 12:39:13
      */
     private String decryptCredential(String encoded, Integer identityType) {
@@ -628,7 +631,7 @@ public class UserService extends CrudService<UserMapper, User> {
      * @param tenantCode tenantCode
      * @param identifier identifier
 	 * @return boolean
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2019/07/04 11:30:27
      */
     @Transactional
@@ -657,7 +660,7 @@ public class UserService extends CrudService<UserMapper, User> {
      *
      * @param ids ids
      * @return List
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2019/07/03 13:59:32
      */
     public List<UserVo> findUserVoListById(Long[] ids) {
@@ -682,7 +685,7 @@ public class UserService extends CrudService<UserMapper, User> {
      * @param userRoles     userRoles
      * @param finalRoleList finalRoleList
      * @return UserDto
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2019/07/03 22:35:50
      */
     public UserDto getUserDtoByUserAndUserAuths(User tempUser, List<UserAuths> userAuths, List<Dept> deptList, List<UserRole> userRoles, List<Role> finalRoleList) {
@@ -723,7 +726,7 @@ public class UserService extends CrudService<UserMapper, User> {
      *
      * @param userInfoDtos userInfoDtos
      * @return boolean
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2019/07/04 12:46:01
      */
     @Transactional

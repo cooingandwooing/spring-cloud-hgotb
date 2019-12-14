@@ -1,7 +1,7 @@
 package com.github.cooingandwooing.user.service;
 
-import com.github.tangyi.common.core.service.CrudService;
-import com.github.tangyi.user.api.module.UserStudent;
+import com.github.cooingandwooing.common.core.service.CrudService;
+import com.github.cooingandwooing.user.api.module.UserStudent;
 import com.github.cooingandwooing.user.mapper.UserStudentMapper;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -12,7 +12,7 @@ import java.util.List;
 /**
  * 用户学生Service
  *
- * @author tangyi
+ * @author cooingandwooing
  * @date 2019/07/09 15:58
  */
 @Service
@@ -23,7 +23,7 @@ public class UserStudentService extends CrudService<UserStudentMapper, UserStude
      *
      * @param userId userId
      * @return List
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2019/07/09 17:01:13
      */
     public List<UserStudent> getByUserId(@NotBlank String userId) {
@@ -35,7 +35,7 @@ public class UserStudentService extends CrudService<UserStudentMapper, UserStude
      *
      * @param studentId studentId
      * @return UserStudent
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2019/07/09 17:02:19
      */
     public UserStudent getByStudentId(@NotBlank String studentId) {
@@ -47,7 +47,7 @@ public class UserStudentService extends CrudService<UserStudentMapper, UserStude
      *
      * @param userId userId
      * @return int
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2019/07/09 17:04:13
      */
     @Transactional
@@ -60,7 +60,7 @@ public class UserStudentService extends CrudService<UserStudentMapper, UserStude
      *
      * @param studentId studentId
      * @return int
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2019/07/09 17:04:59
      */
     @Transactional

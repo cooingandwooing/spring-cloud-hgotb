@@ -12,7 +12,7 @@ import java.util.List;
 /**
  * 用户基本信息
  *
- * @author tangyi
+ * @author cooingandwooing
  * @date 2018-08-25 15:30
  */
 @Data

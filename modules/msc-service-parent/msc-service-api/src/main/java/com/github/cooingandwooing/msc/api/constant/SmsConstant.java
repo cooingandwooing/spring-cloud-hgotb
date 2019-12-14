@@ -1,7 +1,7 @@
 package com.github.cooingandwooing.msc.api.constant;
 
 /**
- * @author tangyi
+ * @author cooingandwooing
  * @date 2019/6/22 13:18
  */
 public class SmsConstant {

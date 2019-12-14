@@ -1,7 +1,7 @@
 package com.github.cooingandwooing.user.api.constant;
 
 /**
- * @author tangyi
+ * @author cooingandwooing
  * @date 2019/07/06 16:16
  */
 public class AttachmentConstant {

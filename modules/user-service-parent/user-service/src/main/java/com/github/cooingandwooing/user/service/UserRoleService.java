@@ -1,7 +1,7 @@
 package com.github.cooingandwooing.user.service;
 
-import com.github.tangyi.common.core.service.CrudService;
-import com.github.tangyi.user.api.module.UserRole;
+import com.github.cooingandwooing.common.core.service.CrudService;
+import com.github.cooingandwooing.user.api.module.UserRole;
 import com.github.cooingandwooing.user.mapper.UserRoleMapper;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 /**
- * @author tangyi
+ * @author cooingandwooing
  * @date 2018/8/26 14:55
  */
 @AllArgsConstructor
@@ -43,7 +43,7 @@ public class UserRoleService extends CrudService<UserRoleMapper, UserRole> {
      *
      * @param userRoles userRoles
      * @return int
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2019-09-03 13:13
      */
     public int insertBatch(List<UserRole> userRoles) {

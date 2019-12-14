@@ -1,14 +1,14 @@
 package com.github.cooingandwooing.user.controller;
 
 import com.github.pagehelper.PageInfo;
-import com.github.tangyi.common.core.constant.CommonConstant;
-import com.github.tangyi.common.core.model.ResponseBean;
-import com.github.tangyi.common.core.utils.PageUtil;
-import com.github.tangyi.common.core.utils.SysUtil;
-import com.github.tangyi.common.core.web.BaseController;
-import com.github.tangyi.common.log.annotation.Log;
-import com.github.tangyi.common.security.constant.SecurityConstant;
-import com.github.tangyi.user.api.module.Role;
+import com.github.cooingandwooing.common.core.constant.CommonConstant;
+import com.github.cooingandwooing.common.core.model.ResponseBean;
+import com.github.cooingandwooing.common.core.utils.PageUtil;
+import com.github.cooingandwooing.common.core.utils.SysUtil;
+import com.github.cooingandwooing.common.core.web.BaseController;
+import com.github.cooingandwooing.common.log.annotation.Log;
+import com.github.cooingandwooing.common.security.constant.SecurityConstant;
+import com.github.cooingandwooing.user.api.module.Role;
 import com.github.cooingandwooing.user.service.RoleMenuService;
 import com.github.cooingandwooing.user.service.RoleService;
 import io.swagger.annotations.Api;
@@ -30,7 +30,7 @@ import java.util.stream.Stream;
 /**
  * 角色controller
  *
- * @author tangyi
+ * @author cooingandwooing
  * @date 2018/8/26 22:50
  */
 @Slf4j
@@ -49,7 +49,7 @@ public class RoleController extends BaseController {
      *
      * @param id id
      * @return RoleVo
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2018/9/14 18:20
      */
     @GetMapping("/{id}")
@@ -73,7 +73,7 @@ public class RoleController extends BaseController {
      * @param order    order
      * @param role     role
      * @return PageInfo
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2018/10/24 22:13
      */
     @GetMapping("roleList")
@@ -99,7 +99,7 @@ public class RoleController extends BaseController {
      *
      * @param role role
      * @return ResponseBean
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2019/05/15 23:29
      */
     @GetMapping("allRoles")
@@ -116,7 +116,7 @@ public class RoleController extends BaseController {
      *
      * @param role role
      * @return ResponseBean
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2018/9/14 18:22
      */
     @PutMapping
@@ -134,7 +134,7 @@ public class RoleController extends BaseController {
      *
      * @param role role
      * @return ResponseBean
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2018/10/28 14:20
      */
     @PutMapping("roleMenuUpdate")
@@ -158,7 +158,7 @@ public class RoleController extends BaseController {
      *
      * @param role role
      * @return ResponseBean
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2018/9/14 18:23
      */
     @PostMapping
@@ -176,7 +176,7 @@ public class RoleController extends BaseController {
      *
      * @param id id
      * @return RoleVo
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2018/9/14 18:24
      */
     @DeleteMapping("/{id}")
@@ -197,7 +197,7 @@ public class RoleController extends BaseController {
      *
      * @param ids ids
      * @return ResponseBean
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2018/12/4 10:00
      */
     @PostMapping("deleteAll")

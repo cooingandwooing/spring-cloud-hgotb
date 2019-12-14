@@ -1,16 +1,16 @@
 package com.github.cooingandwooing.user.controller;
 
 import cn.hutool.core.collection.CollUtil;
-import com.github.tangyi.common.core.constant.CommonConstant;
-import com.github.tangyi.common.core.model.ResponseBean;
-import com.github.tangyi.common.core.utils.SysUtil;
-import com.github.tangyi.common.core.utils.TreeUtil;
-import com.github.tangyi.common.core.vo.DeptVo;
-import com.github.tangyi.common.core.web.BaseController;
-import com.github.tangyi.common.log.annotation.Log;
-import com.github.tangyi.common.security.constant.SecurityConstant;
-import com.github.tangyi.user.api.dto.DeptDto;
-import com.github.tangyi.user.api.module.Dept;
+import com.github.cooingandwooing.common.core.constant.CommonConstant;
+import com.github.cooingandwooing.common.core.model.ResponseBean;
+import com.github.cooingandwooing.common.core.utils.SysUtil;
+import com.github.cooingandwooing.common.core.utils.TreeUtil;
+import com.github.cooingandwooing.common.core.vo.DeptVo;
+import com.github.cooingandwooing.common.core.web.BaseController;
+import com.github.cooingandwooing.common.log.annotation.Log;
+import com.github.cooingandwooing.common.security.constant.SecurityConstant;
+import com.github.cooingandwooing.user.api.dto.DeptDto;
+import com.github.cooingandwooing.user.api.module.Dept;
 import com.github.cooingandwooing.user.service.DeptService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
@@ -31,7 +31,7 @@ import java.util.stream.Stream;
 /**
  * 部门controller
  *
- * @author tangyi
+ * @author cooingandwooing
  * @date 2018/8/26 0026 22:49
  */
 @AllArgsConstructor
@@ -46,7 +46,7 @@ public class DeptController extends BaseController {
      * 查询树形部门集合
      *
      * @return List
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2018/10/25 12:57
      */
     @GetMapping(value = "depts")
@@ -70,7 +70,7 @@ public class DeptController extends BaseController {
      *
      * @param id id
      * @return Dept
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2018/8/28 10:11
      */
     @GetMapping("/{id}")
@@ -87,7 +87,7 @@ public class DeptController extends BaseController {
      *
      * @param dept dept
      * @return ResponseBean
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2018/8/28 10:15
      */
     @PostMapping
@@ -105,7 +105,7 @@ public class DeptController extends BaseController {
      *
      * @param id id
      * @return ResponseBean
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2018/8/28 10:16
      */
     @DeleteMapping("/{id}")
@@ -125,7 +125,7 @@ public class DeptController extends BaseController {
      *
      * @param dept dept
      * @return ResponseBean
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2018/8/28 10:22
      */
     @PutMapping
@@ -143,7 +143,7 @@ public class DeptController extends BaseController {
      *
      * @param ids ids
      * @return ResponseBean
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2018/12/31 22:13
      */
     @RequestMapping(value = "findById", method = RequestMethod.POST)

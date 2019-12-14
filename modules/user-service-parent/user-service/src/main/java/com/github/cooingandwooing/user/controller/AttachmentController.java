@@ -1,16 +1,16 @@
 package com.github.cooingandwooing.user.controller;
 
 import com.github.pagehelper.PageInfo;
-import com.github.tangyi.common.core.constant.CommonConstant;
-import com.github.tangyi.common.core.exceptions.CommonException;
-import com.github.tangyi.common.core.model.ResponseBean;
-import com.github.tangyi.common.core.utils.PageUtil;
-import com.github.tangyi.common.core.utils.Servlets;
-import com.github.tangyi.common.core.utils.SysUtil;
-import com.github.tangyi.common.core.vo.AttachmentVo;
-import com.github.tangyi.common.core.web.BaseController;
-import com.github.tangyi.common.log.annotation.Log;
-import com.github.tangyi.user.api.module.Attachment;
+import com.github.cooingandwooing.common.core.constant.CommonConstant;
+import com.github.cooingandwooing.common.core.exceptions.CommonException;
+import com.github.cooingandwooing.common.core.model.ResponseBean;
+import com.github.cooingandwooing.common.core.utils.PageUtil;
+import com.github.cooingandwooing.common.core.utils.Servlets;
+import com.github.cooingandwooing.common.core.utils.SysUtil;
+import com.github.cooingandwooing.common.core.vo.AttachmentVo;
+import com.github.cooingandwooing.common.core.web.BaseController;
+import com.github.cooingandwooing.common.log.annotation.Log;
+import com.github.cooingandwooing.user.api.module.Attachment;
 import com.github.cooingandwooing.user.service.AttachmentService;
 import com.google.common.net.HttpHeaders;
 import io.swagger.annotations.*;
@@ -35,7 +35,7 @@ import java.util.stream.Collectors;
 /**
  * 附件信息管理
  *
- * @author tangyi
+ * @author cooingandwooing
  * @date 2018/10/30 20:45
  */
 @Slf4j
@@ -52,7 +52,7 @@ public class AttachmentController extends BaseController {
      *
      * @param id id
      * @return ResponseBean
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2019/01/01 19:56
      */
     @ApiOperation(value = "获取附件信息", notes = "根据附件id获取附件详细信息")
@@ -73,7 +73,7 @@ public class AttachmentController extends BaseController {
      * @param order      order
      * @param attachment attachment
      * @return PageInfo
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2018/10/30 21:05
      */
     @GetMapping("attachmentList")
@@ -99,7 +99,7 @@ public class AttachmentController extends BaseController {
      *
      * @param file       file
      * @param attachment attachment
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2018/10/30 21:54
      */
     @PostMapping("upload")
@@ -121,7 +121,7 @@ public class AttachmentController extends BaseController {
      * 下载文件
      *
      * @param id id
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2018/10/30 22:26
      */
     @GetMapping("download")
@@ -159,7 +159,7 @@ public class AttachmentController extends BaseController {
      *
      * @param id id
      * @return ResponseBean
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2018/10/30 22:44
      */
     @DeleteMapping("/{id}")
@@ -181,7 +181,7 @@ public class AttachmentController extends BaseController {
      *
      * @param ids ids
      * @return ResponseBean
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2018/12/4 10:01
      */
     @PostMapping("deleteAll")
@@ -204,7 +204,7 @@ public class AttachmentController extends BaseController {
      *
      * @param ids ids
      * @return ResponseBean
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2019/01/01 22:16
      */
     @PostMapping(value = "findById")
@@ -230,7 +230,7 @@ public class AttachmentController extends BaseController {
      *
      * @param id id
      * @return ResponseBean
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2019/06/19 15:47
      */
     @GetMapping("/{id}/preview")

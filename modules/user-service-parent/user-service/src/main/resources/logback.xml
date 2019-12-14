@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration debug="false" scan="false">
     <springProperty scop="context" name="spring.application.name" source="spring.application.name"
-                    defaultValue="spring-microservice-exam"/>
+                    defaultValue="spring-cloud-hgotb"/>
     <property name="log.path" value="logs/${spring.application.name}"/>
     <!-- Console log output -->
     <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
@@ -53,7 +53,7 @@
         <!--<appender-ref ref="logstash"/>-->
     </root>
 
-    <logger name="com.github.tangyi" level="debug">
+    <logger name="com.github.cooingandwooding" level="debug">
         <appender-ref ref="console"/>
         <appender-ref ref="debug"/>
         <appender-ref ref="error"/>
