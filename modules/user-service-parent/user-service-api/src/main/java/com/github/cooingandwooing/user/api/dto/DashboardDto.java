@@ -7,7 +7,7 @@ import java.io.Serializable;
 /**
  * DashboardDto
  *
- * @author tangyi
+ * @author cooingandwooing
  * @date 2019-03-01 13:56
  */
 @Data

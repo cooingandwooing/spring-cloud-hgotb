@@ -1,14 +1,14 @@
 package com.github.cooingandwooing.user.controller;
 
 import com.github.pagehelper.PageInfo;
-import com.github.tangyi.common.core.constant.CommonConstant;
-import com.github.tangyi.common.core.model.ResponseBean;
-import com.github.tangyi.common.core.utils.PageUtil;
-import com.github.tangyi.common.core.utils.SysUtil;
-import com.github.tangyi.common.core.web.BaseController;
-import com.github.tangyi.common.log.annotation.Log;
-import com.github.tangyi.user.api.dto.StudentDto;
-import com.github.tangyi.user.api.module.Student;
+import com.github.cooingandwooing.common.core.constant.CommonConstant;
+import com.github.cooingandwooing.common.core.model.ResponseBean;
+import com.github.cooingandwooing.common.core.utils.PageUtil;
+import com.github.cooingandwooing.common.core.utils.SysUtil;
+import com.github.cooingandwooing.common.core.web.BaseController;
+import com.github.cooingandwooing.common.log.annotation.Log;
+import com.github.cooingandwooing.user.api.dto.StudentDto;
+import com.github.cooingandwooing.user.api.module.Student;
 import com.github.cooingandwooing.user.service.StudentService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
@@ -27,7 +27,7 @@ import java.util.Optional;
 /**
  * 学生管理Controller
  *
- * @author tangyi
+ * @author cooingandwooing
  * @date 2019/07/09 15:29
  */
 @Slf4j
@@ -44,7 +44,7 @@ public class StudentController extends BaseController {
      *
      * @param id id
      * @return ResponseBean
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2019/07/09 15:30
      */
     @ApiOperation(value = "获取学生信息", notes = "根据学生id获取学生详细信息")
@@ -65,7 +65,7 @@ public class StudentController extends BaseController {
      * @param order      order
      * @param studentDto studentDto
      * @return PageInfo
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2019/07/09 15:31
      */
     @GetMapping("studentList")
@@ -93,7 +93,7 @@ public class StudentController extends BaseController {
      *
      * @param studentDto studentDto
      * @return ResponseBean
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2019/07/09 15:31
      */
     @PostMapping
@@ -109,7 +109,7 @@ public class StudentController extends BaseController {
      *
      * @param studentDto studentDto
      * @return ResponseBean
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2019/07/09 15:32
      */
     @PutMapping
@@ -134,7 +134,7 @@ public class StudentController extends BaseController {
      *
      * @param id id
      * @return ResponseBean
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2019/07/09 15:33
      */
     @DeleteMapping("/{id}")
@@ -159,7 +159,7 @@ public class StudentController extends BaseController {
      *
      * @param ids ids
      * @return ResponseBean
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2019/07/09 15:34
      */
     @PostMapping("deleteAll")
@@ -182,7 +182,7 @@ public class StudentController extends BaseController {
      *
      * @param ids ids
      * @return ResponseBean
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2019/07/09 15:34
      */
     @RequestMapping(value = "findById", method = RequestMethod.POST)

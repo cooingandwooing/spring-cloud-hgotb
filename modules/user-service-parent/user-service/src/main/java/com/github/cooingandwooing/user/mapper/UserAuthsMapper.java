@@ -1,7 +1,7 @@
 package com.github.cooingandwooing.user.mapper;
 
-import com.github.tangyi.common.core.persistence.CrudMapper;
-import com.github.tangyi.user.api.module.UserAuths;
+import com.github.cooingandwooing.common.core.persistence.CrudMapper;
+import com.github.cooingandwooing.user.api.module.UserAuths;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * UserAuthsMapper
  *
- * @author tangyi
+ * @author cooingandwooing
  * @date 2019/07/03 11:44
  */
 @Mapper
@@ -21,7 +21,7 @@ public interface UserAuthsMapper extends CrudMapper<UserAuths> {
      *
      * @param userAuths userAuths
      * @return UserAuths
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2019/07/03 11:52:27
      */
     UserAuths getByIdentifier(UserAuths userAuths);
@@ -31,7 +31,7 @@ public interface UserAuthsMapper extends CrudMapper<UserAuths> {
      *
      * @param userIds userIds
      * @return List
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2019/07/03 22:02:13
      */
     List<UserAuths> getListByUserIds(@Param("userIds") Long[] userIds);
@@ -41,7 +41,7 @@ public interface UserAuthsMapper extends CrudMapper<UserAuths> {
      *
      * @param userAuths userAuths
      * @return int
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2019/07/04 11:39:50
      */
     int deleteByIdentifier(UserAuths userAuths);
@@ -52,7 +52,7 @@ public interface UserAuthsMapper extends CrudMapper<UserAuths> {
      *
      * @param userAuths userAuths
      * @return int
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2019/07/04 11:43:50
      */
     int deleteByUserId(UserAuths userAuths);
@@ -62,7 +62,7 @@ public interface UserAuthsMapper extends CrudMapper<UserAuths> {
      *
      * @param userAuths userAuths
      * @return int
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2019-09-03 13:07
      */
     int insertBatch(List<UserAuths> userAuths);

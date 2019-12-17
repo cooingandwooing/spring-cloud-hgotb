@@ -19,6 +19,10 @@ import java.util.Map;
  */
 public class CustomTokenConverter extends JwtAccessTokenConverter {
 
+    /**
+     * @see-SysUtil.getCurrentUserTenantCode
+     * tenantCode修改为SecurityConstant.TENANT_CODE  unmodified
+     */
     @Override
     public OAuth2AccessToken enhance(OAuth2AccessToken accessToken, OAuth2Authentication authentication) {
         final Map<String, Object> additionalInfo = new HashMap<>();

@@ -1,6 +1,6 @@
 package com.github.cooingandwooing.user.api.module;
 
-import com.github.tangyi.common.core.persistence.BaseEntity;
+import com.github.cooingandwooing.common.core.persistence.BaseEntity;
 import lombok.Data;
 
 import javax.validation.constraints.NotBlank;
@@ -8,7 +8,7 @@ import javax.validation.constraints.NotBlank;
 /**
  * 租户
  *
- * @author tangyi
+ * @author cooingandwooing
  * @date 2019/5/22 22:44
  */
 @Data

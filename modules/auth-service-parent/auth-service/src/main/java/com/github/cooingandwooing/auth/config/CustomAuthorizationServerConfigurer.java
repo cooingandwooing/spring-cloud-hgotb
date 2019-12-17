@@ -74,7 +74,7 @@ public class CustomAuthorizationServerConfigurer extends AuthorizationServerConf
 
     /**
      * 将token存储到redis
-     *
+     * RedisTokenStore只要该token不过期、永远使用的都是一个token、不知道有没有别的方法可以不这样、我找了好多都没找到、而JwtTokenStore则是每次都生成不同的token、感觉可以使用RedisTokenStore来储存token、然后自定义TokenEnhancer来生成token
      * @return TokenStore
      */
     @Bean
@@ -84,7 +84,8 @@ public class CustomAuthorizationServerConfigurer extends AuthorizationServerConf
 
     /**
      * token增强，使用非对称加密算法来对Token进行签名
-     *
+     * JwtAccessTokenConverter token生成中的处理
+     * token生产 @see DefaultTokenServices
      * @return JwtAccessTokenConverter
      */
     @Bean

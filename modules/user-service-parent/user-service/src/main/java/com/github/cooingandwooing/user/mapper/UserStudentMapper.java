@@ -1,7 +1,7 @@
 package com.github.cooingandwooing.user.mapper;
 
-import com.github.tangyi.common.core.persistence.CrudMapper;
-import com.github.tangyi.user.api.module.UserStudent;
+import com.github.cooingandwooing.common.core.persistence.CrudMapper;
+import com.github.cooingandwooing.user.api.module.UserStudent;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * 用户学生Mapper
  *
- * @author tangyi
+ * @author cooingandwooing
  * @date 2019/07/09 15:57
  */
 @Mapper

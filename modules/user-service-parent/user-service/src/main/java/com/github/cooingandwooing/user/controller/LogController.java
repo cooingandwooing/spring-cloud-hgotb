@@ -1,13 +1,13 @@
 package com.github.cooingandwooing.user.controller;
 
 import com.github.pagehelper.PageInfo;
-import com.github.tangyi.common.core.constant.CommonConstant;
-import com.github.tangyi.common.core.model.Log;
-import com.github.tangyi.common.core.model.ResponseBean;
-import com.github.tangyi.common.core.utils.PageUtil;
-import com.github.tangyi.common.core.utils.SysUtil;
-import com.github.tangyi.common.core.web.BaseController;
-import com.github.tangyi.common.security.constant.SecurityConstant;
+import com.github.cooingandwooing.common.core.constant.CommonConstant;
+import com.github.cooingandwooing.common.core.model.Log;
+import com.github.cooingandwooing.common.core.model.ResponseBean;
+import com.github.cooingandwooing.common.core.utils.PageUtil;
+import com.github.cooingandwooing.common.core.utils.SysUtil;
+import com.github.cooingandwooing.common.core.web.BaseController;
+import com.github.cooingandwooing.common.security.constant.SecurityConstant;
 import com.github.cooingandwooing.user.service.LogService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
@@ -24,7 +24,7 @@ import javax.validation.Valid;
 /**
  * 日志controller
  *
- * @author tangyi
+ * @author cooingandwooing
  * @date 2018/10/31 20:48
  */
 @Slf4j
@@ -41,7 +41,7 @@ public class LogController extends BaseController {
      *
      * @param id id
      * @return Log
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2018/9/14 18:20
      */
     @GetMapping("/{id}")
@@ -65,7 +65,7 @@ public class LogController extends BaseController {
      * @param order    order
      * @param log      log
      * @return PageInfo
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2018/10/24 0024 22:13
      */
     @GetMapping("logList")
@@ -91,7 +91,7 @@ public class LogController extends BaseController {
      *
      * @param log log
      * @return ResponseBean
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2019/03/27 23:14
      */
     @PostMapping
@@ -111,7 +111,7 @@ public class LogController extends BaseController {
      *
      * @param id id
      * @return ResponseBean
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2018/10/31 21:27
      */
     @DeleteMapping("/{id}")
@@ -129,7 +129,7 @@ public class LogController extends BaseController {
      *
      * @param ids ids
      * @return ResponseBean
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2018/12/4 10:12
      */
     @PostMapping("deleteAll")

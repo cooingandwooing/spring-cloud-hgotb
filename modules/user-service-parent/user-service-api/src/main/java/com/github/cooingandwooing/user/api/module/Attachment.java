@@ -1,7 +1,7 @@
 package com.github.cooingandwooing.user.api.module;
 
 import com.github.cooingandwooing.user.api.constant.AttachmentConstant;
-import com.github.tangyi.common.core.persistence.BaseEntity;
+import com.github.cooingandwooing.common.core.persistence.BaseEntity;
 import lombok.Data;
 
 import javax.validation.constraints.NotBlank;
@@ -9,7 +9,7 @@ import javax.validation.constraints.NotBlank;
 /**
  * 附件信息
  *
- * @author tangyi
+ * @author gaoxiaofeng
  * @date 2018/10/30 20:47
  */
 @Data

@@ -12,7 +12,7 @@ import java.util.List;
 /**
  * 菜单工具类
  *
- * @author tangyi
+ * @author gaoxiaofeng
  * @date 2018/10/28 15:57
  */
 public class MenuUtil {
@@ -22,7 +22,7 @@ public class MenuUtil {
      *
      * @param menu menu
      * @return List
-     * @author tangyi
+     * @author gaoxiaofeng
      * @date 2018/10/28 15:59
      */
     public static List<Menu> initMenuPermission(Menu menu) {
@@ -64,7 +64,7 @@ public class MenuUtil {
      * 获取Menu属性的map
      *
      * @return LinkedHashMap
-     * @author tangyi
+     * @author gaoxiaofeng
      * @date 2018/11/28 12:48
      */
     public static LinkedHashMap<String, String> getMenuMap() {

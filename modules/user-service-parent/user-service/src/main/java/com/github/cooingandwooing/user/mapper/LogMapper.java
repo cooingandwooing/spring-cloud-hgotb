@@ -1,13 +1,13 @@
 package com.github.cooingandwooing.user.mapper;
 
-import com.github.tangyi.common.core.model.Log;
-import com.github.tangyi.common.core.persistence.CrudMapper;
+import com.github.cooingandwooing.common.core.model.Log;
+import com.github.cooingandwooing.common.core.persistence.CrudMapper;
 import org.apache.ibatis.annotations.Mapper;
 
 /**
  * 日志
  *
- * @author tangyi
+ * @author cooingandwooing
  * @date 2018/10/31 20:38
  */
 @Mapper

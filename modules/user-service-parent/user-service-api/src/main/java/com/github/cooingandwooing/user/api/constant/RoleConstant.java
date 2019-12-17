@@ -3,7 +3,7 @@ package com.github.cooingandwooing.user.api.constant;
 /**
  * 角色常量
  *
- * @author tangyi
+ * @author cooingandwooing
  * @date 2019/1/11 13:58
  */
 public class RoleConstant {

@@ -1,7 +1,7 @@
 package com.github.cooingandwooing.user.mapper;
 
-import com.github.tangyi.common.core.persistence.CrudMapper;
-import com.github.tangyi.user.api.module.RoleMenu;
+import com.github.cooingandwooing.common.core.persistence.CrudMapper;
+import com.github.cooingandwooing.user.api.module.RoleMenu;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * 角色菜单mapper
  *
- * @author tangyi
+ * @author cooingandwooing
  * @date 2018/8/26 22:34
  */
 @Mapper
@@ -44,7 +44,7 @@ public interface RoleMenuMapper extends CrudMapper<RoleMenu> {
 	 *
 	 * @param roleMenu roleMenu
 	 * @return List
-	 * @author tangyi
+	 * @author cooingandwooing
 	 * @date 2019/09/02 22:22:51
 	 */
 	List<RoleMenu> getByRoleId(RoleMenu roleMenu);
@@ -54,7 +54,7 @@ public interface RoleMenuMapper extends CrudMapper<RoleMenu> {
 	 *
 	 * @param roleMenu roleMenu
 	 * @return List
-	 * @author tangyi
+	 * @author cooingandwooing
 	 * @date 2019-09-14 15:50
 	 */
 	List<RoleMenu> getByMenuId(RoleMenu roleMenu);
@@ -64,7 +64,7 @@ public interface RoleMenuMapper extends CrudMapper<RoleMenu> {
 	 *
 	 * @param roleMenus roleMenus
 	 * @return List
-	 * @author tangyi
+	 * @author cooingandwooing
 	 * @date 2019-09-14 16:00
 	 */
 	List<RoleMenu> getByMenuIds(List<RoleMenu> roleMenus);

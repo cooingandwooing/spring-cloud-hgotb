@@ -2,14 +2,14 @@ package com.github.cooingandwooing.user.controller;
 
 import cn.hutool.core.collection.CollUtil;
 import com.github.pagehelper.PageInfo;
-import com.github.tangyi.common.core.constant.CommonConstant;
-import com.github.tangyi.common.core.model.ResponseBean;
-import com.github.tangyi.common.core.utils.*;
-import com.github.tangyi.common.core.web.BaseController;
-import com.github.tangyi.common.log.annotation.Log;
-import com.github.tangyi.common.security.constant.SecurityConstant;
-import com.github.tangyi.user.api.dto.MenuDto;
-import com.github.tangyi.user.api.module.Menu;
+import com.github.cooingandwooing.common.core.constant.CommonConstant;
+import com.github.cooingandwooing.common.core.model.ResponseBean;
+import com.github.cooingandwooing.common.core.utils.*;
+import com.github.cooingandwooing.common.core.web.BaseController;
+import com.github.cooingandwooing.common.log.annotation.Log;
+import com.github.cooingandwooing.common.security.constant.SecurityConstant;
+import com.github.cooingandwooing.user.api.dto.MenuDto;
+import com.github.cooingandwooing.user.api.module.Menu;
 import com.github.cooingandwooing.user.service.MenuService;
 import com.github.cooingandwooing.user.utils.MenuUtil;
 import com.google.common.net.HttpHeaders;
@@ -36,7 +36,7 @@ import java.util.stream.Stream;
 /**
  * 菜单controller
  *
- * @author tangyi
+ * @author cooingandwooing
  * @date 2018/8/26 22:48
  */
 @Slf4j
@@ -86,7 +86,7 @@ public class MenuController extends BaseController {
      *
      * @param menu menu
      * @return ResponseBean
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2018/8/27 16:12
      */
     @PostMapping
@@ -104,7 +104,7 @@ public class MenuController extends BaseController {
      *
      * @param menu menu
      * @return ResponseBean
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2018/10/24 16:34
      */
     @PutMapping
@@ -122,7 +122,7 @@ public class MenuController extends BaseController {
      *
      * @param id id
      * @return ResponseBean
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2018/8/27 16:19
      */
     @DeleteMapping("/{id}")
@@ -141,7 +141,7 @@ public class MenuController extends BaseController {
      *
      * @param id
      * @return Menu
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2018/8/27 16:11
      */
     @GetMapping("/{id}")
@@ -162,7 +162,7 @@ public class MenuController extends BaseController {
      * @param order    order
      * @param menu     menu
      * @return PageInfo
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2018/8/26 23:17
      */
     @GetMapping("menuList")
@@ -190,7 +190,7 @@ public class MenuController extends BaseController {
      * @param role       角色标识
      * @param tenantCode 租户标识
      * @return ResponseBean
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2018/8/27 15:58
      */
     @GetMapping("findMenuByRole/{role}")
@@ -205,7 +205,7 @@ public class MenuController extends BaseController {
      *
      * @param tenantCode 租户标识
      * @return ResponseBean
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2019/04/26 11:50
      */
     @GetMapping("findAllMenu")
@@ -239,7 +239,7 @@ public class MenuController extends BaseController {
      * 导出菜单
      *
      * @param ids ids
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2018/11/28 12:46
      */
     @PostMapping("export")
@@ -276,7 +276,7 @@ public class MenuController extends BaseController {
      *
      * @param file file
      * @return ResponseBean
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2018/11/28 12:51
      */
     @PostMapping("import")

@@ -1,12 +1,12 @@
 package com.github.cooingandwooing.user.service;
 
-import com.github.tangyi.common.core.constant.CommonConstant;
-import com.github.tangyi.common.core.service.CrudService;
-import com.github.tangyi.common.core.utils.SysUtil;
-import com.github.tangyi.common.security.constant.SecurityConstant;
-import com.github.tangyi.user.api.constant.TenantConstant;
-import com.github.tangyi.user.api.enums.IdentityType;
-import com.github.tangyi.user.api.module.*;
+import com.github.cooingandwooing.common.core.constant.CommonConstant;
+import com.github.cooingandwooing.common.core.service.CrudService;
+import com.github.cooingandwooing.common.core.utils.SysUtil;
+import com.github.cooingandwooing.common.security.constant.SecurityConstant;
+import com.github.cooingandwooing.user.api.constant.TenantConstant;
+import com.github.cooingandwooing.user.api.enums.IdentityType;
+import com.github.cooingandwooing.user.api.module.*;
 import com.github.cooingandwooing.user.mapper.TenantMapper;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -18,7 +18,7 @@ import org.springframework.transaction.annotation.Transactional;
 /**
  * 租户Service
  *
- * @author tangyi
+ * @author cooingandwooing
  * @date 2019/5/22 22:51
  */
 @Slf4j
@@ -41,7 +41,7 @@ public class TenantService extends CrudService<TenantMapper, Tenant> {
      *
      * @param tenantCode tenantCode
      * @return Tenant
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2019/05/26 10:28
      */
     @Cacheable(value = "tenant#" + CommonConstant.CACHE_EXPIRE, key = "#tenantCode")
@@ -54,7 +54,7 @@ public class TenantService extends CrudService<TenantMapper, Tenant> {
      *
      * @param tenant tenant
      * @return int
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2019-09-02 11:41
      */
     @Transactional
@@ -68,7 +68,7 @@ public class TenantService extends CrudService<TenantMapper, Tenant> {
      *
      * @param tenant tenant
      * @return Tenant
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2019/05/26 10:28
      */
     @Transactional
@@ -112,7 +112,7 @@ public class TenantService extends CrudService<TenantMapper, Tenant> {
      *
      * @param tenant tenant
      * @return Tenant
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2019/05/26 10:28
      */
     @Transactional
@@ -134,7 +134,7 @@ public class TenantService extends CrudService<TenantMapper, Tenant> {
      *
      * @param ids ids
      * @return Tenant
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2019/05/26 10:37
      */
     @Transactional

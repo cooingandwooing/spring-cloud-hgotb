@@ -6,7 +6,7 @@ import lombok.Data;
 /**
  * OAuth2客户端信息
  *
- * @author tangyi
+ * @author gaoxiaofeng
  * @date 2019/3/30 16:35
  */
 @Data

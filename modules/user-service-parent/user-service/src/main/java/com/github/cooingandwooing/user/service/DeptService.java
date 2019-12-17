@@ -12,7 +12,7 @@ import java.util.List;
 /**
  * 部门service
  *
- * @author tangyi
+ * @author cooingandwooing
  * @date 2018/8/26 22:46
  */
 @Service
@@ -36,7 +36,7 @@ public class DeptService extends CrudService<DeptMapper, Dept> {
      *
      * @param userList userList
      * @return List
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2019/07/03 22:06:50
      */
     public List<Dept> getListByUsers(List<User> userList) {

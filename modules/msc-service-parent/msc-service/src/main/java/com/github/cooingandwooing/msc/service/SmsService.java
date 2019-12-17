@@ -16,7 +16,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 /**
- * @author tangyi
+ * @author cooingandwooing
  * @date 2019/6/22 13:23
  */
 @Slf4j
@@ -31,7 +31,7 @@ public class SmsService {
      *
      * @param smsDto smsDto
      * @return SmsResponse
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2019/06/22 13:28
      */
     public SmsResponse sendSms(SmsDto smsDto) {

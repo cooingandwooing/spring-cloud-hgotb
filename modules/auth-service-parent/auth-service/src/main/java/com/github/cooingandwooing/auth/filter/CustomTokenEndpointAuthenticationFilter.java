@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  *
  * 登录成功后的处理，如记录登录日志
- * 没有放入过滤器链中 没有启用
+ * 没有放入过滤器链中 没有启用 @see 	CustomAuthorizationServerConfigurer	//.addTokenEndpointAuthenticationFilter(new CustomTokenEndpointAuthenticationFilter(authenticationManager, oAuth2RequestFactory, userServiceClient)); //登录成功后的处理，如记录登录日志 通过调用security. .addTokenEndpointAuthenticationFilter(integrationAuthenticationFilter);方法，将拦截器放入到认证链条中
  * @author gaoxiaofeng
  * @date 2019-10-11 12:08
  */

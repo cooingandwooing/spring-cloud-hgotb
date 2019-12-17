@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 /**
  * 消息中心服务
  *
- * @author tangyi
+ * @author cooingandwooing
  * @date 2019/07/02 16:04
  */
 @FeignClient(value = ServiceConstant.MSC_SERVICE, configuration = CustomFeignConfig.class, fallbackFactory = MscServiceClientFallbackFactory.class)
@@ -23,7 +23,7 @@ public interface MscServiceClient {
      *
      * @param smsDto smsDto
      * @return ResponseBean
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2019/07/02 16:07:27
      */
     @PostMapping("/v1/sms/sendSms")

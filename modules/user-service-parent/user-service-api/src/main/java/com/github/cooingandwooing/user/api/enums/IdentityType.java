@@ -3,7 +3,7 @@ package com.github.cooingandwooing.user.api.enums;
 /**
  * 用户授权类型
  *
- * @author tangyi
+ * @author cooingandwooing
  * @date 2019/07/03 13:35
  */
 public enum IdentityType {

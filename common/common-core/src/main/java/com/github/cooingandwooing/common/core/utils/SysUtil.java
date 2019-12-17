@@ -38,7 +38,7 @@ public class SysUtil {
      * 获取当前登录的用户名
      *
      * @return String
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2019/03/17 11:46
      */
     public static String getUser() {
@@ -113,7 +113,7 @@ public class SysUtil {
      * @param data data
      * @param pass pass
      * @return String
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2019/03/18 11:39
      */
     public static String decryptAES(String data, String pass) throws Exception {

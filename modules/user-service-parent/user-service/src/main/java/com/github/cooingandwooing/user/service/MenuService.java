@@ -1,18 +1,18 @@
 package com.github.cooingandwooing.user.service;
 
 import cn.hutool.core.collection.CollUtil;
-import com.github.tangyi.common.core.constant.CommonConstant;
-import com.github.tangyi.common.core.properties.SysProperties;
-import com.github.tangyi.common.core.service.CrudService;
-import com.github.tangyi.common.core.utils.SysUtil;
-import com.github.tangyi.common.core.utils.TreeUtil;
-import com.github.tangyi.common.security.constant.SecurityConstant;
-import com.github.tangyi.common.security.utils.SecurityUtil;
-import com.github.tangyi.user.api.constant.MenuConstant;
-import com.github.tangyi.user.api.dto.MenuDto;
-import com.github.tangyi.user.api.module.Menu;
-import com.github.tangyi.user.api.module.Role;
-import com.github.tangyi.user.api.module.RoleMenu;
+import com.github.cooingandwooing.common.core.constant.CommonConstant;
+import com.github.cooingandwooing.common.core.properties.SysProperties;
+import com.github.cooingandwooing.common.core.service.CrudService;
+import com.github.cooingandwooing.common.core.utils.SysUtil;
+import com.github.cooingandwooing.common.core.utils.TreeUtil;
+import com.github.cooingandwooing.common.security.constant.SecurityConstant;
+import com.github.cooingandwooing.common.security.utils.SecurityUtil;
+import com.github.cooingandwooing.user.api.constant.MenuConstant;
+import com.github.cooingandwooing.user.api.dto.MenuDto;
+import com.github.cooingandwooing.user.api.module.Menu;
+import com.github.cooingandwooing.user.api.module.Role;
+import com.github.cooingandwooing.user.api.module.RoleMenu;
 import com.github.cooingandwooing.user.mapper.MenuMapper;
 import com.google.common.collect.Lists;
 import lombok.AllArgsConstructor;
@@ -31,7 +31,7 @@ import java.util.stream.Collectors;
 /**
  * 菜单service
  *
- * @author tangyi
+ * @author cooingandwooing
  * @date 2018/8/26 22:45
  */
 @AllArgsConstructor
@@ -48,7 +48,7 @@ public class MenuService extends CrudService<MenuMapper, Menu> {
      * 返回当前用户的树形菜单集合
      *
      * @return List
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2019-09-14 14:41
      */
     public List<MenuDto> findUserMenu() {
@@ -110,7 +110,7 @@ public class MenuService extends CrudService<MenuMapper, Menu> {
      * @param role       角色标识
      * @param tenantCode 租户标识
      * @return List
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2018/8/27 16:00
      */
     @Cacheable(value = "menu#" + CommonConstant.CACHE_EXPIRE, key = "#role")
@@ -131,7 +131,7 @@ public class MenuService extends CrudService<MenuMapper, Menu> {
      * @param roleList   roleList
      * @param tenantCode tenantCode
      * @return List
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2019/07/03 23:50:35
      */
     private List<Menu> finMenuByRoleList(List<Role> roleList, String tenantCode) {
@@ -149,7 +149,7 @@ public class MenuService extends CrudService<MenuMapper, Menu> {
      *
      * @param menu menu
      * @return List
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2019/04/10 17:58
      */
     @Override
@@ -172,7 +172,7 @@ public class MenuService extends CrudService<MenuMapper, Menu> {
      *
      * @param menu menu
      * @return int
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2018/10/28 15:56
      */
     @Transactional
@@ -187,7 +187,7 @@ public class MenuService extends CrudService<MenuMapper, Menu> {
      *
      * @param menu menu
      * @return int
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2018/10/30 20:19
      */
     @Transactional
@@ -241,7 +241,7 @@ public class MenuService extends CrudService<MenuMapper, Menu> {
      *
      * @param menu menu
      * @return int
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2018/8/27 16:22
      */
     @Override
@@ -264,7 +264,7 @@ public class MenuService extends CrudService<MenuMapper, Menu> {
      *
      * @param menus menus
      * @return int
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2019-09-03 12:19
      */
     @Transactional
@@ -278,7 +278,7 @@ public class MenuService extends CrudService<MenuMapper, Menu> {
      * @param defaultMenus defaultMenus
      * @param tenantMenus  tenantMenus
      * @return List
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2019-09-14 14:45
      */
     private List<Menu> mergeMenu(List<Menu> defaultMenus, List<Menu> tenantMenus) {
@@ -315,7 +315,7 @@ public class MenuService extends CrudService<MenuMapper, Menu> {
      * @param sysCode         sysCode
      * @param tenantCode      tenantCode
      * @return
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2019-09-14 15:57
      */
     @Transactional

@@ -1,6 +1,6 @@
 package com.github.cooingandwooing.user.api.module;
 
-import com.github.tangyi.common.core.persistence.BaseEntity;
+import com.github.cooingandwooing.common.core.persistence.BaseEntity;
 import lombok.Data;
 
 import java.util.Date;
@@ -8,7 +8,7 @@ import java.util.Date;
 /**
  * 学生
  *
- * @author tangyi
+ * @author cooingandwooing
  * @date 2019/07/09 15:08
  */
 @Data

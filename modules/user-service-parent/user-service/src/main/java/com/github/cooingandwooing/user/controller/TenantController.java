@@ -1,14 +1,14 @@
 package com.github.cooingandwooing.user.controller;
 
 import com.github.pagehelper.PageInfo;
-import com.github.tangyi.common.core.constant.CommonConstant;
-import com.github.tangyi.common.core.model.ResponseBean;
-import com.github.tangyi.common.core.utils.PageUtil;
-import com.github.tangyi.common.core.utils.SysUtil;
-import com.github.tangyi.common.core.web.BaseController;
-import com.github.tangyi.common.log.annotation.Log;
-import com.github.tangyi.user.api.constant.TenantConstant;
-import com.github.tangyi.user.api.module.Tenant;
+import com.github.cooingandwooing.common.core.constant.CommonConstant;
+import com.github.cooingandwooing.common.core.model.ResponseBean;
+import com.github.cooingandwooing.common.core.utils.PageUtil;
+import com.github.cooingandwooing.common.core.utils.SysUtil;
+import com.github.cooingandwooing.common.core.web.BaseController;
+import com.github.cooingandwooing.common.log.annotation.Log;
+import com.github.cooingandwooing.user.api.constant.TenantConstant;
+import com.github.cooingandwooing.user.api.module.Tenant;
 import com.github.cooingandwooing.user.service.TenantService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
@@ -26,7 +26,7 @@ import java.util.Optional;
 /**
  * 租户管理Controller
  *
- * @author tangyi
+ * @author cooingandwooing
  * @date 2019/5/22 22:52
  */
 @Slf4j
@@ -43,7 +43,7 @@ public class TenantController extends BaseController {
      *
      * @param id id
      * @return ResponseBean
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2019/05/22 22:53
      */
     @ApiOperation(value = "获取租户信息", notes = "根据租户id获取租户详细信息")
@@ -60,7 +60,7 @@ public class TenantController extends BaseController {
      *
      * @param tenantCode tenantCode
      * @return ResponseBean
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2019/05/26 10:23
      */
     @GetMapping("findTenantByTenantCode/{tenantCode}")
@@ -77,7 +77,7 @@ public class TenantController extends BaseController {
      * @param order    order
      * @param tenant   tenant
      * @return PageInfo
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2019/05/22 23:29
      */
     @GetMapping("tenantList")
@@ -102,7 +102,7 @@ public class TenantController extends BaseController {
      *
      * @param tenant tenant
      * @return ResponseBean
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2019/05/22 23:32
      */
     @PostMapping
@@ -122,7 +122,7 @@ public class TenantController extends BaseController {
      *
      * @param tenant tenant
      * @return ResponseBean
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2019/05/22 23:33
      */
     @PutMapping
@@ -143,7 +143,7 @@ public class TenantController extends BaseController {
      *
      * @param id id
      * @return ResponseBean
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2019/05/22 23:35
      */
     @DeleteMapping("/{id}")
@@ -168,7 +168,7 @@ public class TenantController extends BaseController {
      *
      * @param ids ids
      * @return ResponseBean
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2019/05/22 23:37
      */
     @PostMapping("deleteAll")
@@ -191,7 +191,7 @@ public class TenantController extends BaseController {
      *
      * @param ids ids
      * @return ResponseBean
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2019/05/22 23:38
      */
     @RequestMapping(value = "findById", method = RequestMethod.POST)

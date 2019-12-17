@@ -6,7 +6,7 @@ import lombok.Data;
 /**
  * 封装短信服务返回的结果
  *
- * @author tangyi
+ * @author cooingandwooing
  * @date 2019/08/04 13:51
  */
 @Data

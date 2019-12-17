@@ -1,12 +1,12 @@
 package com.github.cooingandwooing.user.api.module;
 
-import com.github.tangyi.common.core.persistence.BaseEntity;
+import com.github.cooingandwooing.common.core.persistence.BaseEntity;
 import lombok.Data;
 
 /**
  * 用户学生关联关系，一个用户可以绑定多个学生
  *
- * @author tangyi
+ * @author cooingandwooing
  * @date 2019/07/09 15:23
  */
 @Data

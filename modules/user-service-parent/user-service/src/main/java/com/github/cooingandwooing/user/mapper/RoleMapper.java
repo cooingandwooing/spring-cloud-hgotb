@@ -1,13 +1,13 @@
 package com.github.cooingandwooing.user.mapper;
 
-import com.github.tangyi.common.core.persistence.CrudMapper;
-import com.github.tangyi.user.api.module.Role;
+import com.github.cooingandwooing.common.core.persistence.CrudMapper;
+import com.github.cooingandwooing.user.api.module.Role;
 import org.apache.ibatis.annotations.Mapper;
 
 /**
  * 角色mapper
  *
- * @author tangyi
+ * @author cooingandwooing
  * @date 2018/8/26 09:33
  */
 @Mapper
@@ -18,7 +18,7 @@ public interface RoleMapper extends CrudMapper<Role> {
      *
      * @param role role
      * @return Role
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2019/09/21 12:08:29
      */
     Role findByRoleCode(Role role);

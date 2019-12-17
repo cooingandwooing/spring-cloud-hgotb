@@ -2,13 +2,13 @@ package com.github.cooingandwooing.user.api.dto;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.github.cooingandwooing.user.api.module.Menu;
-import com.github.tangyi.common.core.persistence.TreeEntity;
+import com.github.cooingandwooing.common.core.persistence.TreeEntity;
 import lombok.Data;
 
 /**
  * 菜单dto
  *
- * @author tangyi
+ * @author cooingandwooing
  * @date 2018-09-13 20:39
  */
 @Data

@@ -1,6 +1,6 @@
 package com.github.cooingandwooing.user.controller;
 
-import com.github.tangyi.common.core.web.BaseController;
+import com.github.cooingandwooing.common.core.web.BaseController;
 import com.github.cooingandwooing.user.service.UserService;
 import com.google.code.kaptcha.Producer;
 import io.swagger.annotations.Api;
@@ -22,7 +22,7 @@ import java.awt.image.BufferedImage;
 /**
  * 验证码
  *
- * @author tangyi
+ * @author cooingandwooing
  * @date 2018-09-14-19:24
  */
 @AllArgsConstructor
@@ -39,7 +39,7 @@ public class ValidateCodeController extends BaseController {
      * 生成验证码
      *
      * @param random random
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2018/9/14 20:13
      */
     @ApiOperation(value = "生成验证码", notes = "生成验证码")

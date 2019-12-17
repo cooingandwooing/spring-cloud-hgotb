@@ -1,13 +1,13 @@
 package com.github.cooingandwooing.user.mapper;
 
-import com.github.tangyi.common.core.persistence.CrudMapper;
-import com.github.tangyi.user.api.module.UserRole;
+import com.github.cooingandwooing.common.core.persistence.CrudMapper;
+import com.github.cooingandwooing.user.api.module.UserRole;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
 
 /**
- * @author tangyi
+ * @author cooingandwooing
  * @date 2018/8/26 14:53
  */
 @Mapper
@@ -51,7 +51,7 @@ public interface UserRoleMapper extends CrudMapper<UserRole> {
      *
      * @param userRoles userRoles
      * @return int
-     * @author tangyi
+     * @author cooingandwooing
      * @date 2019-09-03 13:14
      */
     int insertBatch(List<UserRole> userRoles);

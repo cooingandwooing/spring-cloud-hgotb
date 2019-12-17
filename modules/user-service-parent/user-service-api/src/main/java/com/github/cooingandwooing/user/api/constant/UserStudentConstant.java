@@ -3,7 +3,7 @@ package com.github.cooingandwooing.user.api.constant;
 /**
  * 用户学生常量
  *
- * @author tangyi
+ * @author cooingandwooing
  * @date 2019-07-25 13:08
  */
 public class UserStudentConstant {

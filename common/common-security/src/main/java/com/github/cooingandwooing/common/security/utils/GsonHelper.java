@@ -25,7 +25,7 @@ public class GsonHelper {
     /**
      * 获取单例
      *
-     * @author tangyi
+     * @author gaoxiaofeng
      * @date 2017/11/23 18:10
      */
     public static GsonHelper getInstance() {
