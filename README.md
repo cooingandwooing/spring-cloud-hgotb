@@ -24,7 +24,7 @@
 - 分布式配置中心：`Spring Cloud Config`
 - 分布式调用链监控：`Spring Cloud Sleuth` + `Zipkin`
 - 数据库：`MySQL 5.7`
-- 部署：`Docker` + `docker-compose`
+- 部署：`Docker` + `k8s`
 - 构建工具：`Maven`
 - 后台 API 文档：`Swagger`
 - 消息队列：`RabbitMQ`
