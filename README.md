@@ -6,21 +6,11 @@
 
 - 前端采用`vue2.0`，通过`jwt`和后端交互
 
-- 后端基于`spring boot`、`spring cloud`、`MySQL`等技术实现权限管理、考试管理等功能。
+- 后端基于`spring boot`、`spring cloud`、`MySQL`等技术实现权限管理、信息管理等功能。
 
 # 2 在线体验
+- 暂无
 
-- 前台：[http://it99.club](http://it99.club)
-
-- 后台：[http://it99.club:81](http://it99.club:81)
-
-默认账号：
-
-单位ID：gitee
-
-1. 管理员：admin/123456
-2. 学生：student/123456
-3. 教师：teacher/123456
 
 # 3 技术选型
 
