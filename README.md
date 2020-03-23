@@ -55,11 +55,13 @@
 
 # 6 功能概述
 
-项目分前台网站和后台管理两部分，前台主要提供考试功能，后台提供基础管理、考试管理功能。
+项目分前台网站和后台管理两部分，前台主要提供展示功能，后台提供基础管理、通用信息系统后台功能。
 
-前台主要提供在线考试、在线学习功能
+前台主要提供信息系统展示功能
 
-后台管理分为：系统管理、系统监控、考务管理、附件管理、个人管理
+后台管理分为：系统管理、系统监控、附件管理、个人管理
+
+预计包含自动生成前后端代码功能。
 
 系统管理：提供用户、部门、角色、权限等基础管理
 - 用户管理：用户信息增删改查、导入导出
@@ -76,68 +78,10 @@
 - 服务监控：`spring boot admin`服务监控
 - 接口文档：`swagger api`文档
 
-考务管理：提供课程、考试、题库、成绩等管理
-- 课程管理：课程信息增删改查
-- 考试管理：考试信息增删改查、题目管理、发布回收，题目管理支持简单文本、富文本输入、从题库添加等
-- 题库管理：题目分类增删改查、题目信息增删改查
-- 成绩管理：查看成绩、导出成绩
-- 知识库：知识库增删改查、上传附件
 
 附件管理：项目的所有附件存储在`fastDfs`里，提供统一的管理入口
-- 附件列表：管理所有附件，如用户头像、考试附件、知识库附件等。
+- 附件列表：管理所有附件，如用户头像、文件附件等。
 
 个人管理：管理个人资料和修改密码
 - 个人资料：姓名、头像等基本信息的修改
 - 修改密码：修改密码
-
-# 7 功能演示
-
-## 7.1 前台功能
-
-1. 考试
-![image](docs/images/image_web_exam.png)
-
-2. 查看错题
-![image](docs/images/image_web_incorrect_answer.png)
-
-## 7.2 后台功能
-
-1. 总体功能
-![image](docs/images/image_ui_menu.png)
-
-2. 考试管理
-![image](docs/images/image_ui_exam.png)
-
-3. 题目管理
-![image](docs/images/image_ui_subjects_rich_edit.png)
-
-4. 个人资料
-![image](docs/images/image_ui_msg.png)
-
-# 8 问题反馈
-
-欢迎提交 issue，请写清楚遇到问题的原因、浏览器、操作系统环境、重现的流程和报错日志等。 
-
-如果有开发能力，建议在本地调试出出错的代码。
-
-# 9 参考资料
-
-- [在线考试系统-部署文档](https://www.kancloud.cn/tangyi/spring-microservice-exam/1322870)
-
-- [在线考试系统-部署文档(docker版)](https://www.kancloud.cn/tangyi/spring-microservice-exam/1322869)
-
-- [在线考试系统-数据库设计](https://www.kancloud.cn/tangyi/spring-microservice-exam/1322868)
-
-- [微服务架构下的安全设计方案](http://ehedgehog.net/2019/03/23/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%84%E4%B8%8B%E7%9A%84%E5%AE%89%E5%85%A8%E8%AE%BE%E8%AE%A1%E6%96%B9%E6%A1%88/)
-
-- [在线考试系统V3.0镜像构建、推送、部署](http://ehedgehog.net/2019/04/22/%E5%9C%A8%E7%BA%BF%E8%80%83%E8%AF%95%E7%B3%BB%E7%BB%9FV2.0%E9%95%9C%E5%83%8F%E6%9E%84%E5%BB%BA%E3%80%81%E6%8E%A8%E9%80%81%E3%80%81%E9%83%A8%E7%BD%B2/)
-
-***
-
-# 10 关于
-
-交流QQ群：<a target="_blank" href="https://jq.qq.com/?_wv=1027&k=5RKZNF2"><img border="0" src="http://pub.idqqimg.com/wpa/images/group.png" alt="Spring Cloud考试系统学习" title="Spring Cloud考试系统学习"></a>
-
-QQ群号：996208878
-
-如果您觉得有帮助，请点右上角 "Star" 或者项目底部的“捐助”支持一下，谢谢！
