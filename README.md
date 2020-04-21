@@ -39,7 +39,7 @@
 - 后台 API 文档：`Swagger`
 - 消息队列：`RabbitMQ`
 - 文件系统：`FastDFS`
-- 缓存：`Redis`
+- 缓存：`Redis` @see RedisConfig and MultitenantCacheManager CustomRedisCacheWriter 配置中没有开启集群
 - 前端：`vue`
 
 # 4 核心依赖
