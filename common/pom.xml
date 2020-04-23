@@ -19,6 +19,5 @@
         <module>common-feign</module>
         <module>common-log</module>
         <module>common-config</module>
-        <module>common-core</module>
     </modules>
 </project>
