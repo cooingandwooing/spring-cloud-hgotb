@@ -34,13 +34,13 @@
 
     <build>
         <plugins>
-<!--            <plugin>
+            <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
                     <finalName>${project.name}</finalName>
                 </configuration>
-            </plugin>-->
+            </plugin>
             <!-- 打包时跳过test插件，不运行test测试用例 -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -52,12 +52,12 @@
             </plugin>
 
             <!-- docker的maven插件 -->
-<!--            <plugin>
+            <plugin>
                 <groupId>com.spotify</groupId>
                 <artifactId>dockerfile-maven-plugin</artifactId>
                 <version>${docker.maven.verion}</version>
                 <executions>
-                    &lt;!&ndash;执行 mvn package 时 自动构建docker镜像并推送到仓库 &ndash;&gt;
+                    <!--执行 mvn package 时 自动构建docker镜像并推送到仓库 -->
                     <execution>
                         <id>default</id>
                         <phase>package</phase>
@@ -70,12 +70,12 @@
                 <configuration>
                     <repository>${docker.registry}/${docker.namespace}/${project.artifactId}</repository>
                     <tag>latest</tag>
-                    &lt;!&ndash; 构建参数，指定jar包名称 &ndash;&gt;
+                    <!-- 构建参数，指定jar包名称 -->
                     <buildArgs>
                         <JAR_FILE>${project.name}.jar</JAR_FILE>
                     </buildArgs>
                 </configuration>
-            </plugin>-->
+            </plugin>
         </plugins>
     </build>
 
