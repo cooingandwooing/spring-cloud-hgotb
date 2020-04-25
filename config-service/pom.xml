@@ -53,6 +53,7 @@
 
             <!-- docker的maven插件 -->
             <plugin>
+                <!--三个坐标定位dockerfile插件-->
                 <groupId>com.spotify</groupId>
                 <artifactId>dockerfile-maven-plugin</artifactId>
                 <version>${docker.maven.verion}</version>
@@ -68,9 +69,11 @@
                     </execution>
                 </executions>
                 <configuration>
+                    <!--这里指定打包镜像的名称-->
                     <repository>${docker.registry}/${docker.namespace}/${project.artifactId}</repository>
                     <tag>latest</tag>
                     <!-- 构建参数，指定jar包名称 -->
+                    <!-- 这里是复制 jar 包到 docker 容器指定目录配置 -->
                     <buildArgs>
                         <JAR_FILE>${project.name}.jar</JAR_FILE>
                     </buildArgs>

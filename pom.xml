@@ -77,10 +77,11 @@
         <!-- 当前版本3.5.10.B -->
         <weixin.version>3.4.0</weixin.version>
 
-        <!-- docker -->
+        <!-- docker 打包使用的参数-->
         <docker.maven.verion>1.4.3</docker.maven.verion>
         <docker.registry>registry.cn-hangzhou.aliyuncs.com</docker.registry>
         <docker.namespace>spring-cloud-hgotb</docker.namespace>
+
         <scanner.maven.version>3.3.0.603</scanner.maven.version>
 
         <!-- logstash -->
