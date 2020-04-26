@@ -70,8 +70,12 @@
                 </executions>
                 <configuration>
                     <!--这里指定打包镜像的名称-->
+                    <!--使用用户名和密码  可以在命令行写 哈哈 mvn goal -Ddockerfile.username=... -Ddockerfile.password=...-->
+                    <!-- <username>repoUserName</username>
+                     <password>repoPassword</password>
+                     -->
                     <repository>${docker.registry}/${docker.namespace}/${project.artifactId}</repository>
-                    <tag>latest</tag>
+                    <tag>${project.version}</tag>
                     <!-- 构建参数，指定jar包名称 -->
                     <!-- 这里是复制 jar 包到 docker 容器指定目录配置 -->
                     <buildArgs>
