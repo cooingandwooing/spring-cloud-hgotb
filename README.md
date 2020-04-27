@@ -1,5 +1,4 @@
-# 1 简介
-
+# 1 简介(主分支向spring-cloud-kubernetes发展)
 - 重写[spring-cloud-online-exam](https://gitee.com/wells2333/spring-cloud-online-exam)
 
 - 采用前后端分离技术
