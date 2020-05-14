@@ -6,7 +6,7 @@
 
     <groupId>com.github.cooingandwooing</groupId>
     <artifactId>spring-cloud-hgotb</artifactId>
-    <version>${revision}</version>
+    <version>0.0.1</version>
 
     <packaging>pom</packaging>
     <name>spring-cloud-hgotb</name>
@@ -196,56 +196,56 @@
             <dependency>
                 <groupId>com.github.cooingandwooing</groupId>
                 <artifactId>common-core</artifactId>
-                <version>${revision}</version>
+                <version>0.0.1</version>
             </dependency>
 
             <!-- common-config -->
             <dependency>
                 <groupId>com.github.cooingandwooing</groupId>
                 <artifactId>common-config</artifactId>
-                <version>${revision}</version>
+                <version>0.0.1</version>
             </dependency>
 
             <!-- common-security -->
             <dependency>
                 <groupId>com.github.cooingandwooing</groupId>
                 <artifactId>common-security</artifactId>
-                <version>${revision}</version>
+                <version>0.0.1</version>
             </dependency>
 
             <!-- common-feign -->
             <dependency>
                 <groupId>com.github.cooingandwooing</groupId>
                 <artifactId>common-feign</artifactId>
-                <version>${revision}</version>
+                <version>0.0.1</version>
             </dependency>
 
             <!-- common-log -->
             <dependency>
                 <groupId>com.github.cooingandwooing</groupId>
                 <artifactId>common-log</artifactId>
-                <version>${revision}</version>
+                <version>0.0.1</version>
             </dependency>
 
             <!-- user-service-api -->
             <dependency>
                 <groupId>com.github.cooingandwooing</groupId>
                 <artifactId>user-service-api</artifactId>
-                <version>${revision}</version>
+                <version>0.0.1</version>
             </dependency>
 
             <!-- auth-service-api -->
             <dependency>
                 <groupId>com.github.cooingandwooing</groupId>
                 <artifactId>auth-service-api</artifactId>
-                <version>${revision}</version>
+                <version>0.0.1</version>
             </dependency>
 
             <!-- msc-service-api -->
             <dependency>
                 <groupId>com.github.cooingandwooing</groupId>
                 <artifactId>msc-service-api</artifactId>
-                <version>${revision}</version>
+                <version>0.0.1</version>
             </dependency>
             <!-- ??????  -->
             <dependency>

@@ -6,7 +6,7 @@
     <parent>
         <groupId>com.github.cooingandwooing</groupId>
         <artifactId>msc-service-parent</artifactId>
-        <version>${revision}</version>
+        <version>0.0.1</version>
     </parent>
     <artifactId>msc-service</artifactId>
     <name>${project.artifactId}</name>
