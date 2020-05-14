@@ -7,7 +7,7 @@
     <parent>
         <artifactId>common</artifactId>
         <groupId>com.github.cooingandwooing</groupId>
-        <version>${revision}</version>
+        <version>0.0.2</version>
     </parent>
     <artifactId>common-config</artifactId>
     <name>${project.artifactId}</name>

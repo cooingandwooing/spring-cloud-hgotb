@@ -7,7 +7,7 @@
     <groupId>com.github.cooingandwooing</groupId>
     <artifactId>spring-cloud-hgotb</artifactId>
     <!--在 Maven 中，任何一个项目和构件都必须有自己的版本。版本的值可能是 1.0.0、1.0-alpha-4、1.3-SNAPSHOT 等，其中 1.0.0、1.0-alpha-4 是稳定的发布版本，而 1.3-SNAPSHOT 为不稳定的快照版本。-->
-    <version>${revision}</version>
+    <version>0.0.2</version>
 
     <packaging>pom</packaging>
     <name>spring-cloud-hgotb</name>
@@ -216,56 +216,56 @@
             <dependency>
                 <groupId>com.github.cooingandwooing</groupId>
                 <artifactId>common-core</artifactId>
-                <version>${revision}</version>
+                <version>0.0.2</version>
             </dependency>
 
             <!-- common-config -->
             <dependency>
                 <groupId>com.github.cooingandwooing</groupId>
                 <artifactId>common-config</artifactId>
-                <version>${revision}</version>
+                <version>0.0.2</version>
             </dependency>
 
             <!-- common-security -->
             <dependency>
                 <groupId>com.github.cooingandwooing</groupId>
                 <artifactId>common-security</artifactId>
-                <version>${revision}</version>
+                <version>0.0.2</version>
             </dependency>
 
             <!-- common-feign -->
             <dependency>
                 <groupId>com.github.cooingandwooing</groupId>
                 <artifactId>common-feign</artifactId>
-                <version>${revision}</version>
+                <version>0.0.2</version>
             </dependency>
 
             <!-- common-log -->
             <dependency>
                 <groupId>com.github.cooingandwooing</groupId>
                 <artifactId>common-log</artifactId>
-                <version>${revision}</version>
+                <version>0.0.2</version>
             </dependency>
 
             <!-- user-service-api -->
             <dependency>
                 <groupId>com.github.cooingandwooing</groupId>
                 <artifactId>user-service-api</artifactId>
-                <version>${revision}</version>
+                <version>0.0.2</version>
             </dependency>
 
             <!-- auth-service-api -->
             <dependency>
                 <groupId>com.github.cooingandwooing</groupId>
                 <artifactId>auth-service-api</artifactId>
-                <version>${revision}</version>
+                <version>0.0.2</version>
             </dependency>
 
             <!-- msc-service-api -->
             <dependency>
                 <groupId>com.github.cooingandwooing</groupId>
                 <artifactId>msc-service-api</artifactId>
-                <version>${revision}</version>
+                <version>0.0.2</version>
             </dependency>
             <!-- 管理中心插件  -->
             <dependency>
