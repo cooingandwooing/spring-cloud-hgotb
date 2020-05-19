@@ -1,15 +1,30 @@
+/*
+ * Copyright 2013-2019 the original author or authors.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 package com.github.cooingandwooing.common.core.utils;
+
+import java.io.IOException;
 
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.JavaType;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.StringUtils;
-
-import java.io.IOException;
-
 /**
- * JsonMapper
+ * JsonMapper.
  *
  * @author gaoxiaofeng
  * @date 2018-08-23 12:03
@@ -17,76 +32,79 @@ import java.io.IOException;
 @Slf4j
 public class JsonMapper extends ObjectMapper {
 
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-    private static JsonMapper mapper;
+	private static JsonMapper mapper;
 
-    public static JsonMapper getInstance() {
-        if (mapper == null) {
-            mapper = new JsonMapper().enableSimple();
-        }
-        return mapper;
-    }
+	public static JsonMapper getInstance() {
+		if (mapper == null) {
+			mapper = new JsonMapper().enableSimple();
+		}
+		return mapper;
+	}
 
-    public String toJson(Object object) {
-        try {
-            return this.writeValueAsString(object);
-        } catch (IOException e) {
-            log.warn("将解析JSON为字符串失败:" + object, e);
-            return null;
-        }
-    }
+	public String toJson(Object object) {
+		try {
+			return this.writeValueAsString(object);
+		}
+		catch (IOException e) {
+			log.warn("将解析JSON为字符串失败:" + object, e);
+			return null;
+		}
+	}
 
-    public <T> T fromJson(String jsonString, Class<T> clazz) {
-        if (StringUtils.isEmpty(jsonString)) {
-            return null;
-        }
-        try {
-            return this.readValue(jsonString, clazz);
-        } catch (IOException e) {
-            log.warn("将解析JSON为对象失败:" + jsonString, e);
-            return null;
-        }
-    }
+	public <T> T fromJson(String jsonString, Class<T> clazz) {
+		if (StringUtils.isEmpty(jsonString)) {
+			return null;
+		}
+		try {
+			return this.readValue(jsonString, clazz);
+		}
+		catch (IOException e) {
+			log.warn("将解析JSON为对象失败:" + jsonString, e);
+			return null;
+		}
+	}
 
-    public <T> T fromJson(String jsonString, JavaType javaType) {
-        if (StringUtils.isEmpty(jsonString)) {
-            return null;
-        }
-        try {
-            return (T) this.readValue(jsonString, javaType);
-        } catch (IOException e) {
-            log.warn("将解析JSON为对象失败:" + jsonString, e);
-            return null;
-        }
-    }
+	public <T> T fromJson(String jsonString, JavaType javaType) {
+		if (StringUtils.isEmpty(jsonString)) {
+			return null;
+		}
+		try {
+			return (T) this.readValue(jsonString, javaType);
+		}
+		catch (IOException e) {
+			log.warn("将解析JSON为对象失败:" + jsonString, e);
+			return null;
+		}
+	}
 
-    public static Object fromJsonObject(String jsonString, JavaType javaType) {
-        return JsonMapper.getInstance().fromJson(jsonString, javaType);
-    }
-
-
-    public JavaType createCollectionType(Class<?> collectionClass, Class<?>... elementClasses) {
-        return this.getTypeFactory().constructParametricType(collectionClass, elementClasses);
-    }
-
-    public JsonMapper enableSimple() {
-        this.configure(JsonParser.Feature.ALLOW_SINGLE_QUOTES, true);
-        this.configure(JsonParser.Feature.ALLOW_UNQUOTED_FIELD_NAMES, true);
-        return this;
-    }
-
-    public ObjectMapper getMapper() {
-        return this;
-    }
+	public static Object fromJsonObject(String jsonString, JavaType javaType) {
+		return JsonMapper.getInstance().fromJson(jsonString, javaType);
+	}
 
 
-    public static String toJsonString(Object object) {
-        return JsonMapper.getInstance().toJson(object);
-    }
+	public JavaType createCollectionType(Class<?> collectionClass, Class<?>... elementClasses) {
+		return this.getTypeFactory().constructParametricType(collectionClass, elementClasses);
+	}
 
-    public static Object fromJsonString(String jsonString, Class<?> clazz) {
-        return JsonMapper.getInstance().fromJson(jsonString, clazz);
-    }
+	public JsonMapper enableSimple() {
+		this.configure(JsonParser.Feature.ALLOW_SINGLE_QUOTES, true);
+		this.configure(JsonParser.Feature.ALLOW_UNQUOTED_FIELD_NAMES, true);
+		return this;
+	}
+
+	public ObjectMapper getMapper() {
+		return this;
+	}
+
+
+	public static String toJsonString(Object object) {
+		return JsonMapper.getInstance().toJson(object);
+	}
+
+	public static Object fromJsonString(String jsonString, Class<?> clazz) {
+		return JsonMapper.getInstance().fromJson(jsonString, clazz);
+	}
 
 }
