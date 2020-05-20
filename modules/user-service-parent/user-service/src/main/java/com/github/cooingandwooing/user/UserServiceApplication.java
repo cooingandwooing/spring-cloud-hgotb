@@ -17,6 +17,7 @@
 package com.github.cooingandwooing.user;
 
 import com.github.cooingandwooing.common.core.constant.CommonConstant;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
@@ -34,8 +35,8 @@ import org.springframework.security.config.annotation.method.configuration.Enabl
 @EnableAsync
 public class UserServiceApplication {
 
-    public static void main(String[] args) {
-        SpringApplication.run(UserServiceApplication.class, args);
-    }
+	public static void main(String[] args) {
+		SpringApplication.run(UserServiceApplication.class, args);
+	}
 
 }

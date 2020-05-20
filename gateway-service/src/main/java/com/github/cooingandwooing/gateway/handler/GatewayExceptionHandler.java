@@ -1,24 +1,23 @@
 /*
  * Copyright 2013-2019 the original author or authors.
- *  
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
  *      https://www.apache.org/licenses/LICENSE-2.0
- *         
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
- * limitations under the License. 
+ * limitations under the License.
  */
 
 package com.github.cooingandwooing.gateway.handler;
 
-import java.util.List;
 import java.util.Collections;
-import reactor.core.publisher.Mono;
+import java.util.List;
 
 import com.github.cooingandwooing.common.core.exceptions.InvalidAccessTokenException;
 import com.github.cooingandwooing.common.core.exceptions.InvalidValidateCodeException;
@@ -26,6 +25,7 @@ import com.github.cooingandwooing.common.core.exceptions.ValidateCodeExpiredExce
 import com.github.cooingandwooing.common.core.model.ResponseBean;
 import com.github.cooingandwooing.common.core.utils.Assert;
 import lombok.extern.slf4j.Slf4j;
+import reactor.core.publisher.Mono;
 
 import org.springframework.boot.web.reactive.error.ErrorWebExceptionHandler;
 import org.springframework.cloud.gateway.support.NotFoundException;
@@ -45,7 +45,7 @@ import org.springframework.web.server.ServerWebExchange;
 
 
 /**
- * 网关统一异常处理
+ * 网关统一异常处理.
  *
  * @author gaoxiaofeng
  * @date 2019/3/18 20:52
@@ -53,120 +53,126 @@ import org.springframework.web.server.ServerWebExchange;
 @Slf4j
 public class GatewayExceptionHandler implements ErrorWebExceptionHandler {
 
-    /**
-     * MessageReader
-     */
-    private List<HttpMessageReader<?>> messageReaders = Collections.emptyList();
+	/**
+	 * MessageReader.
+	 */
+	private List<HttpMessageReader<?>> messageReaders = Collections.emptyList();
 
-    /**
-     * MessageWriter
-     */
-    private List<HttpMessageWriter<?>> messageWriters = Collections.emptyList();
+	/**
+	 * MessageWriter.
+	 */
+	private List<HttpMessageWriter<?>> messageWriters = Collections.emptyList();
 
-    /**
-     * ViewResolvers
-     */
-    private List<ViewResolver> viewResolvers = Collections.emptyList();
+	/**
+	 * ViewResolvers.
+	 */
+	private List<ViewResolver> viewResolvers = Collections.emptyList();
 
-    /**
-     * 存储处理异常后的信息
-     */
-    private ThreadLocal<ResponseBean<?>> exceptionHandlerResult = new ThreadLocal<>();
+	/**
+	 * 存储处理异常后的信息.
+	 */
+	private ThreadLocal<ResponseBean<?>> exceptionHandlerResult = new ThreadLocal<>();
 
-    public void setMessageReaders(List<HttpMessageReader<?>> messageReaders) {
-        Assert.notNull(messageReaders, "'messageReaders' must not be null");
-        this.messageReaders = messageReaders;
-    }
+	public void setMessageReaders(List<HttpMessageReader<?>> messageReaders) {
+		Assert.notNull(messageReaders, "'messageReaders' must not be null");
+		this.messageReaders = messageReaders;
+	}
 
-    public void setViewResolvers(List<ViewResolver> viewResolvers) {
-        this.viewResolvers = viewResolvers;
-    }
+	public void setViewResolvers(List<ViewResolver> viewResolvers) {
+		this.viewResolvers = viewResolvers;
+	}
 
-    public void setMessageWriters(List<HttpMessageWriter<?>> messageWriters) {
-        Assert.notNull(messageWriters, "'messageWriters' must not be null");
-        this.messageWriters = messageWriters;
-    }
+	public void setMessageWriters(List<HttpMessageWriter<?>> messageWriters) {
+		Assert.notNull(messageWriters, "'messageWriters' must not be null");
+		this.messageWriters = messageWriters;
+	}
 
-    /**
-     * 处理逻辑
-     *
-     * @param exchange exchange
-     * @param ex       ex
-     * @return Mono
-     */
-    @Override
-    public Mono<Void> handle(ServerWebExchange exchange, Throwable ex) {
-        // 按照异常类型进行处理
-        HttpStatus httpStatus;
-        String msg;
-        // 返回给前端用的状态码，默认服务器内部错误
-        int code = ResponseBean.FAIL;
-        if (ex instanceof NotFoundException) {
-            httpStatus = HttpStatus.NOT_FOUND;
-            msg = "SERVICE_UNAVAILABLE.";
-        } else if (ex instanceof ResponseStatusException) {
-            ResponseStatusException responseStatusException = (ResponseStatusException) ex;
-            httpStatus = responseStatusException.getStatus();
-            msg = responseStatusException.getMessage();
-        } else if (ex instanceof InvalidValidateCodeException) {
-            httpStatus = HttpStatus.INTERNAL_SERVER_ERROR;
-            msg = ex.getMessage();
-            // 验证码错误
-            code = ResponseBean.INVALID_VALIDATE_CODE_ERROR;
-        } else if (ex instanceof ValidateCodeExpiredException) {
-            httpStatus = HttpStatus.INTERNAL_SERVER_ERROR;
-            msg = ex.getMessage();
-            // 验证码过期
-            code = ResponseBean.VALIDATE_CODE_EXPIRED_ERROR;
-        } else if (ex instanceof InvalidAccessTokenException) {
-            httpStatus = HttpStatus.FORBIDDEN;
-            msg = ex.getMessage();
-            // token非法，返回403
-            code = HttpStatus.FORBIDDEN.value();
-        } else {
-            httpStatus = HttpStatus.INTERNAL_SERVER_ERROR;
-            msg = "服务器内部错误.";
-        }
-        // 封装响应体
-        ResponseBean<String> responseBean = new ResponseBean<>(msg, msg);
-        responseBean.setStatus(httpStatus.value());
-        responseBean.setCode(code);
-        // 错误记录
-        ServerHttpRequest request = exchange.getRequest();
-        log.error("[全局异常处理]异常请求路径:{},记录异常信息:{}", request.getPath(), ex.getMessage());
-        if (exchange.getResponse().isCommitted())
-            return Mono.error(ex);
-        exceptionHandlerResult.set(responseBean);
-        ServerRequest newRequest = ServerRequest.create(exchange, this.messageReaders);
-        return RouterFunctions.route(RequestPredicates.all(), this::renderErrorResponse).route(newRequest)
-                .switchIfEmpty(Mono.error(ex))
-                .flatMap((handler) -> handler.handle(newRequest))
-                .flatMap((response) -> write(exchange, response));
-    }
+	/**
+	 * 处理逻辑.
+	 *
+	 * @param exchange exchange
+	 * @param ex       ex
+	 * @return Mono
+	 */
+	@Override
+	public Mono<Void> handle(ServerWebExchange exchange, Throwable ex) {
+		// 按照异常类型进行处理
+		HttpStatus httpStatus;
+		String msg;
+		// 返回给前端用的状态码，默认服务器内部错误
+		int code = ResponseBean.FAIL;
+		if (ex instanceof NotFoundException) {
+			httpStatus = HttpStatus.NOT_FOUND;
+			msg = "SERVICE_UNAVAILABLE.";
+		}
+		else if (ex instanceof ResponseStatusException) {
+			ResponseStatusException responseStatusException = (ResponseStatusException) ex;
+			httpStatus = responseStatusException.getStatus();
+			msg = responseStatusException.getMessage();
+		}
+		else if (ex instanceof InvalidValidateCodeException) {
+			httpStatus = HttpStatus.INTERNAL_SERVER_ERROR;
+			msg = ex.getMessage();
+			// 验证码错误
+			code = ResponseBean.INVALID_VALIDATE_CODE_ERROR;
+		}
+		else if (ex instanceof ValidateCodeExpiredException) {
+			httpStatus = HttpStatus.INTERNAL_SERVER_ERROR;
+			msg = ex.getMessage();
+			// 验证码过期
+			code = ResponseBean.VALIDATE_CODE_EXPIRED_ERROR;
+		}
+		else if (ex instanceof InvalidAccessTokenException) {
+			httpStatus = HttpStatus.FORBIDDEN;
+			msg = ex.getMessage();
+			// token非法，返回403
+			code = HttpStatus.FORBIDDEN.value();
+		}
+		else {
+			httpStatus = HttpStatus.INTERNAL_SERVER_ERROR;
+			msg = "服务器内部错误.";
+		}
+		// 封装响应体
+		ResponseBean<String> responseBean = new ResponseBean<>(msg, msg);
+		responseBean.setStatus(httpStatus.value());
+		responseBean.setCode(code);
+		// 错误记录
+		ServerHttpRequest request = exchange.getRequest();
+		log.error("[全局异常处理]异常请求路径:{},记录异常信息:{}", request.getPath(), ex.getMessage());
+		if (exchange.getResponse().isCommitted()) {
+			return Mono.error(ex);
+		}
+		exceptionHandlerResult.set(responseBean);
+		ServerRequest newRequest = ServerRequest.create(exchange, this.messageReaders);
+		return RouterFunctions.route(RequestPredicates.all(), this::renderErrorResponse).route(newRequest)
+			.switchIfEmpty(Mono.error(ex))
+			.flatMap((handler) -> handler.handle(newRequest))
+			.flatMap((response) -> write(exchange, response));
+	}
 
-    private Mono<ServerResponse> renderErrorResponse(ServerRequest request) {
-        ResponseBean<?> responseBean = exceptionHandlerResult.get();
-        return ServerResponse.status(responseBean.getStatus())
-                .contentType(MediaType.APPLICATION_JSON_UTF8)
-                .body(BodyInserters.fromObject(responseBean));
-    }
+	private Mono<ServerResponse> renderErrorResponse(ServerRequest request) {
+		ResponseBean<?> responseBean = exceptionHandlerResult.get();
+		return ServerResponse.status(responseBean.getStatus())
+			.contentType(MediaType.APPLICATION_JSON_UTF8)
+			.body(BodyInserters.fromObject(responseBean));
+	}
 
-    private Mono<? extends Void> write(ServerWebExchange exchange,
-                                       ServerResponse response) {
-        exchange.getResponse().getHeaders().setContentType(response.headers().getContentType());
-        return response.writeTo(exchange, new ResponseContext());
-    }
+	private Mono<? extends Void> write(ServerWebExchange exchange,
+		ServerResponse response) {
+		exchange.getResponse().getHeaders().setContentType(response.headers().getContentType());
+		return response.writeTo(exchange, new ResponseContext());
+	}
 
-    private class ResponseContext implements ServerResponse.Context {
+	private class ResponseContext implements ServerResponse.Context {
 
-        @Override
-        public List<HttpMessageWriter<?>> messageWriters() {
-            return GatewayExceptionHandler.this.messageWriters;
-        }
+		@Override
+		public List<HttpMessageWriter<?>> messageWriters() {
+			return GatewayExceptionHandler.this.messageWriters;
+		}
 
-        @Override
-        public List<ViewResolver> viewResolvers() {
-            return GatewayExceptionHandler.this.viewResolvers;
-        }
-    }
+		@Override
+		public List<ViewResolver> viewResolvers() {
+			return GatewayExceptionHandler.this.viewResolvers;
+		}
+	}
 }

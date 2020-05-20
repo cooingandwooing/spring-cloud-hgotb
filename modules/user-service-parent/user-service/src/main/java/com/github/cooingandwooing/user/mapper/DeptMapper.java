@@ -21,7 +21,7 @@ import com.github.cooingandwooing.user.api.module.Dept;
 import org.apache.ibatis.annotations.Mapper;
 
 /**
- * 菜单mapper
+ * 菜单mapper.
  *
  * @author cooingandwooing
  * @date 2018/8/26 22:34

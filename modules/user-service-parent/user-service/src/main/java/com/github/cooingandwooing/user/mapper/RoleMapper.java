@@ -21,7 +21,7 @@ import com.github.cooingandwooing.user.api.module.Role;
 import org.apache.ibatis.annotations.Mapper;
 
 /**
- * 角色mapper
+ * 角色mapper.
  *
  * @author cooingandwooing
  * @date 2018/8/26 09:33
@@ -29,13 +29,13 @@ import org.apache.ibatis.annotations.Mapper;
 @Mapper
 public interface RoleMapper extends CrudMapper<Role> {
 
-    /**
-     * 根据角色code查询
-     *
-     * @param role role
-     * @return Role
-     * @author cooingandwooing
-     * @date 2019/09/21 12:08:29
-     */
-    Role findByRoleCode(Role role);
+	/**
+	 * 根据角色code查询.
+	 *
+	 * @param role role
+	 * @return Role
+	 * @author cooingandwooing
+	 * @date 2019/09/21 12:08:29
+	 */
+	Role findByRoleCode(Role role);
 }

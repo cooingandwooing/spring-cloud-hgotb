@@ -19,6 +19,7 @@ package com.github.cooingandwooing.common.security.mobile;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.cooingandwooing.common.security.core.CustomUserDetailsService;
 import lombok.Data;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationEventPublisher;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -29,7 +30,7 @@ import org.springframework.security.web.authentication.AuthenticationSuccessHand
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 /**
- * 手机登录配置
+ * 手机登录配置.
  *
  * @author gaoxiaofeng
  * @date 2019/6/22 21:26
@@ -37,26 +38,27 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @Data
 public class MobileSecurityConfigurer extends SecurityConfigurerAdapter<DefaultSecurityFilterChain, HttpSecurity> {
 
-    @Autowired
-    private ObjectMapper objectMapper;
+	@Autowired
+	private ObjectMapper objectMapper;
 
-    @Autowired
-    private AuthenticationEventPublisher defaultAuthenticationEventPublisher;
+	@Autowired
+	private AuthenticationEventPublisher defaultAuthenticationEventPublisher;
 
-    private AuthenticationSuccessHandler mobileLoginSuccessHandler;
+	private AuthenticationSuccessHandler mobileLoginSuccessHandler;
 
-    private CustomUserDetailsService userDetailsService;
+	private CustomUserDetailsService userDetailsService;
 
-    @Override
-    public void configure(HttpSecurity http) {
-        // 手机登录过滤器
-        MobileAuthenticationFilter mobileAuthenticationFilter = new MobileAuthenticationFilter();
-        mobileAuthenticationFilter.setAuthenticationManager(http.getSharedObject(AuthenticationManager.class));
-        mobileAuthenticationFilter.setAuthenticationSuccessHandler(mobileLoginSuccessHandler);
-        mobileAuthenticationFilter.setEventPublisher(defaultAuthenticationEventPublisher);
-        MobileAuthenticationProvider mobileAuthenticationProvider = new MobileAuthenticationProvider();
-        mobileAuthenticationProvider.setCustomUserDetailsService(userDetailsService);
-        // 增加手机登录的过滤器
-        http.authenticationProvider(mobileAuthenticationProvider).addFilterAfter(mobileAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
-    }
+	@Override
+	public void configure(HttpSecurity http) {
+		// 手机登录过滤器
+		MobileAuthenticationFilter mobileAuthenticationFilter = new MobileAuthenticationFilter();
+		mobileAuthenticationFilter.setAuthenticationManager(http.getSharedObject(AuthenticationManager.class));
+		mobileAuthenticationFilter.setAuthenticationSuccessHandler(mobileLoginSuccessHandler);
+		mobileAuthenticationFilter.setEventPublisher(defaultAuthenticationEventPublisher);
+		MobileAuthenticationProvider mobileAuthenticationProvider = new MobileAuthenticationProvider();
+		mobileAuthenticationProvider.setCustomUserDetailsService(userDetailsService);
+		// 增加手机登录的过滤器
+		http.authenticationProvider(mobileAuthenticationProvider)
+			.addFilterAfter(mobileAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
+	}
 }

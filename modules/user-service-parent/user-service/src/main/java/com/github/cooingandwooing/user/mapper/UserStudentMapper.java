@@ -16,14 +16,14 @@
 
 package com.github.cooingandwooing.user.mapper;
 
+import java.util.List;
+
 import com.github.cooingandwooing.common.core.persistence.CrudMapper;
 import com.github.cooingandwooing.user.api.module.UserStudent;
 import org.apache.ibatis.annotations.Mapper;
 
-import java.util.List;
-
 /**
- * 用户学生Mapper
+ * 用户学生Mapper.
  *
  * @author cooingandwooing
  * @date 2019/07/09 15:57
@@ -31,35 +31,35 @@ import java.util.List;
 @Mapper
 public interface UserStudentMapper extends CrudMapper<UserStudent> {
 
-    /**
-     * 根据userId查询
-     *
-     * @param userId userId
-     * @return List
-     */
-    List<UserStudent> getByUserId(String userId);
+	/**
+	 * 根据userId查询.
+	 *
+	 * @param userId userId
+	 * @return List
+	 */
+	List<UserStudent> getByUserId(String userId);
 
-    /**
-     * 根据studentId查询
-     *
-     * @param studentId studentId
-     * @return UserStudent
-     */
-    UserStudent getByStudentId(String studentId);
+	/**
+	 * 根据studentId查询.
+	 *
+	 * @param studentId studentId
+	 * @return UserStudent
+	 */
+	UserStudent getByStudentId(String studentId);
 
-    /**
-     * 根据用户id删除
-     *
-     * @param userId userId
-     * @return int
-     */
-    int deleteByUserId(String userId);
+	/**
+	 * 根据用户id删除.
+	 *
+	 * @param userId userId
+	 * @return int
+	 */
+	int deleteByUserId(String userId);
 
-    /**
-     * 根据学生id删除
-     *
-     * @param studentId studentId
-     * @return int
-     */
-    int deleteByStudentId(String studentId);
+	/**
+	 * 根据学生id删除.
+	 *
+	 * @param studentId studentId
+	 * @return int
+	 */
+	int deleteByStudentId(String studentId);
 }

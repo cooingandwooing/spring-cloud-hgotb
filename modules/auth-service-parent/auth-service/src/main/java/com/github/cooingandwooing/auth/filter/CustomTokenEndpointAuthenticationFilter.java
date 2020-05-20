@@ -16,6 +16,15 @@
 
 package com.github.cooingandwooing.auth.filter;
 
+import java.io.IOException;
+
+import javax.servlet.FilterChain;
+import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import com.github.cooingandwooing.auth.model.CustomUserDetails;
 import com.github.cooingandwooing.common.core.constant.CommonConstant;
 import com.github.cooingandwooing.common.core.constant.ServiceConstant;
@@ -25,21 +34,11 @@ import com.github.cooingandwooing.user.api.feign.UserServiceClient;
 import lombok.extern.slf4j.Slf4j;
 
 import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpMethod;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.oauth2.provider.OAuth2RequestFactory;
 import org.springframework.security.oauth2.provider.endpoint.TokenEndpointAuthenticationFilter;
-
-import java.io.IOException;
-
-import javax.servlet.FilterChain;
-import javax.servlet.ServletException;
-import javax.servlet.ServletRequest;
-import javax.servlet.ServletResponse;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
 
 /**
@@ -54,14 +53,14 @@ public class CustomTokenEndpointAuthenticationFilter extends TokenEndpointAuthen
 	private UserServiceClient userServiceClient;
 
 	public CustomTokenEndpointAuthenticationFilter(AuthenticationManager authenticationManager,
-			OAuth2RequestFactory oAuth2RequestFactory, UserServiceClient userServiceClient) {
+		OAuth2RequestFactory oAuth2RequestFactory, UserServiceClient userServiceClient) {
 		super(authenticationManager, oAuth2RequestFactory);
 		this.userServiceClient = userServiceClient;
 	}
 
 	@Override
 	protected void onSuccessfulAuthentication(HttpServletRequest request, HttpServletResponse response,
-			Authentication authentication) throws IOException {
+		Authentication authentication) throws IOException {
 		// 登录成功后的处理
 		log.info("CustomTokenEndpointAuthenticationFilter onSuccessfulAuthentication");
 		CustomUserDetails userDetails = (CustomUserDetails) authentication.getPrincipal();
@@ -86,7 +85,7 @@ public class CustomTokenEndpointAuthenticationFilter extends TokenEndpointAuthen
 
 	@Override
 	public void doFilter(ServletRequest req, ServletResponse res, FilterChain chain)
-			throws IOException, ServletException {
+		throws IOException, ServletException {
 		// 认证前的特殊处理
 		//		if (!condition) {
 		//			throw new AuthenticationServiceException("condition not satisfied");
@@ -96,7 +95,7 @@ public class CustomTokenEndpointAuthenticationFilter extends TokenEndpointAuthen
 	}
 
 	/**
-	 * 异步记录登录日志
+	 * 异步记录登录日志.
 	 *
 	 * @author tangyi
 	 * @date 2019/05/30 23:30

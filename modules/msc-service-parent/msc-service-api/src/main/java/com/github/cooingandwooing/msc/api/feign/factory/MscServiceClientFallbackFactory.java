@@ -19,10 +19,11 @@ package com.github.cooingandwooing.msc.api.feign.factory;
 import com.github.cooingandwooing.msc.api.feign.MscServiceClient;
 import com.github.cooingandwooing.msc.api.feign.fallback.MscServiceClientFallbackImpl;
 import feign.hystrix.FallbackFactory;
+
 import org.springframework.stereotype.Component;
 
 /**
- * 消息中心服务断路器工厂
+ * 消息中心服务断路器工厂.
  *
  * @author cooingandwooing
  * @date 2019/07/02 16:08
@@ -30,10 +31,10 @@ import org.springframework.stereotype.Component;
 @Component
 public class MscServiceClientFallbackFactory implements FallbackFactory<MscServiceClient> {
 
-    @Override
-    public MscServiceClient create(Throwable throwable) {
-        MscServiceClientFallbackImpl mscServiceClientFallback = new MscServiceClientFallbackImpl();
-        mscServiceClientFallback.setThrowable(throwable);
-        return mscServiceClientFallback;
-    }
+	@Override
+	public MscServiceClient create(Throwable throwable) {
+		MscServiceClientFallbackImpl mscServiceClientFallback = new MscServiceClientFallbackImpl();
+		mscServiceClientFallback.setThrowable(throwable);
+		return mscServiceClientFallback;
+	}
 }

@@ -17,13 +17,14 @@
 package com.github.cooingandwooing.user.config;
 
 import com.github.tobato.fastdfs.FdfsClientConfig;
+
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.EnableMBeanExport;
 import org.springframework.context.annotation.Import;
 import org.springframework.jmx.support.RegistrationPolicy;
 
 /**
- * fastDfs配置
+ * fastDfs配置.
  * https://github.com/tobato/FastDFS_Client
  * 在Maven当中配置依赖以后，SpringBoot项目将会自动导入FastDFS依赖(感谢@Lzgabel)。
  *

@@ -16,13 +16,12 @@
 
 package com.github.cooingandwooing.auth.controller;
 
+import javax.servlet.http.HttpServletRequest;
+
 import com.github.cooingandwooing.common.core.constant.CommonConstant;
 import com.github.cooingandwooing.common.core.exceptions.CommonException;
 import com.github.cooingandwooing.common.core.model.ResponseBean;
 import com.github.cooingandwooing.common.core.web.BaseController;
-
-import javax.servlet.http.HttpServletRequest;
-
 import org.apache.commons.lang3.StringUtils;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,7 +34,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 /**.
- * Authentication管理
+ * Authentication管理.
  * @author gaoxiaofeng
  */
 @RestController
@@ -47,7 +46,7 @@ public class AuthenticationController extends BaseController {
 	private ConsumerTokenServices consumerTokenServices;
 
 	/**
-	 * 用户信息校验
+	 * 用户信息校验.
 	 *
 	 * @param authentication 信息
 	 * @return 用户信息
@@ -58,7 +57,7 @@ public class AuthenticationController extends BaseController {
 	}
 
 	/**.
-	 * 清除access_token
+	 * 清除access_token.
 	 *
 	 * @param request request
 	 * @return ReturnT

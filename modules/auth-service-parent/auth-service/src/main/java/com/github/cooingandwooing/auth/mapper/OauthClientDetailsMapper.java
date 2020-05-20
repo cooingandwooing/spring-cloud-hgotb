@@ -21,7 +21,7 @@ import com.github.cooingandwooing.common.core.persistence.CrudMapper;
 import org.apache.ibatis.annotations.Mapper;
 
 /**
- * Oauth2客户端mapper
+ * Oauth2客户端mapper.
  *
  * @author gaoxiaofeng
  * @date 2019/3/30 16:39

@@ -20,7 +20,7 @@ import com.github.cooingandwooing.common.core.persistence.BaseEntity;
 import lombok.Data;
 
 /**
- * 部门vo
+ * 部门vo.
  *
  * @author gaoxiaofeng
  * @date 2018/12/31 22:02

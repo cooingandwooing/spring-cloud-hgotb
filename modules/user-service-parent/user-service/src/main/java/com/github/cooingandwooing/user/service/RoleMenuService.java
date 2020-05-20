@@ -16,18 +16,20 @@
 
 package com.github.cooingandwooing.user.service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.github.cooingandwooing.common.core.service.CrudService;
 import com.github.cooingandwooing.common.core.utils.IdGen;
 import com.github.cooingandwooing.user.api.module.RoleMenu;
 import com.github.cooingandwooing.user.mapper.RoleMenuMapper;
 import lombok.AllArgsConstructor;
 import org.apache.commons.collections4.CollectionUtils;
+
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * @author cooingandwooing
@@ -67,7 +69,7 @@ public class RoleMenuService extends CrudService<RoleMenuMapper, RoleMenu> {
 	}
 
 	/**
-	 * 批量保存
+	 * 批量保存.
 	 *
 	 * @param roleMenus roleMenus
 	 * @return int
@@ -80,7 +82,7 @@ public class RoleMenuService extends CrudService<RoleMenuMapper, RoleMenu> {
 	}
 
 	/**
-	 * 根据roleId查询
+	 * 根据roleId查询.
 	 *
 	 * @param roleMenu roleMenu
 	 * @return List
@@ -92,7 +94,7 @@ public class RoleMenuService extends CrudService<RoleMenuMapper, RoleMenu> {
 	}
 
 	/**
-	 * 根据menuId查询
+	 * 根据menuId查询.
 	 *
 	 * @param roleMenu roleMenu
 	 * @return List
@@ -104,7 +106,7 @@ public class RoleMenuService extends CrudService<RoleMenuMapper, RoleMenu> {
 	}
 
 	/**
-	 * 根据menuId列表查询
+	 * 根据menuId列表查询.
 	 *
 	 * @param roleMenus roleMenus
 	 * @return List

@@ -16,14 +16,15 @@
 
 package com.github.cooingandwooing.msc.api.feign.fallback;
 
+import com.github.cooingandwooing.common.core.model.ResponseBean;
 import com.github.cooingandwooing.msc.api.dto.SmsDto;
 import com.github.cooingandwooing.msc.api.feign.MscServiceClient;
-import com.github.cooingandwooing.common.core.model.ResponseBean;
 import lombok.extern.slf4j.Slf4j;
+
 import org.springframework.stereotype.Component;
 
 /**
- * 消息中心服务断路器
+ * 消息中心服务断路器.
  *
  * @author cooingandwooing
  * @date 2019/07/02 16:09
@@ -32,19 +33,19 @@ import org.springframework.stereotype.Component;
 @Component
 public class MscServiceClientFallbackImpl implements MscServiceClient {
 
-    private Throwable throwable;
+	private Throwable throwable;
 
-    @Override
-    public ResponseBean<?> sendSms(SmsDto smsDto) {
-        log.error("feign 发送短信失败:{}, {}, {}", smsDto.getReceiver(), smsDto.getContent(), throwable);
-        return null;
-    }
+	@Override
+	public ResponseBean<?> sendSms(SmsDto smsDto) {
+		log.error("feign 发送短信失败:{}, {}, {}", smsDto.getReceiver(), smsDto.getContent(), throwable);
+		return null;
+	}
 
-    public Throwable getThrowable() {
-        return throwable;
-    }
+	public Throwable getThrowable() {
+		return throwable;
+	}
 
-    public void setThrowable(Throwable throwable) {
-        this.throwable = throwable;
-    }
+	public void setThrowable(Throwable throwable) {
+		this.throwable = throwable;
+	}
 }

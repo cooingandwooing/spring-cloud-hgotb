@@ -21,7 +21,7 @@ import com.github.cooingandwooing.common.core.persistence.BaseEntity;
 import lombok.Data;
 
 /**
- * logVo
+ * logVo.
  *
  * @author gaoxiaofeng
  * @date 2019-01-05 17:07

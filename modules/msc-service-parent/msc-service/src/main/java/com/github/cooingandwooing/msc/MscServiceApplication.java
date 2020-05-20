@@ -17,6 +17,7 @@
 package com.github.cooingandwooing.msc;
 
 import com.github.cooingandwooing.common.core.constant.CommonConstant;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
@@ -33,8 +34,8 @@ import org.springframework.security.config.annotation.method.configuration.Enabl
 @EnableCircuitBreaker
 public class MscServiceApplication {
 
-    public static void main(String[] args) {
-        SpringApplication.run(MscServiceApplication.class, args);
-    }
+	public static void main(String[] args) {
+		SpringApplication.run(MscServiceApplication.class, args);
+	}
 
 }

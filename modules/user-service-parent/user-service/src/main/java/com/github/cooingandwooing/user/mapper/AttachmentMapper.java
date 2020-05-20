@@ -21,7 +21,7 @@ import com.github.cooingandwooing.user.api.module.Attachment;
 import org.apache.ibatis.annotations.Mapper;
 
 /**
- * 附件mapper
+ * 附件mapper.
  *
  * @author cooingandwooing
  * @date 2018/10/30 20:55

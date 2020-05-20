@@ -16,13 +16,14 @@
 
 package com.github.cooingandwooing.auth.service;
 
-import com.github.cooingandwooing.auth.mapper.OauthClientDetailsMapper;
 import com.github.cooingandwooing.auth.api.module.OauthClientDetails;
+import com.github.cooingandwooing.auth.mapper.OauthClientDetailsMapper;
 import com.github.cooingandwooing.common.core.service.CrudService;
+
 import org.springframework.stereotype.Service;
 
 /**
- * Oauth2客户端Service
+ * Oauth2客户端Service.
  *
  * @author gaoxiaofeng
  * @date 2019/3/30 16:48

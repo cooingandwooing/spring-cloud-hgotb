@@ -16,14 +16,14 @@
 
 package com.github.cooingandwooing.common.core.vo;
 
-import com.github.cooingandwooing.common.core.persistence.BaseEntity;
-import lombok.Data;
-
 import java.util.Date;
 import java.util.List;
 
+import com.github.cooingandwooing.common.core.persistence.BaseEntity;
+import lombok.Data;
+
 /**
- * 用户Vo
+ * 用户Vo.
  *
  * @author gaoxiaofeng
  * @date 2018-08-25 13:57
@@ -31,120 +31,120 @@ import java.util.List;
 @Data
 public class UserVo extends BaseEntity<UserVo> {
 
-    /**
-     * 授权类型，1：用户名密码，2：手机号，3：邮箱，4：微信，5：QQ
-     */
-    private Integer identityType;
+	/**
+	 * 授权类型，1：用户名密码，2：手机号，3：邮箱，4：微信，5：QQ.
+	 */
+	private Integer identityType;
 
-    /**
-     * 唯一标识，如用户名、手机号
-     */
-    private String identifier;
+	/**
+	 * 唯一标识，如用户名、手机号.
+	 */
+	private String identifier;
 
-    /**
-     * 密码凭证，跟授权类型有关，如密码、第三方系统的token等
-     */
-    private String credential;
+	/**
+	 * 密码凭证，跟授权类型有关，如密码、第三方系统的token等.
+	 */
+	private String credential;
 
-    /**
-     * 姓名
-     */
-    private String name;
+	/**
+	 * 姓名.
+	 */
+	private String name;
 
-    /**
-     * 电话号码
-     */
-    private String phone;
+	/**
+	 * 电话号码.
+	 */
+	private String phone;
 
-    /**
-     * 头像对应的附件id
-     */
-    private Long avatarId;
+	/**
+	 * 头像对应的附件id.
+	 */
+	private Long avatarId;
 
-    /**
-     * 邮箱
-     */
-    private String email;
+	/**
+	 * 邮箱.
+	 */
+	private String email;
 
-    /**
-     * 性别
-     */
-    private Integer sex;
+	/**
+	 * 性别.
+	 */
+	private Integer sex;
 
-    /**
-     * 生日
-     */
-    private Date born;
+	/**
+	 * 生日.
+	 */
+	private Date born;
 
-    /**
-     * 部门名称
-     */
-    private String deptName;
+	/**
+	 * 部门名称.
+	 */
+	private String deptName;
 
-    /**
-     * 部门ID
-     */
-    private Long deptId;
+	/**
+	 * 部门ID.
+	 */
+	private Long deptId;
 
-    /**
-     * 角色列表
-     */
-    private List<RoleVo> roleList;
+	/**
+	 * 角色列表.
+	 */
+	private List<RoleVo> roleList;
 
-    /**
-     * 详细描述
-     */
-    private String userDesc;
+	/**
+	 * 详细描述.
+	 */
+	private String userDesc;
 
-    /**
-     * 状态，0-启用，1-禁用
-     */
-    private Integer status;
+	/**
+	 * 状态，0-启用，1-禁用.
+	 */
+	private Integer status;
 
-    /**
-     * 引导注册人
-     */
-    private Long parentUid;
+	/**
+	 * 引导注册人.
+	 */
+	private Long parentUid;
 
-    /**
-     * 乡/镇
-     */
-    private Long streetId;
+	/**
+	 * 乡/镇.
+	 */
+	private Long streetId;
 
-    /**
-     * 县
-     */
-    private Long countyId;
+	/**
+	 * 县.
+	 */
+	private Long countyId;
 
-    /**
-     * 城市
-     */
-    private Long cityId;
+	/**
+	 * 城市.
+	 */
+	private Long cityId;
 
-    /**
-     * 省份
-     */
-    private Long provinceId;
+	/**
+	 * 省份.
+	 */
+	private Long provinceId;
 
-    /**
-     * 最近登录时间
-     */
-    private Date loginTime;
+	/**
+	 * 最近登录时间.
+	 */
+	private Date loginTime;
 
-    /**
-     * 用户归档时间
-     */
-    private Date lockTime;
+	/**
+	 * 用户归档时间.
+	 */
+	private Date lockTime;
 
-    /**
-     * 微信
-     */
-    private String wechat;
+	/**
+	 * 微信.
+	 */
+	private String wechat;
 
-    /**
-     * 家庭角色，参考UserStudentConstant
-     */
-    private Integer familyRole;
+	/**
+	 * 家庭角色，参考UserStudentConstant.
+	 */
+	private Integer familyRole;
 
 }
 

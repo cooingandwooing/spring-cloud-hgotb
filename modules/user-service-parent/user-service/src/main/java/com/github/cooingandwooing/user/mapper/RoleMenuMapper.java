@@ -16,14 +16,14 @@
 
 package com.github.cooingandwooing.user.mapper;
 
+import java.util.List;
+
 import com.github.cooingandwooing.common.core.persistence.CrudMapper;
 import com.github.cooingandwooing.user.api.module.RoleMenu;
 import org.apache.ibatis.annotations.Mapper;
 
-import java.util.List;
-
 /**
- * 角色菜单mapper
+ * 角色菜单mapper.
  *
  * @author cooingandwooing
  * @date 2018/8/26 22:34
@@ -32,7 +32,7 @@ import java.util.List;
 public interface RoleMenuMapper extends CrudMapper<RoleMenu> {
 
 	/**
-	 * 根据角色ID删除
+	 * 根据角色ID删除.
 	 *
 	 * @param roleId 角色ID
 	 * @return int
@@ -40,7 +40,7 @@ public interface RoleMenuMapper extends CrudMapper<RoleMenu> {
 	int deleteByRoleId(Long roleId);
 
 	/**
-	 * 根据菜单ID删除
+	 * 根据菜单ID删除.
 	 *
 	 * @param menuId 菜单ID
 	 * @return int
@@ -48,7 +48,7 @@ public interface RoleMenuMapper extends CrudMapper<RoleMenu> {
 	int deleteByMenuId(Long menuId);
 
 	/**
-	 * 批量保存
+	 * 批量保存.
 	 *
 	 * @param roleMenus roleMenus
 	 * @return int
@@ -56,7 +56,7 @@ public interface RoleMenuMapper extends CrudMapper<RoleMenu> {
 	int insertBatch(List<RoleMenu> roleMenus);
 
 	/**
-	 * 根据roleId查询
+	 * 根据roleId查询.
 	 *
 	 * @param roleMenu roleMenu
 	 * @return List
@@ -66,7 +66,7 @@ public interface RoleMenuMapper extends CrudMapper<RoleMenu> {
 	List<RoleMenu> getByRoleId(RoleMenu roleMenu);
 
 	/**
-	 * 根据menuId查询
+	 * 根据menuId查询.
 	 *
 	 * @param roleMenu roleMenu
 	 * @return List
@@ -76,7 +76,7 @@ public interface RoleMenuMapper extends CrudMapper<RoleMenu> {
 	List<RoleMenu> getByMenuId(RoleMenu roleMenu);
 
 	/**
-	 * 根据menuId列表查询
+	 * 根据menuId列表查询.
 	 *
 	 * @param roleMenus roleMenus
 	 * @return List

@@ -16,17 +16,18 @@
 
 package com.github.cooingandwooing.user.service;
 
+import java.util.List;
+
 import com.github.cooingandwooing.common.core.service.CrudService;
 import com.github.cooingandwooing.user.api.module.Dept;
 import com.github.cooingandwooing.user.api.module.User;
 import com.github.cooingandwooing.user.mapper.DeptMapper;
+
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.List;
-
 /**
- * 部门service
+ * 部门service.
  *
  * @author cooingandwooing
  * @date 2018/8/26 22:46
@@ -34,28 +35,29 @@ import java.util.List;
 @Service
 public class DeptService extends CrudService<DeptMapper, Dept> {
 
-    /**
-     * 删除部门
-     *
-     * @param dept dept
-     * @return int
-     */
-    @Transactional
-    @Override
-    public int delete(Dept dept) {
-        // 删除部门
-        return super.delete(dept);
-    }
+	/**
+	 * 删除部门.
+	 *
+	 * @param dept dept
+	 * @return int
+	 */
+	@Transactional
+	@Override
+	public int delete(Dept dept) {
+		// 删除部门
+		return super.delete(dept);
+	}
 
-    /**
-     * 根据用户批量查询
-     *
-     * @param userList userList
-     * @return List
-     * @author cooingandwooing
-     * @date 2019/07/03 22:06:50
-     */
-    public List<Dept> getListByUsers(List<User> userList) {
-        return this.findListById(userList.stream().filter(tempUser -> tempUser.getDeptId() != null).map(User::getDeptId).distinct().toArray(Long[]::new));
-    }
+	/**
+	 * 根据用户批量查询.
+	 *
+	 * @param userList userList
+	 * @return List
+	 * @author cooingandwooing
+	 * @date 2019/07/03 22:06:50
+	 */
+	public List<Dept> getListByUsers(List<User> userList) {
+		return this.findListById(userList.stream().filter(tempUser -> tempUser.getDeptId() != null).map(User::getDeptId)
+			.distinct().toArray(Long[]::new));
+	}
 }

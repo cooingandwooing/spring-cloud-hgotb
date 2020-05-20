@@ -20,7 +20,7 @@ import com.github.cooingandwooing.common.core.persistence.BaseEntity;
 import lombok.Data;
 
 /**
- * 用户学生关联关系，一个用户可以绑定多个学生
+ * 用户学生关联关系，一个用户可以绑定多个学生.
  *
  * @author cooingandwooing
  * @date 2019/07/09 15:23
@@ -28,18 +28,18 @@ import lombok.Data;
 @Data
 public class UserStudent extends BaseEntity<UserStudent> {
 
-    /**
-     * 用户id
-     */
-    private Long userId;
+	/**
+	 * 用户id.
+	 */
+	private Long userId;
 
-    /**
-     * 学生id
-     */
-    private Long studentId;
+	/**
+	 * 学生id.
+	 */
+	private Long studentId;
 
-    /**
-     * 关系类型
-     */
-    private Integer relationshipType;
+	/**
+	 * 关系类型.
+	 */
+	private Integer relationshipType;
 }

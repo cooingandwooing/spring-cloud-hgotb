@@ -16,13 +16,13 @@
 
 package com.github.cooingandwooing.auth.api.module;
 
+import java.io.Serializable;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
-import java.io.Serializable;
-
 /**
- * 封装微信登录状态
+ * 封装微信登录状态.
  *
  * @author gaoxiaofeng
  * @date 2019/07/05 20:35
@@ -31,9 +31,9 @@ import java.io.Serializable;
 @AllArgsConstructor
 public class WxSession implements Serializable {
 
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-    private String openId;
+	private String openId;
 
-    private String sessionKey;
+	private String sessionKey;
 }

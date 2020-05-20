@@ -21,7 +21,7 @@ import com.github.cooingandwooing.common.core.persistence.CrudMapper;
 import org.apache.ibatis.annotations.Mapper;
 
 /**
- * 日志
+ * 日志.
  *
  * @author cooingandwooing
  * @date 2018/10/31 20:38

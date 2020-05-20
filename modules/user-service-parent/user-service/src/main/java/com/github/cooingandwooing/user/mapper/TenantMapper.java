@@ -21,7 +21,7 @@ import com.github.cooingandwooing.user.api.module.Tenant;
 import org.apache.ibatis.annotations.Mapper;
 
 /**
- * 租户Mapper
+ * 租户Mapper.
  *
  * @author cooingandwooing
  * @date 2019/5/22 22:50
@@ -29,13 +29,13 @@ import org.apache.ibatis.annotations.Mapper;
 @Mapper
 public interface TenantMapper extends CrudMapper<Tenant> {
 
-    /**
-     * 根据租户标识获取
-     *
-     * @param tenantCode tenantCode
-     * @return Tenant
-     * @author cooingandwooing
-     * @date 2019/05/26 10:29
-     */
-    Tenant getByTenantCode(String tenantCode);
+	/**
+	 * 根据租户标识获取.
+	 *
+	 * @param tenantCode tenantCode
+	 * @return Tenant
+	 * @author cooingandwooing
+	 * @date 2019/05/26 10:29
+	 */
+	Tenant getByTenantCode(String tenantCode);
 }

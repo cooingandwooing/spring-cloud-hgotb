@@ -16,6 +16,8 @@
 
 package com.github.cooingandwooing.user.service;
 
+import java.util.List;
+
 import com.github.cooingandwooing.common.core.constant.CommonConstant;
 import com.github.cooingandwooing.common.core.service.CrudService;
 import com.github.cooingandwooing.user.api.module.Role;
@@ -23,15 +25,15 @@ import com.github.cooingandwooing.user.mapper.RoleMapper;
 import com.github.cooingandwooing.user.mapper.RoleMenuMapper;
 import com.github.cooingandwooing.user.mapper.UserRoleMapper;
 import lombok.AllArgsConstructor;
+
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.List;
 
 /**
- * 角色service
+ * 角色service.
  *
  * @author cooingandwooing
  * @date 2018/8/26 14:16
@@ -40,77 +42,77 @@ import java.util.List;
 @Service
 public class RoleService extends CrudService<RoleMapper, Role> {
 
-    private final RoleMenuMapper roleMenuMapper;
+	private final RoleMenuMapper roleMenuMapper;
 
-    private final UserRoleMapper userRoleMapper;
+	private final UserRoleMapper userRoleMapper;
 
-    /**
-     * 查询所有角色
-     *
-     * @param role role
-     * @return List
-     * @author cooingandwooing
-     * @date 2019/05/15 23:32
-     */
-    @Override
-    @Cacheable(value = "role#" + CommonConstant.CACHE_EXPIRE, key = "#role.applicationCode")
-    public List<Role> findAllList(Role role) {
-        return super.findAllList(role);
-    }
+	/**
+	 * 查询所有角色.
+	 *
+	 * @param role role
+	 * @return List
+	 * @author cooingandwooing
+	 * @date 2019/05/15 23:32
+	 */
+	@Override
+	@Cacheable(value = "role#" + CommonConstant.CACHE_EXPIRE, key = "#role.applicationCode")
+	public List<Role> findAllList(Role role) {
+		return super.findAllList(role);
+	}
 
-    /**
-     * 根据角色code查询
-     *
-     * @param role role
-     * @return Role
-     * @author cooingandwooing
-     * @date 2019/09/21 12:07:47
-     */
-    @Cacheable(value = "role#" + CommonConstant.CACHE_EXPIRE, key = "#role.roleCode")
-    public Role findByRoleCode(Role role) {
-        return this.dao.findByRoleCode(role);
-    }
+	/**
+	 * 根据角色code查询.
+	 *
+	 * @param role role
+	 * @return Role
+	 * @author cooingandwooing
+	 * @date 2019/09/21 12:07:47
+	 */
+	@Cacheable(value = "role#" + CommonConstant.CACHE_EXPIRE, key = "#role.roleCode")
+	public Role findByRoleCode(Role role) {
+		return this.dao.findByRoleCode(role);
+	}
 
-    /**
-     * 新增
-     *
-     * @param role
-     * @return int
-     */
-    @Override
-    @Transactional
-    @CacheEvict(value = "role", key = "#role.roleCode")
-    public int insert(Role role) {
-        return super.insert(role);
-    }
+	/**
+	 * 新增.
+	 *
+	 * @param role r
+	 * @return int
+	 */
+	@Override
+	@Transactional
+	@CacheEvict(value = "role", key = "#role.roleCode")
+	public int insert(Role role) {
+		return super.insert(role);
+	}
 
-    /**
-     * 更新
-     *
-     * @param role role
-     * @return int
-     */
-    @Override
-    @Transactional
-    @CacheEvict(value = "role", key = "#role.roleCode")
-    public int update(Role role) {
-        return super.update(role);
-    }
+	/**
+	 * 更新.
+	 *
+	 * @param role role
+	 * @return int
+	 */
+	@Override
+	@Transactional
+	@CacheEvict(value = "role", key = "#role.roleCode")
+	public int update(Role role) {
+		return super.update(role);
+	}
 
-    /**
-     * 删除
-     *
-     * @param role role
-     * @return int
-     */
-    @Override
-    @Transactional
-    @CacheEvict(value = "role", key = "#role.roleCode")
-    public int delete(Role role) {
-        // 删除角色菜单关系
-        roleMenuMapper.deleteByRoleId(role.getId());
-        // 删除用户角色关系
-        userRoleMapper.deleteByRoleId(role.getId());
-        return super.delete(role);
-    }
+	/**
+	 * 删除.
+	 *
+	 * @param role role
+	 * @return int
+	 */
+	@Override
+	@Transactional
+	@CacheEvict(value = "role", key = "#role.roleCode")
+	public int delete(Role role) {
+		// 删除角色菜单关系
+		roleMenuMapper.deleteByRoleId(role.getId());
+		// 删除用户角色关系
+		userRoleMapper.deleteByRoleId(role.getId());
+		return super.delete(role);
+	}
 }

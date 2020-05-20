@@ -21,7 +21,7 @@ import com.github.cooingandwooing.user.api.module.Student;
 import org.apache.ibatis.annotations.Mapper;
 
 /**
- * 学生Mapper
+ * 学生Mapper.
  *
  * @author cooingandwooing
  * @date 2019/07/09 15:27
