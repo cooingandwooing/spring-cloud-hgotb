@@ -97,7 +97,7 @@ public class CustomTokenEndpointAuthenticationFilter extends TokenEndpointAuthen
 	/**
 	 * 异步记录登录日志.
 	 *
-	 * @author tangyi
+	 * @author gaoxiaofeng
 	 * @date 2019/05/30 23:30
 	 */
 	@Async

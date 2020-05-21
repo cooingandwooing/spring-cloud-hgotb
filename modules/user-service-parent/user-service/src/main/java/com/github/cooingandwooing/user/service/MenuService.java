@@ -36,9 +36,9 @@ import com.github.cooingandwooing.user.api.module.Menu;
 import com.github.cooingandwooing.user.api.module.Role;
 import com.github.cooingandwooing.user.api.module.RoleMenu;
 import com.github.cooingandwooing.user.mapper.MenuMapper;
-import com.google.common.collect.Lists;
 import lombok.AllArgsConstructor;
 import org.apache.commons.collections4.CollectionUtils;
+import org.apache.commons.compress.utils.Lists;
 
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;

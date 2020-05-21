@@ -30,8 +30,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
-import org.apache.commons.beanutils.BeanUtils;
 import org.apache.commons.lang3.StringUtils;
+
+import org.springframework.beans.BeanUtils;
 
 /**
  * @author gaoxiaofeng
@@ -51,7 +52,7 @@ public class MapUtil {
 	 * @return E
 	 */
 	@SuppressWarnings({"unchecked"})
-	public final static <E> E get(Map<String, Object> map, Object key, E defaultValue) {
+	public static <E> E get(Map<String, Object> map, Object key, E defaultValue) {
 		Object o = map.get(key);
 		if (o == null) {
 			return defaultValue;
@@ -66,7 +67,7 @@ public class MapUtil {
 	 * @param key 键对
 	 * @return String 对应的键值，并格式为字符串
 	 */
-	public final static String getString(Map<String, Object> map, String key) {
+	public static String getString(Map<String, Object> map, String key) {
 		Object o = map.get(key);
 		if (o != null) {
 			return o.toString();
@@ -96,7 +97,7 @@ public class MapUtil {
 	 * @param key 键对
 	 * @return Double 对应的键值，并格式为Double类型
 	 */
-	public final static Double getDouble(Map<String, Object> map, String key) {
+	public static Double getDouble(Map<String, Object> map, String key) {
 		Object o = map.get(key);
 		return ObjectUtil.obj2Double(o);
 	}
@@ -108,7 +109,7 @@ public class MapUtil {
 	 * @param key 键对
 	 * @return Boolean 对应的键值，并格式为Boolean类型
 	 */
-	public final static Boolean getBooleanValue(Map<String, Object> map, String key) {
+	public static Boolean getBooleanValue(Map<String, Object> map, String key) {
 		Object o = map.get(key);
 		if (o != null) {
 			return (Boolean) o;
@@ -143,6 +144,7 @@ public class MapUtil {
 	 * @param map      Map对象
 	 */
 	public static <T> T map2Java(T javaBean, Map<String, Object> map) {
+		// TODO
 		try {
 			Map<String, Object> collectionObj = new HashMap<>();
 			for (String key : map.keySet()) {
@@ -155,7 +157,9 @@ public class MapUtil {
 					if (Objects.requireNonNull(temFiels).getType().equals(Object.class)) {
 						o = javaBean.getClass().newInstance();
 						ReflectionUtil.setFieldValue(o, temp[1], map.get(key));
-						BeanUtils.copyProperties(javaBean, o);
+						// 下面是深还是浅拷贝 待查Apache BeanUtils BeanUtils.copyProperties(javaBean, o);性能较差，可以使用 Spring BeanUtils 或者 Cglib BeanCopier 来代替
+						BeanUtils.copyProperties(o, javaBean);
+
 					}
 					else if (Objects.requireNonNull(temFiels).getType().equals(List.class)) {
 						if (!collectionObj.containsKey(temp[0])) {
@@ -174,19 +178,19 @@ public class MapUtil {
 								Object tempObj = ((Class<?>) types[0]).newInstance();
 								ReflectionUtil.setFieldValue(tempObj, temp[2], map.get(key));
 								((List) o).add(tempObj);
-								BeanUtils.setProperty(javaBean, temp[0], o);
+								org.apache.commons.beanutils.BeanUtils.setProperty(javaBean, temp[0], o);
 							}
 						}
 					}
 					else {
 						o = temFiels.getType().newInstance();
 						ReflectionUtil.setFieldValue(o, temp[1], map.get(key));
-						BeanUtils.setProperty(javaBean, temp[0], o);
+						org.apache.commons.beanutils.BeanUtils.setProperty(javaBean, temp[0], o);
 					}
 				}
 				else {
 					// 属性是普通的数据类型
-					BeanUtils.copyProperty(javaBean, key, map.get(key));
+					org.apache.commons.beanutils.BeanUtils.copyProperty(javaBean, key, map.get(key));
 				}
 			}
 			return javaBean;
@@ -263,7 +267,7 @@ public class MapUtil {
 				Object propertyValue;
 				for (PropertyDescriptor pd : propertyDescriptors) {
 					propertyName = pd.getName();
-					if (!propertyName.equals("class")) {
+					if (!"class".equals(propertyName)) {
 						Method readMethod = pd.getReadMethod();
 						if (readMethod != null) {
 							propertyValue = readMethod.invoke(javaBean, new Object[0]);

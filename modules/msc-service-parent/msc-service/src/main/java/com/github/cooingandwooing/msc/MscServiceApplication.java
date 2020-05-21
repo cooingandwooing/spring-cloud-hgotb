@@ -26,6 +26,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 
+//@checkstyle:off
 @SpringBootApplication(scanBasePackages = {CommonConstant.BASE_PACKAGE}, exclude = {DataSourceAutoConfiguration.class})
 @EnableDiscoveryClient
 // 扫描api包里的FeignClient
@@ -33,9 +34,9 @@ import org.springframework.security.config.annotation.method.configuration.Enabl
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 @EnableCircuitBreaker
 public class MscServiceApplication {
-
 	public static void main(String[] args) {
 		SpringApplication.run(MscServiceApplication.class, args);
 	}
-
 }
+//@checkstyle:on
+

@@ -26,6 +26,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.validation.constraints.NotBlank;
 
 import com.github.cooingandwooing.common.core.constant.CommonConstant;
+import com.github.cooingandwooing.common.core.constant.HttpHeaders;
 import com.github.cooingandwooing.common.core.exceptions.CommonException;
 import com.github.cooingandwooing.common.core.model.ResponseBean;
 import com.github.cooingandwooing.common.core.utils.PageUtil;
@@ -37,8 +38,6 @@ import com.github.cooingandwooing.common.log.annotation.Log;
 import com.github.cooingandwooing.user.api.module.Attachment;
 import com.github.cooingandwooing.user.service.AttachmentService;
 import com.github.pagehelper.PageInfo;
-/**关闭检查*/
-import com.google.common.net.HttpHeaders;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
@@ -61,7 +60,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
-
 /**
  * 附件信息管理.
  *

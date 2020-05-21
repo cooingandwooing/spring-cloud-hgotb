@@ -17,9 +17,9 @@
 package com.github.cooingandwooing.auth.model;
 
 import java.util.Collection;
+import java.util.Objects;
 
 import com.github.cooingandwooing.common.core.enums.LoginType;
-import lombok.Data;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.User;
@@ -30,7 +30,6 @@ import org.springframework.security.core.userdetails.User;
  * @author gaoxiaofeng
  * @date 2019/5/28 21:13
  */
-@Data
 public class CustomUserDetails extends User {
 
 	private static final long serialVersionUID = 1L;
@@ -66,5 +65,65 @@ public class CustomUserDetails extends User {
 		this.tenantCode = tenantCode;
 		this.start = start;
 		this.loginType = loginType;
+	}
+
+	static long getSerialVersionUID() {
+		return serialVersionUID;
+	}
+
+	public String getTenantCode() {
+		return tenantCode;
+	}
+
+	public void setTenantCode(String tenantCode) {
+		this.tenantCode = tenantCode;
+	}
+
+	public long getStart() {
+		return start;
+	}
+
+	public void setStart(long start) {
+		this.start = start;
+	}
+
+	LoginType getLoginType() {
+		return loginType;
+	}
+
+	void setLoginType(LoginType loginType) {
+		this.loginType = loginType;
+	}
+
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) {
+			return true;
+		}
+		if (!(o instanceof CustomUserDetails)) {
+			return false;
+		}
+		if (!super.equals(o)) {
+			return false;
+		}
+		CustomUserDetails that = (CustomUserDetails) o;
+		return getStart() == that.getStart() &&
+			Objects.equals(getTenantCode(), that.getTenantCode()) &&
+			getLoginType() == that.getLoginType();
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(super.hashCode(), getTenantCode(), getStart(), getLoginType());
+	}
+
+	@Override
+	public String toString() {
+		return "CustomUserDetails{" +
+			"tenantCode='" + tenantCode + '\'' +
+			", start=" + start +
+			", loginType=" + loginType +
+			"} " + super.toString();
 	}
 }

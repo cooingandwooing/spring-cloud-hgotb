@@ -23,6 +23,9 @@ package com.github.cooingandwooing.common.security.tenant;
  * @date 2019/5/28 20:54
  */
 public class TenantContextHolder {
+	protected TenantContextHolder() {
+		throw new UnsupportedOperationException();
+	}
 
 	private static final ThreadLocal<String> CONTEXT = new ThreadLocal<>();
 

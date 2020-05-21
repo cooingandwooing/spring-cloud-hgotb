@@ -38,8 +38,6 @@ public class OkHttpRequestBodyUtil {
 	}
 
 	/**
-	 * @param
-	 * @return
 	 * @author gaoxiaofeng
 	 * @date 2018/9/9 10:22
 	 */

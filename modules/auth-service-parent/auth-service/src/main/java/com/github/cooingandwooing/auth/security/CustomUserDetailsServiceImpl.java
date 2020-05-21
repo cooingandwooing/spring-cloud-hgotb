@@ -17,6 +17,7 @@
 package com.github.cooingandwooing.auth.security;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -46,7 +47,6 @@ import com.github.cooingandwooing.user.api.enums.IdentityType;
 import com.github.cooingandwooing.user.api.feign.UserServiceClient;
 import com.github.cooingandwooing.user.api.module.Menu;
 import com.github.cooingandwooing.user.api.module.Tenant;
-import com.google.common.collect.Lists;
 import lombok.AllArgsConstructor;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang.StringUtils;
@@ -246,8 +246,8 @@ public class CustomUserDetailsServiceImpl implements CustomUserDetailsService {
 	private Set<GrantedAuthority> getAuthority(UserVo userVo) {
 		// 权限集合
 		Set<GrantedAuthority> authorities = new HashSet<>();
-		// 根据角色查找菜单权限
-		List<Menu> menus = Lists.newArrayList();
+		// 根据角色查找菜单权限 import com.google.common.collect.Lists;  Lists.newArrayList();
+		List<Menu> menus = new ArrayList();
 		// 判断是否是管理员，是则查找所有菜单权限
 		if (userVo.getIdentifier().equals(sysProperties.getAdminUser())) {
 			// 查找所有菜单权限，因为角色一般是一个，这里只会执行一次

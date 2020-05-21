@@ -52,11 +52,10 @@ import com.github.cooingandwooing.user.mapper.RoleMapper;
 import com.github.cooingandwooing.user.mapper.UserMapper;
 import com.github.cooingandwooing.user.mapper.UserRoleMapper;
 import com.github.cooingandwooing.user.utils.UserUtils;
-/**关闭检查*/
-import com.google.common.collect.Lists;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.collections4.CollectionUtils;
+import org.apache.commons.compress.utils.Lists;
 import org.apache.commons.lang.StringUtils;
 
 import org.springframework.beans.BeanUtils;

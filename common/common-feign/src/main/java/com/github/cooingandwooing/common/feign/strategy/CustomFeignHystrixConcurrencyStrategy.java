@@ -124,7 +124,7 @@ public class CustomFeignHystrixConcurrencyStrategy extends HystrixConcurrencyStr
 		private final Callable<T> target;
 		private final RequestAttributes requestAttributes;
 
-		public WrappedCallable(Callable<T> target, RequestAttributes requestAttributes) {
+		WrappedCallable(Callable<T> target, RequestAttributes requestAttributes) {
 			this.target = target;
 			this.requestAttributes = requestAttributes;
 		}

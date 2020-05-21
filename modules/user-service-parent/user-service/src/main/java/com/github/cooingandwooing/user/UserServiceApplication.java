@@ -25,7 +25,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
-
+//@checkstyle:off
 @SpringBootApplication(scanBasePackages = {CommonConstant.BASE_PACKAGE})
 @EnableDiscoveryClient
 // 扫描api包里的FeignClient
@@ -40,3 +40,4 @@ public class UserServiceApplication {
 	}
 
 }
+//@checkstyle:on

@@ -80,7 +80,9 @@ public class GatewayConstant {
 	 * 默认租户编号.
 	 */
 	public static final String DEFAULT_TENANT_CODE = "gitee";
-
+	/**
+	 * 租户编号.
+	 */
 	public static final String TENANT_CODE_HEADER = "Tenant-Code";
 
 }

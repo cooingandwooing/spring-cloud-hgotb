@@ -63,4 +63,5 @@ public enum LoginType {
 	 * 接口uri.
 	 */
 	private String uri;
+
 }

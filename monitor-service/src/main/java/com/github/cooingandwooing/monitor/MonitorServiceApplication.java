@@ -25,7 +25,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.cloud.netflix.hystrix.dashboard.EnableHystrixDashboard;
 import org.springframework.cloud.netflix.turbine.EnableTurbine;
-
+//@checkstyle:off
 @SpringBootApplication
 @EnableDiscoveryClient
 @EnableHystrixDashboard
@@ -40,3 +40,4 @@ public class MonitorServiceApplication {
 	}
 
 }
+//@checkstyle:on
