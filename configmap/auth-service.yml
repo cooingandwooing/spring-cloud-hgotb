@@ -55,16 +55,6 @@ hystrix:
         isolation:
           thread:
             timeoutInMilliseconds: 60000
-
-management:
-  endpoints:
-    web:
-      exposure:
-        include: "*"
-  endpoint:
-    health:
-      show-details: ALWAYS
-
 # mybatis配置
 mybatis:
   type-aliases-package: com.github.tangyi.auth.api.module
@@ -79,7 +69,6 @@ pagehelper:
   reasonable: true
   supportMethodsArguments: true
   params: count=countSql
-
 ignore:
   urls:
     - /

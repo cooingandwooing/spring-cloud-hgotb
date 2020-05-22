@@ -17,15 +17,18 @@
 package com.github.cooingandwooing.gateway;
 
 import com.github.cooingandwooing.common.core.constant.CommonConstant;
+import com.github.cooingandwooing.gateway.properties.GatewayTokenTransferProperties;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 @SpringBootApplication(scanBasePackages = {CommonConstant.BASE_PACKAGE})
 @EnableDiscoveryClient
 @EnableCircuitBreaker
+@EnableConfigurationProperties(GatewayTokenTransferProperties.class)
 public class GatewayServiceApplication {
 	protected GatewayServiceApplication() {
 	}

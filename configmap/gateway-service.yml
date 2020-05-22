@@ -90,15 +90,6 @@ hystrix:
             timeoutInMilliseconds: 60000
           strategy: SEMAPHORE             # 隔离策略，解决RequestContextHolder.getRequestAttributes()问题
 
-management:
-  endpoints:
-    web:
-      exposure:
-        include: "*"
-  endpoint:
-    health:
-      show-details: ALWAYS
-
 # 提供swagger文档的服务
 swagger:
   providers:

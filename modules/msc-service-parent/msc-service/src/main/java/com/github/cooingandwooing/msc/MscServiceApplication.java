@@ -17,10 +17,12 @@
 package com.github.cooingandwooing.msc;
 
 import com.github.cooingandwooing.common.core.constant.CommonConstant;
+import com.github.cooingandwooing.msc.properties.SmsProperties;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.openfeign.EnableFeignClients;
@@ -33,6 +35,7 @@ import org.springframework.security.config.annotation.method.configuration.Enabl
 @EnableFeignClients(basePackages = {CommonConstant.BASE_PACKAGE})
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 @EnableCircuitBreaker
+@EnableConfigurationProperties(SmsProperties.class)
 public class MscServiceApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(MscServiceApplication.class, args);
