@@ -9,7 +9,7 @@
     <parent>
         <groupId>com.github.cooingandwooing</groupId>
         <artifactId>modules</artifactId>
-        <version>${revision}</version>
+        <version>0.0.3</version>
     </parent>
     <artifactId>auth-service-parent</artifactId>
     <name>${project.artifactId}</name>
