@@ -369,7 +369,10 @@
 					<executions>
 						<execution>
 							<goals>
+								<goal>repackage</goal>
+<!--
 								<goal>build-info</goal>
+-->
 							</goals>
 						</execution>
 					</executions>
@@ -461,6 +464,10 @@
 									</fmp-service>
 								</config>
 							</enricher>
+							<!-- 构建参数，指定jar包名称 -->
+<!--							<buildArgs>
+								<JAR_FILE>${project.name}.jar</JAR_FILE>
+							</buildArgs>-->
 							<!--<access>
 								<username>kubernetes-admin</username>
 								<namespace>hgot</namespace>
